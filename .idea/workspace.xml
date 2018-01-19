@@ -27,8 +27,8 @@
       <file leaf-file-name="GiftShop.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GiftShop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="682">
+              <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -209,7 +209,7 @@
       <updated>1515775402613</updated>
       <workItem from="1515775406654" duration="245000" />
       <workItem from="1516208472624" duration="627000" />
-      <workItem from="1516276317045" duration="2595000" />
+      <workItem from="1516276317045" duration="3458000" />
     </task>
     <task id="LOCAL-00001" summary="update of gift shop">
       <created>1516294193830</created>
@@ -218,11 +218,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516294193830</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update of gift shop">
+      <created>1516379932663</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1516379932663</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3467000" />
+    <option name="totallyTimeSpent" value="4330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -268,7 +275,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="update of gift shop" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -303,8 +312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GiftShop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="682">
+          <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="39" />
           <folding />
         </state>
       </provider>
