@@ -51,12 +51,11 @@ public class Buyer {
                         if (decisions == 4) {
                             Main.buyingAnimals = false;
                         } else {
-                            System.out.println("you fucked up somewhere");
+                            System.out.println("you f***** up somewhere");
                         }
                     }
                 }
             }
         }
     }
-}
 }
