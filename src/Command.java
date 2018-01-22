@@ -17,7 +17,9 @@ public class Command {
             {"buy animal", "buys an animal of a specific type"},
             {"report", "displays daily report"},
             {"my animals", "lists all owned animals"},
-            {"animal list", "lists all species available"}
+            {"animal list", "lists all species available"},
+//            {"cancel", "cancels the action you are in"},
+//            {"end turn", "finished the turn"}
     };
 
     //When a user enters a string, user_interface checks for
@@ -25,35 +27,32 @@ public class Command {
     public static void user_interface(String command) {
         if (command.equals("help")) {
             help_command();
-        }
-
-        if (command.equals("buy animal")) {
+        } else if (command.equals("buy animal")) {
             buy_animal_command();
-        }
-
-        if (command.equals("report")) {
+        } else if (command.equals("report")) {
             report();
-        }
-
-        if (command.equals("my animals")) {
+        } else if (command.equals("my animals")) {
             my_animals();
-        }
-
-        if (command.equals("animal list")) {
+        } else if (command.equals("animal list")) {
             animal_list();
+        } else if (command.equals("end turn")) {
+            //Just for testing purposes
+            keepGoing = false;
+        } else {
+            IBIO.output("not a command");
         }
     }
 
     public static void help_command() {
         for (int i = 0; i < command_list.length; i = i + 1) {
             String command_info = String.format("%s -- %s",
-                    command_list[i][0], command_list[i][2]);
+                    command_list[i][0], command_list[i][1]);
             IBIO.output(command_info);
         }
     }
 
     public static void buy_animal_command() {
-        String message = "Choose an animal you would like to purchase -> "
+        String message = "Choose an animal you would like to purchase -> ";
         String animal_purchase = IBIO.input(message);
 
         //The following loop checks through all existing animals
@@ -80,4 +79,35 @@ public class Command {
     public static void animal_list() {
         //Lists all species and cost in animal array
     }
+
+    public static boolean checkForCancel(String input) {
+        boolean endTurn = false;
+        if (input.equals("cancel")) {
+            endTurn = true;
+        }
+        return endTurn;    }
+
+    public static boolean checkForEndTurn(String input) {
+        boolean endTurn = false;
+        if (input.equals("end turn")) {
+            endTurn = true;
+        }
+        return endTurn;
+    }
+
+
+
+    //
+    //
+    //Main here for testing purposes only
+    //
+    //
+    static boolean keepGoing = true;
+    public static void main(String[] args) {
+
+        while (keepGoing) {
+            user_interface(IBIO.input("-> "));
+        }
+    }
+
 }
