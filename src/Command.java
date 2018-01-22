@@ -18,8 +18,9 @@ public class Command {
             {"report", "displays daily report"},
             {"my animals", "lists all owned animals"},
             {"animal list", "lists all species available"},
-//            {"cancel", "cancels the action you are in"},
-//            {"end turn", "finished the turn"}
+            {"end turn", "finished the turn"}
+//            {"cancel", "cancels the action you are in"} TODO
+
     };
 
     //When a user enters a string, user_interface checks for
@@ -39,6 +40,7 @@ public class Command {
             //Just for testing purposes
             keepGoing = false;
         } else {
+            //Outputed if user says something that doesn't work like "hfhfdj"
             IBIO.output("not a command");
         }
     }
@@ -65,22 +67,34 @@ public class Command {
 //            }
 //        }
 
-        //allow for cancelation
+        //allow for cancellation
     }
 
     public static void report() {
         //Daily finances
+        //TODO
     }
 
     public static void my_animals() {
         //lists the animals in your array list of owned animals
+        //Waiting for animal class file to be uploaded so I can
+        //incorporate the animals into Profile.java, where the animals
+        //the player owns are stored in an array
+        //TODO
     }
 
     public static void animal_list() {
         //Lists all species and cost in animal array
+        //Waiting for animal class file to be uploaded so I can
+        //List access the array for this method
+        //TODO
     }
 
     public static boolean checkForCancel(String input) {
+        //This is a boolean function. Place it in UI
+        //so that it can check if user has inputed false.
+        //You put user input into the the parenthesis
+        //True is returned if user says false.
         boolean endTurn = false;
         if (input.equals("cancel")) {
             endTurn = true;
@@ -88,6 +102,10 @@ public class Command {
         return endTurn;    }
 
     public static boolean checkForEndTurn(String input) {
+        //This is a boolean function. Place it in UI
+        //so that it can check if user has inputed false.
+        //You put user input into the the parenthesis
+        //True is returned if user says false.
         boolean endTurn = false;
         if (input.equals("end turn")) {
             endTurn = true;
