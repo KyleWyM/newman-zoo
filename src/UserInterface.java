@@ -1,12 +1,16 @@
 import ibio.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserInterface {
 
     //indicates whether to continue the game or not.
     boolean keepGoing;
+    List<Animal_Test> animals;
 
-    public UserInterface(boolean keepGoing) {
+    public UserInterface(boolean keepGoing, List<Animal_Test> animals) {
         this.keepGoing = keepGoing;
+        this.animals = animals;
     }
 
     //Please update whenever you add a new command
@@ -69,20 +73,25 @@ public class UserInterface {
         }
     }
     public void buy_animal_command() {
+        String name;
         String message = "** Choose an animal you would like to purchase -> ";
         String animal_purchase = IBIO.input(message);
 
-        //The following loop checks through all existing animals
-        //Then it adds the animal to your array which you choose
-        //species[] is the array of all the different animal names
-
-//        for (int i = 0; i < species.length; i = i +1) {
-//            if (species[i].equals(animal_purchase)) {
-//                //asks for name and adds animal to array
-//            }
-//        }
-
-        //allow for cancellation
+        switch (animal_purchase) {
+            case "Kangaroo":
+                name = IBIO.input("** Please name the animal -> ");
+                animals.add(new Kangaroo(name));
+                IBIO.output("Animal successfully named.");
+                break;
+            case "Zebra":
+                name = IBIO.input("** Please name the animal -> ");
+                animals.add(new Zebra(name));
+                IBIO.output("Animal successfully named.");
+                break;
+            default:
+                //Outputed if user says something that doesn't work like "hfhfdj"
+                IBIO.output("** Unknown animal. (Entries are case sensitive).");
+        }
     }
 
     public void report_command() {
@@ -91,11 +100,13 @@ public class UserInterface {
     }
 
     public void my_animals() {
-        //lists the animals in your array list of owned animals
-        //Waiting for animal class file to be uploaded so I can
-        //incorporate the animals into Profile.java, where the animals
-        //the player owns are stored in an array
-        //TODO
+        for (int i = 0; i < animals.size(); i = i + 1) {
+
+            String message = String.format( "%2d. %-20s %s",
+                    i + 1, animals.get(i).species_name, animals.get(i).getName());
+
+            IBIO.output(message);
+        }
     }
 
     public void animal_list() {

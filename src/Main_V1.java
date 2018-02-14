@@ -1,9 +1,17 @@
 import ibio.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main_V1 {
-    public static void main(String args[]){
+    public static void main(String args[]) {
+        int money;
+        int reputation;
+        List<Animal_Test> animals = new ArrayList<Animal_Test>();
+
+        UserInterface UI = new UserInterface(true, animals);
+
         intro();
-        UserInterface UI = new UserInterface(true);
 
         while (UI.keepGoing) {
                 String user_input = IBIO.input();
