@@ -14,7 +14,7 @@ public class Main_V1 {
     public static void intro() {
         String username = IBIO.input("** Hello, what is you're name?\n");
         String message = "** Welcome to the zoo " + username +
-                ". (insert exposition)...";
+                ". (insert exposition)...\nType 'help' for a list of commands.";
         IBIO.output(message);
     }
 }
