@@ -1,20 +1,32 @@
 import ibio.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserInterface {
 
     //indicates whether to continue the game or not.
+    int turnNum;
     boolean keepGoing;
+    boolean turn_in_session;
+
+    //Variables inputed from main (e.g. data about user)
+    String name;
     List<Animal_Test> animals;
+    int money;
+    int revenue;
+    int expenses;
+    int reputation;
 
-    public UserInterface(boolean keepGoing, List<Animal_Test> animals) {
-        this.keepGoing = keepGoing;
+    public UserInterface(List<Animal_Test> animals, String name, int money) {
+        this.keepGoing = true;
         this.animals = animals;
+        this.turnNum = 1;
+        this.turn_in_session = true;
+        this.name = name;
+        this.money = money; //Initial savings
+        this.revenue = 10; //Initial daily revenue
+        this.reputation = 100; //Initial reputation
+        this.expenses = 0; //Initial expenses
     }
-
-    //Please update whenever you add a new command
-    //Number of commands is used when help command is called
 
     //This is a list of all commands for use in the help command
     //Each command contains a name, and then a description.
@@ -29,6 +41,7 @@ public class UserInterface {
             {"report_command", "displays daily report_command."},
             {"my animals", "lists all owned animals."},
             {"animal list", "lists all species available."},
+            {"turn", "ends the turn."},
             {"end game", "quits the game."}
 //            {"cancel", "cancels the action you are in"} TODO
     };
@@ -40,17 +53,20 @@ public class UserInterface {
             case "help":
                 help_command();
                 break;
+            case "my report":
+                myReport();
+                break;
             case "buy animal":
                 buy_animal_command();
-                break;
-            case "report_command":
-                report_command();
                 break;
             case "my animals":
                 my_animals();
                 break;
             case "animal list":
                 animal_list();
+                break;
+            case "turn":
+                this.turn_in_session = false;
                 break;
             case "end game":
                 //Just for testing purposes
@@ -64,16 +80,28 @@ public class UserInterface {
     }
 
     public void help_command() {
+        //Lists the commands and descriptions
         for (int i = 0; i < command_list.length; i = i + 1) {
 
             String message = String.format( "%2d. %-20s %s",
                     i + 1, command_list[i][0], command_list[i][1]);
-
             IBIO.output(message);
         }
     }
+
+    public void turnCycle() {
+        //Updates vistors and money after each turn
+        this.money += revenue;
+        this.money -= expenses;
+    }
+
+    public void myReport() {
+        IBIO.output("Bank Account: " + this.money);
+        IBIO.output("Reputation: " + this.reputation);
+    }
+
     public void buy_animal_command() {
-        String name;
+        String name; //name of the animal
         String message = "** Choose an animal you would like to purchase -> ";
         String animal_purchase = IBIO.input(message);
 
@@ -94,11 +122,6 @@ public class UserInterface {
         }
     }
 
-    public void report_command() {
-        //Daily finances
-        //TODO
-    }
-
     public void my_animals() {
         for (int i = 0; i < animals.size(); i = i + 1) {
 
@@ -116,18 +139,6 @@ public class UserInterface {
         //TODO
     }
 
-    public boolean checkForCancel(String input) {
-        //This is a boolean function. Place it in UI
-        //so that it can check if user has inputed false.
-        //You put user input into the the parenthesis
-        //True is returned if user says false.
-        boolean cancelAction = false;
-        if (input.equals("cancel")) {
-            cancelAction = true;
-        }
-        return cancelAction;
-    }
-
     public boolean checkForEndGame() {
         //This is a boolean function. Place it in UI
         //so that it can check if user has inputed false.
@@ -141,6 +152,7 @@ public class UserInterface {
             switch (response) {
                 case "Yes":
                     IBIO.output("The game has been ended.");
+                    turn_in_session = false;
                     endGame = true;
                     break;
                 case "No":
@@ -150,8 +162,9 @@ public class UserInterface {
                     IBIO.output("Please answer yes or no.\n" +
                             "Action cancelled.\n");
             }
-
         return endGame;
     }
+
+
 
 }
