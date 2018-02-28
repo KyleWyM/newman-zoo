@@ -46,6 +46,12 @@ public class UserInterface {
 //            {"cancel", "cancels the action you are in"} TODO
     };
 
+    static String[] animal_list = new String[] {
+            "Kangaroo",
+            "Zebra",
+            "Pig"
+    };
+
     //When a user enters a string, user_interface checks for
     //existing commands
     public void requestCommand(String command) {
@@ -133,10 +139,12 @@ public class UserInterface {
     }
 
     public void animal_list() {
-        //Lists all species and cost in animal array
-        //Waiting for animal class file to be uploaded so I can
-        //List access the array for this method
-        //TODO
+        for (int i = 0; i < animal_list.length; i = i + 1) {
+
+            String message = String.format( "%2d. %-20s",
+                    i + 1, animal_list[i]);
+            IBIO.output(message);
+        }
     }
 
     public boolean checkForEndGame() {
