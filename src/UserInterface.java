@@ -38,11 +38,11 @@ public class UserInterface {
     static String[][] command_list = new String[][]{
             {"help", "lists possible commands."},
             {"buy animal", "buys an animal of a specific type."},
-            {"report_command", "displays daily report_command."},
-            {"my animals", "lists all owned animals."},
-            {"animal list", "lists all species available."},
-            {"turn", "ends the turn."},
-            {"end game", "quits the game."}
+            {"report", "displays daily report_command."},
+            {"animals", "lists all owned animals."},
+            {"list", "lists all species available."},
+            {"next", "ends the turn."},
+            {"quit", "quits the game."}
 //            {"cancel", "cancels the action you are in"} TODO
     };
 
@@ -59,22 +59,22 @@ public class UserInterface {
             case "help":
                 help_command();
                 break;
-            case "my report":
+            case "report":
                 myReport();
                 break;
-            case "buy animal":
+            case "animals":
                 buy_animal_command();
                 break;
             case "my animals":
                 my_animals();
                 break;
-            case "animal list":
+            case "list":
                 animal_list();
                 break;
-            case "turn":
+            case "next":
                 this.turn_in_session = false;
                 break;
-            case "end game":
+            case "quit":
                 //Just for testing purposes
                 //If game is not ended, keep-going is true
                 this.keepGoing = !checkForEndGame();
