@@ -17,7 +17,8 @@ public class Main_V1 {
             IBIO.output("\nTurn number : " + UI.turnNum);
 
             while (UI.turn_in_session) {
-                String user_input = IBIO.input();
+                String user_input_temp = IBIO.input();
+                String user_input = user_input_temp.toLowerCase();
                 UI.requestCommand(user_input);
             }
 
