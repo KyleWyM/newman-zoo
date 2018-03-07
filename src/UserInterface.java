@@ -1,7 +1,7 @@
 import ibio.*;
 import java.util.List;
 
-public class UserInterface {
+public class UserInterface extends Autocorrect {
 
     //indicates whether to continue the game or not.
     int turnNum;
@@ -35,15 +35,21 @@ public class UserInterface {
     //While 1 indicates description.
     //
     //Commands listed here:
-    static String[][] command_list = new String[][]{
+    public static String[][] command_list = new String[][]{
             {"help", "lists possible commands."},
             {"buy animal", "buys an animal of a specific type."},
-            {"report_command", "displays daily report_command."},
-            {"my animals", "lists all owned animals."},
-            {"animal list", "lists all species available."},
-            {"turn", "ends the turn."},
-            {"end game", "quits the game."}
+            {"report", "displays daily report_command."},
+            {"animals", "lists all owned animals."},
+            {"list", "lists all species available."},
+            {"next", "ends the turn."},
+            {"quit", "quits the game."}
 //            {"cancel", "cancels the action you are in"} TODO
+    };
+
+    static String[] animal_list = new String[] {
+            "Kangaroo",
+            "Zebra",
+            "Pig"
     };
 
     //When a user enters a string, user_interface checks for
@@ -53,29 +59,46 @@ public class UserInterface {
             case "help":
                 help_command();
                 break;
-            case "my report":
+            case "report":
                 myReport();
                 break;
             case "buy animal":
-                buy_animal_command();
+                String message = "** Choose an animal you would like to purchase -> ";
+                String animal_purchase = IBIO.input(message);
+                animal_purchase = animal_purchase.toLowerCase();
+                int endNum = buy_animal_command(animal_purchase);
+
+                if (endNum == -1) {
+                    int bestMatchIndex = findMatch(animal_purchase,
+                            createListVectors(animal_list));
+
+                    IBIO.output("Did you mean " + animal_list[bestMatchIndex] + "?");
+                    String input = IBIO.input("Yes or No? -> ");
+                    input = input.toLowerCase();
+                    if (input.equals("yes")) {
+                        buy_animal_command(animal_list[bestMatchIndex]);
+                    } else IBIO.output("Action cancelled.");
+                }
+
                 break;
-            case "my animals":
+            case "animals":
                 my_animals();
                 break;
-            case "animal list":
+            case "list":
                 animal_list();
                 break;
-            case "turn":
+            case "next":
                 this.turn_in_session = false;
                 break;
-            case "end game":
+            case "quit":
                 //Just for testing purposes
                 //If game is not ended, keep-going is true
                 this.keepGoing = !checkForEndGame();
                 break;
             default:
-                //Outputed if user says something that doesn't work like "hfhfdj"
-                IBIO.output("** Type 'help' for a list of commands.");
+                int bestMatchIndex =
+                        findMatch(command, createListVectors(command_vector_list));
+                requestCommand(command_vector_list[bestMatchIndex]);
         }
     }
 
@@ -100,10 +123,8 @@ public class UserInterface {
         IBIO.output("Reputation: " + this.reputation);
     }
 
-    public void buy_animal_command() {
+    public int buy_animal_command(String animal_purchase) {
         String name; //name of the animal
-        String message = "** Choose an animal you would like to purchase -> ";
-        String animal_purchase = IBIO.input(message);
 
         switch (animal_purchase) {
             case "Kangaroo":
@@ -117,9 +138,13 @@ public class UserInterface {
                 IBIO.output("Animal successfully named.");
                 break;
             default:
-                //Outputed if user says something that doesn't work like "hfhfdj"
-                IBIO.output("** Unknown animal. (Entries are case sensitive).");
+                IBIO.output("** Unknown animal.");
+                return -1;
+                //This number is returned, so that the requestCommand knows to run a search
+                //of possible animals the user meant, and then re-run with the correction if
+                //the user chooses to
         }
+        return 0;
     }
 
     public void my_animals() {
@@ -133,10 +158,12 @@ public class UserInterface {
     }
 
     public void animal_list() {
-        //Lists all species and cost in animal array
-        //Waiting for animal class file to be uploaded so I can
-        //List access the array for this method
-        //TODO
+        for (int i = 0; i < animal_list.length; i = i + 1) {
+
+            String message = String.format( "%2d. %-20s",
+                    i + 1, animal_list[i]);
+            IBIO.output(message);
+        }
     }
 
     public boolean checkForEndGame() {
