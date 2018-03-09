@@ -16,15 +16,15 @@ public class UserInterface extends Autocorrect {
     int expenses;
     int reputation;
 
-    public UserInterface(List<Animal_Test> animals, String name, int money) {
+    public UserInterface(List<Animal_Test> animals, String name, int money, int reputation, int turnNum) {
         this.keepGoing = true;
         this.animals = animals;
-        this.turnNum = 1;
+        this.turnNum = turnNum;
         this.turn_in_session = true;
         this.name = name;
         this.money = money; //Initial savings
         this.revenue = 10; //Initial daily revenue
-        this.reputation = 100; //Initial reputation
+        this.reputation = reputation; //Initial reputation
         this.expenses = 0; //Initial expenses
     }
 
@@ -37,15 +37,15 @@ public class UserInterface extends Autocorrect {
     //Commands listed here:
     public static String[][] command_list = new String[][]{
             {"help", "lists possible commands."},
-            {"buy animal", "buys an animal of a specific type."},
+            {"buy", "buys an animal of a specific type."},
             {"report", "displays daily report_command."},
             {"animals", "lists all owned animals."},
             {"list", "lists all species available."},
             {"next", "ends the turn."},
-            {"quit", "quits the game."},
-            {"hire employee", "brings new employee to work - doesn't "},
-            {"train employee", "increases the xp of each employee - doesn't work"},
-            {"list employees", " see all xp of employees - doesn't work"}
+            {"hire employee", "hires employee"},
+            {"train employee", "trains employee"},
+            {"list employees", "list all employees"},
+            {"quit", "quits the game."}
 //            {"cancel", "cancels the action you are in"} TODO
     };
 
@@ -65,7 +65,7 @@ public class UserInterface extends Autocorrect {
             case "report":
                 myReport();
                 break;
-            case "buy animal":
+            case "buy":
                 String message = "** Choose an animal you would like to purchase -> ";
                 String animal_purchase = IBIO.input(message);
                 animal_purchase = animal_purchase.toLowerCase();
@@ -93,11 +93,6 @@ public class UserInterface extends Autocorrect {
             case "next":
                 this.turn_in_session = false;
                 break;
-            case "quit":
-                //Just for testing purposes
-                //If game is not ended, keep-going is true
-                this.keepGoing = !checkForEndGame();
-                break;
             case "hire employee":
                 Addemployee.addEmployee();
                 // todo add stuff to the method
@@ -107,6 +102,11 @@ public class UserInterface extends Autocorrect {
                 break;
             case "list employees":
                 ListEmployees.listEmpoyees();
+                break;
+            case "quit":
+                //Just for testing purposes
+                //If game is not ended, keep-going is true
+                this.keepGoing = !checkForEndGame();
                 break;
             default:
                 int bestMatchIndex =
@@ -140,12 +140,12 @@ public class UserInterface extends Autocorrect {
         String name; //name of the animal
 
         switch (animal_purchase) {
-            case "Kangaroo":
+            case "kangaroo":
                 name = IBIO.input("** Please name the animal -> ");
                 animals.add(new Kangaroo(name));
                 IBIO.output("Animal successfully named.");
                 break;
-            case "Zebra":
+            case "zebra":
                 name = IBIO.input("** Please name the animal -> ");
                 animals.add(new Zebra(name));
                 IBIO.output("Animal successfully named.");
@@ -187,15 +187,15 @@ public class UserInterface extends Autocorrect {
         boolean endGame = false;
         String message = "** Are you sure you want to end the game?\n" +
                 "(Yes or No)\n";
-        String response = IBIO.input(message);
+        String response = IBIO.input(message).toLowerCase();
 
             switch (response) {
-                case "Yes":
+                case "yes":
                     IBIO.output("The game has been ended.");
                     turn_in_session = false;
                     endGame = true;
                     break;
-                case "No":
+                case "no":
                     IBIO.output("The game will continue.");
                     break;
                 default:

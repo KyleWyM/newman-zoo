@@ -1,14 +1,12 @@
 public class Autocorrect {
 
     public static String[] command_vector_list = new String[]{
-            "help", "buy", "report", "animals", "list", "next", "quit"
+            "help", "buy", "report", "animals", "list", "next",
+            "quit", "hire employee", "train employee", "list employees"
 //            {"cancel", "cancels the action you are in"} TODO
     }; //TODO : this code is repeated in UserInterface. Find a way to reduce to one copy
 
-
-
-
-    public static char[] alphabetArray = new char[] {'a', 'b', 'c', 'd',
+        public static char[] alphabetArray = new char[] {'a', 'b', 'c', 'd',
             'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
             'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
             '!'};
