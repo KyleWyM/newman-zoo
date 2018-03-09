@@ -37,7 +37,7 @@ public class UserInterface extends Autocorrect {
     //Commands listed here:
     public static String[][] command_list = new String[][]{
             {"help", "lists possible commands."},
-            {"buy animal", "buys an animal of a specific type."},
+            {"buy", "buys an animal of a specific type."},
             {"report", "displays daily report_command."},
             {"animals", "lists all owned animals."},
             {"list", "lists all species available."},
@@ -62,7 +62,7 @@ public class UserInterface extends Autocorrect {
             case "report":
                 myReport();
                 break;
-            case "buy animal":
+            case "buy":
                 String message = "** Choose an animal you would like to purchase -> ";
                 String animal_purchase = IBIO.input(message);
                 animal_purchase = animal_purchase.toLowerCase();
@@ -127,12 +127,12 @@ public class UserInterface extends Autocorrect {
         String name; //name of the animal
 
         switch (animal_purchase) {
-            case "Kangaroo":
+            case "kangaroo":
                 name = IBIO.input("** Please name the animal -> ");
                 animals.add(new Kangaroo(name));
                 IBIO.output("Animal successfully named.");
                 break;
-            case "Zebra":
+            case "zebra":
                 name = IBIO.input("** Please name the animal -> ");
                 animals.add(new Zebra(name));
                 IBIO.output("Animal successfully named.");

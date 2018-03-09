@@ -40,6 +40,10 @@ public class Animal_Test {
         this.popularity = popularity;
     }
 
+    public String getSpecies_name() {
+        return species_name;
+    }
+
     public String getName() {
         return name;
     }

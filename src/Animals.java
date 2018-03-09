@@ -9,6 +9,7 @@ public class Animals {
         this.price = price;
         this.maintenance = maintenance;
         this.reputation = reputation;
+    }
 
         Animals zebra = new Animals("Zebra",75,35,4);
         Animals ostrich = new Animals("Ostrich", 500, 25,6);
@@ -21,8 +22,5 @@ public class Animals {
         Animals hippo = new Animals("Hippo", 1500, 60, 7);
         Animals panda = new Animals("Panda", 450, 65, 8);
         Animals giraffe = new Animals("Giraffe", 300, 35, 8);
-        
-
-    }
 }
 

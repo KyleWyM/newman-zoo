@@ -8,7 +8,9 @@ public class Main_V1 {
     static String name = null;
     static int turnNum = 0;
     static int reputation = 100;
-    static List<Animal_Test> animals = new ArrayList<Animal_Test>();
+    static List<Animal_Test> animals = new ArrayList<>();
+    //When switching over to Animals instead of Animal_Test, be careful of compatibility.
+    //Particularly in Reader/Writer... TODO
 
     static String save_path = "Saves/Save1.txt";
 
@@ -62,7 +64,7 @@ public class Main_V1 {
                     if (response.equals("yes")) {
                         try {
                             Writer.eraseSave(save_path);
-                            Writer.saveGame(UI.name, UI.turnNum, UI.money, UI.reputation, save_path);
+                            Writer.saveGame(UI.name, UI.turnNum, UI.money, UI.reputation, UI.animals, save_path);
                             UI.myReport();
                             userHasResponded = true;
                         } catch (IOException e) {

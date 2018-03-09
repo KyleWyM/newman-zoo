@@ -1,6 +1,9 @@
 //Used to optimize "Autocorrect"
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import ibio.*;
 
 public class Reader {
@@ -32,6 +35,10 @@ public class Reader {
                         UI.reputation = reputation;
                     IBIO.output("Reputation: " + reputation);
                     break;
+                case "Animals:":
+                    List<Animal_Test> animals = new ArrayList<>();
+                    animals = getAnimalsFromLine(line);
+                    UI.animals= animals;
                 default:
             }
         }
@@ -120,5 +127,77 @@ public class Reader {
         }
 
         return stringFound;
+    }
+
+    public static List<Animal_Test> getAnimalsFromLine(String line) {
+        List<Animal_Test> animals = new ArrayList<>();
+
+        boolean keepGoing = true;
+        int i = 0;
+        while (keepGoing) {
+            if ((line.charAt(i)) == ':') {
+                keepGoing = false;
+            } else if (i >= 30) {
+                //If ':' not found
+                IBIO.output("Save file corrupted.");
+                IBIO.output("Name missing ':'");
+                keepGoing = false;
+            }
+            i++;
+        }
+
+        String species_name = "";
+        String name = "";
+        keepGoing = true;
+        while (keepGoing) {
+            if (line.charAt(i) == '[') {
+                i++; //Moves char one past '['
+
+                //Finding species name using '[' and ',' to mark beginning and end.
+                while (line.charAt(i) != ',') {
+                    species_name += line.charAt(i);
+                    i++;
+                }
+
+                i++; //Moves char one past ','
+
+                while (line.charAt(i) != ']') {
+                    name += line.charAt(i);
+                    if (line.charAt(i) != ']') i++;
+                }
+                animals.add(addAnimal(species_name, name));
+
+                //Reset names for next animal saved on list
+                species_name = "";
+                name = "";
+            }
+
+            i++;
+
+            if (line.charAt(i) == '&') {
+                keepGoing = false;
+            } else if (i >= 1000) {
+                keepGoing = false;
+            }
+        }
+        return animals;
+    }
+
+    public static Animal_Test addAnimal(String species_name, String name) {
+        Animal_Test animal = null;
+        switch (species_name) {
+            case "Kangaroo":
+                animal = new Kangaroo(name);
+                IBIO.output("Kangaroo " + name + " loaded.");
+                break;
+            case "Zebra":
+                animal = new Zebra(name);
+                IBIO.output("Zebra " + name + " loaded.");
+                break;
+            default:
+                IBIO.output("Error, animal in save file not found.");
+                IBIO.output("Apparent species name: " + species_name);
+        }
+        return animal;
     }
 }
