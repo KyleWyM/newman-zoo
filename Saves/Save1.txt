@@ -1,0 +1,4 @@
+Name: Brendan
+Turn Number: 103
+Money: 1000030
+Reputation: 100

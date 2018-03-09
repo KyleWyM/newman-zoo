@@ -11,7 +11,7 @@ public class Autocorrect {
     public static char[] alphabetArray = new char[] {'a', 'b', 'c', 'd',
             'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
             'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-            '!'};
+            ' ', '!'};
 
 
     //Transforms a string into a 26-dimensional vector where each component
@@ -28,22 +28,21 @@ public class Autocorrect {
             boolean keepGoing = true;
             while (keepGoing) {
                 if (ch == alphabetArray[letterValue]) {
-                    stringVector[letterValue] += Math.pow(1.7, -i);
+                    stringVector[letterValue]++;
                     //By making each consecutive letter have less 'weight' with Math.pow(x, -i),
                     //the result is less inaccuracy do to some phrases being "too long"
                     keepGoing = false;
-                } else if (letterValue == 26) {
+                } else if (letterValue == 27) {
                     keepGoing = false;
                 } else letterValue++;
             }
         }
 
-        stringVector[26] = 0;
         return stringVector;
     }
 
     public static double[][] createListVectors(String[] list) {
-        double[][] listVectors = new double[list.length][26];
+        double[][] listVectors = new double[list.length][27];
 
         for (int i = 0; i < list.length; i++) {
             listVectors[i] = createStringVector(list[i]);
