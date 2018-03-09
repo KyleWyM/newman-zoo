@@ -1,6 +1,6 @@
 import ibio.*;
 
-public class GiftShop extends Employee{
+public class GiftShop {
     // at the moment is just an arbitrary number
     //it will correspond to the total number of customers declared in the Main
     int totalCustomers = 500;
