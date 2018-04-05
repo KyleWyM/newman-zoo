@@ -4,10 +4,10 @@ import java.util.List;
 import com.newman.animals.Animals;
 
 public class PlayerStats {
-    static String name;
-    static int money;
-    static int reputation;
+    public static String name;
+    public static int money;
+    public static int reputation;
 
-    static int turnNum;
-    static List<Animals> myAnimals;
+    public static int turnNum;
+    public static List<Animals> myAnimals;
 }

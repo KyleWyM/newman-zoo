@@ -1,6 +1,6 @@
 package com.newman.game;
 
-import com.newman.game.commands.*;
+import com.newman.animals.BuyAnimal;
 import com.newman.player.PlayerStats;
 import ibio.IBIO;
 
@@ -34,8 +34,8 @@ public class CommandListener {
             case "help":
                 break;
             case "report":
-                IBIO.output("Bank Account (Zewman Dollars): " + PlayerStats.getMoney());
-                IBIO.output("Reputation: " + PlayerStats.getReputation());
+                IBIO.output("Bank Account (Zewman Dollars): " + PlayerStats.money);
+                IBIO.output("Reputation: " + PlayerStats.reputation);
                 break;
             case "buy animal":
                 BuyAnimal.buyCommand();

@@ -12,7 +12,7 @@ public class AskUser {
         boolean userHasAnswered = false;
 
 
-        String message = "Please respond with 'yes' or 'no.'";
+        String message = "Please respond with 'yes' or 'no.' (y/n)";
         String user_response;
         while(!userHasAnswered) {
             user_response = IBIO.input(message).toLowerCase();

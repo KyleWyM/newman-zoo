@@ -190,6 +190,7 @@ public class UserInterface extends Autocorrect {
 
             switch (response) {
                 case "yes":
+                case "y":
                     IBIO.output("The game has been ended.");
                     turn_in_session = false;
                     endGame = true;

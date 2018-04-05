@@ -1,8 +1,7 @@
-package com.newman.game.commands;
+package com.newman.animals;
 
 import ibio.*;
 import com.newman.game.Autocorrect;
-import com.newman.animals.Species;
 import com.newman.game.AskUser;
 
 public class BuyAnimal {
