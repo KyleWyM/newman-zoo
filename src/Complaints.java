@@ -10,7 +10,6 @@ public class Complaints extends Values {
         this.reputationChange = reputationChange;
         this.moneyChange = moneyChange;
         this.description = description;
-
     }
 
     public String getDescription() {
