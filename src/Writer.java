@@ -1,3 +1,5 @@
+import com.newman.animals.Animals;
+
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -13,7 +15,7 @@ public class Writer {
     }
 
     public static void saveGame(String name, int turnNum, int money,
-                         int reputation, List<Animal_Test> animals, String file_path) throws IOException {
+                                int reputation, List<Animals> animals, String file_path) throws IOException {
 
         FileWriter file_writer = new FileWriter(file_path,true);
         PrintWriter print_writer = new PrintWriter(file_writer);
@@ -24,7 +26,7 @@ public class Writer {
 
         print_writer.print("Animals: ");
         for (int i = 0; i < animals.size(); i++) {
-            print_writer.print("[" + animals.get(i).getSpecies_name() + "," + animals.get(i).getName() + "] ");
+            print_writer.print("[" + animals.get(i).getSpecies() + "," + animals.get(i).getName() + "] ");
         }
 
         print_writer.print("&&&");

@@ -1,3 +1,5 @@
+package com.newman.game;
+
 public class Autocorrect {
 
     public static String[] command_vector_list = new String[]{

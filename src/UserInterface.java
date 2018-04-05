@@ -46,7 +46,6 @@ public class UserInterface extends Autocorrect {
             {"train employee", "trains employee"},
             {"list employees", "list all employees"},
             {"quit", "quits the game."}
-//            {"cancel", "cancels the action you are in"} TODO
     };
 
     static String[] animal_list = new String[] {

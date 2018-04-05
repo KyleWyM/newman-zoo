@@ -3,10 +3,10 @@ import ibio.*;
 
 public class Main {
     public static int employees = 1;
-    public static int visitors = 1;
-    public static int animals = 1;
-    public static int janitors = 1;
-    public static int IQTotalofallanimals = 1;
+    public static int visitors = 11;
+    public static int animals = 100;
+    public static int janitors = 12;
+    public static int IQTotalofallanimals = 50;
     public static int restaurantemployees = 1;
     public static int getRestaurantemployees = 1;
     public static int zoolevel = 1;
