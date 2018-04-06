@@ -1,6 +1,4 @@
-import ibio.*;
-
-public class Values extends Main {
+public class Values extends Main_fix_this {
     String name;
     String description;
 

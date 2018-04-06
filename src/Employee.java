@@ -1,16 +1,14 @@
-import ibio.*;
-
-
-import java.util.ArrayList;
+/* import ibio.*;
+import sun.misc.Cleaner;
 
 public class Employee {
 
-    String ID;
+    String name;
     int experience;
-    double salary; //weekly salary
+    int salary; //weekly salary
 
-    public Employee(String ID, int experience, double salary) {
-        this.ID = ID;
+    public Employee(String name, int experience, int salary) {
+        this.name = name;
         this.experience = experience;
         this.salary = salary;
     }
@@ -20,27 +18,12 @@ public class Employee {
 
         salary = this.salary + experience;
 
-
-
-    }
-
-
-
-    public static void main(String args[]) {
-        int minEmployees = 20;
-
-        ArrayList<Employee> myEmployees = new ArrayList<>();
-
-        for (int i =0; i < minEmployees; i++) {
-            myEmployees.add(new Employee(String.format("%d", i+1), 1, 28));
-        }
-
-        for (int i =0; i < minEmployees; i++) {
-            String.format("ID Employee %s", "has salary %f",  "and his ID id %d" );
-            IBIO.output((myEmployees.get(i).salary));
-        }
-
-    }
-
 }
 
+    public void addExperience(int experience) {
+        this.experience = experience + totalMoney;
+    }
+
+
+}
+*/

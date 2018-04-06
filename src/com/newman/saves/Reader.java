@@ -1,13 +1,16 @@
-//Used to optimize "Autocorrect"
+package com.newman.saves;//Used to optimize "Autocorrect"
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.newman.animals.*;
+import com.newman.player.PlayerStats;
 import ibio.*;
 
 public class Reader {
-    public static void save_reader(String file_path, UserInterface UI) throws IOException {
+
+    public static void save_reader(String file_path) throws IOException {
         File save = new File(file_path);
         BufferedReader save_reader = new BufferedReader(new FileReader(save));
 
@@ -17,34 +20,32 @@ public class Reader {
             switch (keyWord) {
                 case "Name:":
                     String name = getName(line);
-                    UI.name = name;
+                    PlayerStats.name = name;
                     IBIO.output("Name: " + name);
                     break;
                 case "TurnNumber:":
                     int turnNum = getNumberFromLine(line);
-                    UI.turnNum = turnNum;
+                    PlayerStats.turnNum = turnNum;
                     IBIO.output("Turn Number: " + turnNum);
                     break;
                 case "Money:":
                     int money = getNumberFromLine(line);
-                    UI.money = money;
+                    PlayerStats.money = money;
                     IBIO.output("Money: " + money);
                     break;
                 case "Reputation:":
-                        int reputation = getNumberFromLine(line);
-                        UI.reputation = reputation;
+                    int reputation = getNumberFromLine(line);
+                    PlayerStats.reputation = reputation;
                     IBIO.output("Reputation: " + reputation);
                     break;
                 case "Animals:":
-                    List<Animal_Test> animals = new ArrayList<>();
-                    animals = getAnimalsFromLine(line);
-                    UI.animals= animals;
-                default:
+                    List<Animals> animals = new ArrayList<>();
+                    getAnimalsFromLine(line);
             }
         }
     }
 
-    public static int getNumberFromLine(String line) {
+    private static int getNumberFromLine(String line) {
         String dataString = "";
         for(int i = 0; i < 25; i++) {
             try {
@@ -68,7 +69,7 @@ public class Reader {
         return dataNumber;
     }
 
-    public static String getStringFromLine(String line) {
+    private static String getStringFromLine(String line) {
         char[] ch = new char[30];
         if (line.charAt(0) != ' ') {
             int i = 0;
@@ -100,7 +101,7 @@ public class Reader {
         return stringFound;
     }
 
-    public static String getName(String line) {
+    private static String getName(String line) {
         boolean keepGoing = true;
         int i = 0;
         while (keepGoing) {
@@ -129,8 +130,7 @@ public class Reader {
         return stringFound;
     }
 
-    public static List<Animal_Test> getAnimalsFromLine(String line) {
-        List<Animal_Test> animals = new ArrayList<>();
+    private static void getAnimalsFromLine(String line) {
 
         boolean keepGoing = true;
         int i = 0;
@@ -165,7 +165,7 @@ public class Reader {
                     name += line.charAt(i);
                     if (line.charAt(i) != ']') i++;
                 }
-                animals.add(addAnimal(species_name, name));
+                addAnimal(species_name, name);
 
                 //Reset names for next animal saved on list
                 species_name = "";
@@ -180,24 +180,26 @@ public class Reader {
                 keepGoing = false;
             }
         }
-        return animals;
     }
 
-    public static Animal_Test addAnimal(String species_name, String name) {
-        Animal_Test animal = null;
-        switch (species_name) {
-            case "Kangaroo":
-                animal = new Kangaroo(name);
+    private static void addAnimal(String species_name, String name) {
+        Animals animal = null;
+        switch (species_name.toLowerCase()) {
+            case "flamingo":
+                Species.addFlamingo(name);
+                IBIO.output("Flamingo " + name + " loaded.");
+                break;
+            case "kangaroo":
+                Species.addKangaroo(name);
                 IBIO.output("Kangaroo " + name + " loaded.");
                 break;
-            case "Zebra":
-                animal = new Zebra(name);
+            case "zebra":
+                Species.addZebra(name);
                 IBIO.output("Zebra " + name + " loaded.");
                 break;
             default:
                 IBIO.output("Error, animal in save file not found.");
                 IBIO.output("Apparent species name: " + species_name);
         }
-        return animal;
     }
 }

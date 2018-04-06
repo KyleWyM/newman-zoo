@@ -1,21 +1,15 @@
-import ibio.*;
-
-public class GiftShopE extends Employee {
-
-    String ID;
-    int experience;
-    double salary;
-    int number;
-
-
-    public GiftShopE(String ID, int experience, double salary) {
-        super(ID, experience, salary);
-        this.ID  = ID;
-        this.experience = experience;
-        this.salary = salary;
-
-    }
-
-
-
-}
+//import ibio.*;
+//
+//public class GiftShopE extends Employee {
+//
+//    String name;
+//    int experience;
+//    double salary;
+//
+//    public GiftShopE (String name, int experience, double salary) {
+//        super(name, experience, salary);
+//        this.name = name;
+//        this.experience = experience;
+//        this.salary = salary;
+//    }
+//}

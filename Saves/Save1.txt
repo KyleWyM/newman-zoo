@@ -1,5 +1,5 @@
 Name: TestPlayer
-Turn Number: 4
-Money: 1040
-Reputation: 100
-Animals: [Kangaroo,Joey] [Zebra,Oscar] [Zebra,Jack] &&&
+Turn Number: 1
+Money: 5
+Reputation: 0
+Animals: [Kangaroo,Kangaroo] [Zebra,zoey] &&&
