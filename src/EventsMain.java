@@ -1,7 +1,7 @@
 import ibio.*;
 
 
-public class Main {
+public class EventsMain {
     public static int employees = 1;
     public static int visitors = 1;
     public static int animals = 1;

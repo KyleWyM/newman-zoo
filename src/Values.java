@@ -1,6 +1,4 @@
-import ibio.*;
-
-public class Values extends Main {
+public class Values extends EventsMain {
     String name;
     String description;
 
