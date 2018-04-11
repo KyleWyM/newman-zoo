@@ -39,7 +39,7 @@ public class GiftShop {
 
 
     public void increaseLevel() {
-        String message = "I am glad that you want to invest money in your shops";
+        String message = "\nI am glad that you want to invest money in your shops";
         IBIO.output(message);
         message = "Which shop do you want to upgrade?";
         IBIO.output(message);
@@ -366,14 +366,25 @@ public class GiftShop {
 
     public void runShops() {
         intro();
-        foodAndBeverage();
-        zoovenir();
-        stuffedWithJoy();
-        coffeeShop();
-        String message = "\nHey " + username + ", do you want to increase the level of any of your shops?";
+        String message = String.format("\n" +username + ", you know have %f money",totalMoney);
         IBIO.output(message);
-        String answer = IBIO.input("Answer (Y) if you do, answer with any other key if you don’t");
-        if (answer.equals("Y")) {
+        message = "Do you want to open your shops and start earning some more?";
+        IBIO.output(message);
+        String answerOpenShops = IBIO.input("Answer (Y) if you do, answer with any other key if you don’t");
+        if (answerOpenShops.equals("Y")) {
+            foodAndBeverage();
+            zoovenir();
+            stuffedWithJoy();
+            coffeeShop();
+            message = String.format("\nThe shops are now open! " +
+                    "\nYour money are already increased to %f", totalMoney);
+            IBIO.output(message);
+        }
+
+        message = "\nHey " + username + ", do you want to increase the level of any of your shops?";
+        IBIO.output(message);
+        String answerIncreaseLvl = IBIO.input("Answer (Y) if you do, answer with any other key if you don’t");
+        if (answerIncreaseLvl.equals("Y")) {
             increaseLevel();
         }
     }
