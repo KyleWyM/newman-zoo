@@ -1,6 +1,9 @@
 package com.newman.saves;
 
 import com.newman.animals.Animals;
+import com.newman.game.Main;
+import com.newman.game.RealTime_GameLoop;
+import com.newman.player.PlayerStats;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -21,14 +24,26 @@ public class Writer {
 
         FileWriter file_writer = new FileWriter(file_path,true);
         PrintWriter print_writer = new PrintWriter(file_writer);
-        print_writer.println("Name: " + name);
+        print_writer.println("Name: [" + name + "] &&&");
         print_writer.println("Turn Number: " + turnNum);
         print_writer.println("Money: " + money);
         print_writer.println("Reputation: " + reputation);
 
+        int inRealTime = 0; //0 indicates false
+        if (Main.inRealTime) {
+            inRealTime = 1;
+            print_writer.println("GameMode: " + "[" + inRealTime
+                    + "," + RealTime_GameLoop.globalTime + "] &&&");
+        } else {
+            print_writer.println("GameMode: " + "[" + inRealTime
+                    + "," + PlayerStats.dayNum + "] &&&");
+        }
+
         print_writer.print("Animals: ");
         for (int i = 0; i < animals.size(); i++) {
-            print_writer.print("[" + animals.get(i).species + "," + animals.get(i).name + "] ");
+            print_writer.print("[" + animals.get(i).species + "," + animals.get(i).name
+                    + "," + animals.get(i).maintenance + "," + animals.get(i).reputation
+                    + "," + animals.get(i).birthTime + "," + animals.get(i).level + "] ");
         }
 
         print_writer.print("&&&");

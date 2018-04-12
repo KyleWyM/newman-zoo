@@ -10,25 +10,25 @@ public class ManageAnimals {
         String chosen_name = IBIO.input(message);
         message = "** Choose an animal you would like to purchase\n ";
 
-        addSelectedAnimal(IBIO.input(message).toLowerCase(), chosen_name);
+        addSelectedAnimal(IBIO.input(message).toLowerCase(), chosen_name, RealTime_GameLoop.globalTime);
 
     }
 
-    public static void addSelectedAnimal(String animal_selected, String animal_name) {
+    public static void addSelectedAnimal(String animal_selected, String animal_name, int currentTime) {
         boolean searchForAnimal = true;
 
         while (searchForAnimal) {
             switch (animal_selected) {
                 case "flamingo":
-                    Species.addFlamingo(animal_name);
+                    Species.addFlamingo(animal_name, currentTime);
                     searchForAnimal = false;
                     break;
                 case "zebra":
-                    Species.addZebra(animal_name);
+                    Species.addZebra(animal_name, currentTime);
                     searchForAnimal = false;
                     break;
                 case "kangaroo":
-                    Species.addKangaroo(animal_name);
+                    Species.addKangaroo(animal_name, currentTime);
                     searchForAnimal = false;
                     break;
                 default:

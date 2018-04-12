@@ -8,6 +8,6 @@ public class PlayerStats {
     public static int money;
     public static int reputation;
 
-    public static int turnNum;
+    public static int dayNum;
     public static ArrayList<Animals> myAnimals = new ArrayList<>();;
 }

@@ -5,8 +5,6 @@ import com.newman.player.PlayerStats;
 
 import ibio.*;
 
-import java.util.ArrayList;
-
 public class Main {
     public static boolean runGame = true;
     public static boolean turnInProcess = true;
@@ -14,6 +12,8 @@ public class Main {
     public static String input;
     //It's not necessary to put the input string here,
     //but it's better not to redefine a variable every time the loop is run.
+
+    public static boolean inRealTime;
 
     static String save_path = "Saves/Save1.txt";
 
@@ -49,7 +49,7 @@ public class Main {
         //e.g. import com.newman.random_events
         // Random_total.method();
 
-        PlayerStats.turnNum++;
+        PlayerStats.dayNum++;
         PlayerStats.money += 5;
     }
 
@@ -57,22 +57,24 @@ public class Main {
 
         ManageSaves.loadSave(save_path);
         if (newGame) {
-            //If loadSave() does not load a previous game, it will set newGame to true.
-            intro();
-        }
-
-        while(runGame) {
-            while(turnInProcess) {
-                //During the process of a turn, this loops through and gathers user input.
-                input = IBIO.input();
-                CommandListener.takeCommand(input.toLowerCase());
+            IBIO.output("Would you like to run a real time game or a turn based game?\n" +
+                    "y = real time, n = turn based");
+            if (AskUser.yesOrNo()) {
+                RealTime_GameLoop.startTimeCycle();
+                inRealTime = true;
+            } else {
+                TurnBased_GameLoop.startTurnCycle();
+                inRealTime = false;
             }
 
-            update(); //This calls updates the game after every turn with changes, such as adding to turnNum
-            turnInProcess = true; //This allows for the next turn
+            //If loadSave() does not load a previous game, it will set newGame to true.
+            intro();
+        } else {
+            if (inRealTime) {
+                RealTime_GameLoop.startTimeCycle();
+            } else TurnBased_GameLoop.startTurnCycle();
         }
 
         end();
-
     }
 }

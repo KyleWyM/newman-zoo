@@ -16,6 +16,11 @@ public class CommandListener {
     //
     //Commands listed here:
 
+    public static void getInput() {
+        Main.input = IBIO.input();
+        CommandListener.takeCommand(Main.input.toLowerCase());
+    }
+
     public static String[][] command_list = new String[][]{
             {"help", "lists possible commands."},
             {"add animal", "buys an animal of a specific type."},
@@ -56,7 +61,10 @@ public class CommandListener {
                 break;
             case "next":
                 //Ends the current turn by ending the turn loop in the Main
-                Main.turnInProcess = false;
+                //Only works for turn based version
+                if (!Main.inRealTime) {
+                    Main.turnInProcess = false;
+                } else IBIO.output("Must be in turn based mode for 'next' to work");
                 break;
             case "quit":
                 //This is for ending the game.

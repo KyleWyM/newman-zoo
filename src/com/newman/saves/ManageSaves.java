@@ -34,7 +34,7 @@ public class ManageSaves {
         if (AskUser.yesOrNo()) {
             try {
                 Writer.eraseSave(save_path);
-                Writer.saveGame(PlayerStats.name, PlayerStats.turnNum, PlayerStats.money,
+                Writer.saveGame(PlayerStats.name, PlayerStats.dayNum, PlayerStats.money,
                         PlayerStats.reputation, PlayerStats.myAnimals, save_path);
             } catch (IOException e) {
                 IBIO.output("Failed to save data.");

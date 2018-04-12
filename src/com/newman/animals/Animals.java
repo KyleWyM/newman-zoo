@@ -6,13 +6,20 @@ public class Animals {
     public int price;
     public int maintenance; //including the price to feed and the price to clean
     public int reputation;  //on a scale of one to ten how popular the animal is
+    public int growthTime;
+    public int level;
+    public int birthTime;
 
-    public Animals(String species, String name, int price, int maintenance, int reputation) {
+    public Animals(String species, String name, int price, int maintenance, int reputation,
+                   int growthTime, int birthTime, int level) {
         this.species = species;
         this.price = price;
         this.maintenance = maintenance;
         this.reputation = reputation;
         this.name = name;
+        this.birthTime = birthTime;
+        this.level = level;
+        this.growthTime = growthTime;
     }
 
 }
