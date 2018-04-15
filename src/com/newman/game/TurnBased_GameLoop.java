@@ -9,14 +9,14 @@ class TurnBased extends Thread {
 
 public class TurnBased_GameLoop {
     public static void turnCycle() {
-        while (Main.runGame) {
-            while (Main.turnInProcess) {
+        while (MainSinglePlayer.runGame) {
+            while (MainSinglePlayer.turnInProcess) {
                 //During the process of a turn, this loops through and gathers user input.
                 CommandListener.getInput();
             }
 
-            Main.update(); //This calls updates the game after every turn with changes, such as adding to dayNum
-            Main.turnInProcess = true; //This allows for the next turn
+            MainSinglePlayer.update(); //This calls updates the game after every turn with changes, such as adding to dayNum
+            MainSinglePlayer.turnInProcess = true; //This allows for the next turn
         }
     }
 

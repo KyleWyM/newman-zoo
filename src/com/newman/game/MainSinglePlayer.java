@@ -5,7 +5,7 @@ import com.newman.player.PlayerStats;
 
 import ibio.*;
 
-public class Main {
+public class MainSinglePlayer {
     public static boolean runGame = true;
     public static boolean turnInProcess = true;
     public static boolean newGame = false; //New game unless save is loaded
@@ -59,7 +59,7 @@ public class Main {
         if (newGame) {
             IBIO.output("Would you like to run a real time game or a turn based game?\n" +
                     "y = real time, n = turn based");
-            if (AskUser.yesOrNo()) {
+            if (AskUser_old.yesOrNo()) {
                 RealTime_GameLoop.startTimeCycle();
                 inRealTime = true;
             } else {

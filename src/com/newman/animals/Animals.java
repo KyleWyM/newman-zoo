@@ -1,5 +1,6 @@
 package com.newman.animals;
 
+import com.newman.multiplayer.Client;
 public class Animals {
     public String species;
     public String name;
@@ -20,6 +21,14 @@ public class Animals {
         this.birthTime = birthTime;
         this.level = level;
         this.growthTime = growthTime;
+    }
+
+    public void update(Client client, int globalTime) {
+        //TODO
+        if (globalTime - birthTime < growthTime * (level+1)) { //TODO: come up with a better algorithm to decide growth
+            level++;
+            client.println("Your " + species + " " + name + " has grown to level " + level + ".");
+        }
     }
 
 }

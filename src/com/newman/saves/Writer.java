@@ -1,7 +1,7 @@
 package com.newman.saves;
 
 import com.newman.animals.Animals;
-import com.newman.game.Main;
+import com.newman.game.MainSinglePlayer;
 import com.newman.game.RealTime_GameLoop;
 import com.newman.player.PlayerStats;
 
@@ -30,7 +30,7 @@ public class Writer {
         print_writer.println("Reputation: " + reputation);
 
         int inRealTime = 0; //0 indicates false
-        if (Main.inRealTime) {
+        if (MainSinglePlayer.inRealTime) {
             inRealTime = 1;
             print_writer.println("GameMode: " + "[" + inRealTime
                     + "," + RealTime_GameLoop.globalTime + "] &&&");

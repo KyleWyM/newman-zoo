@@ -1,6 +1,6 @@
 package com.newman.game;
 
-import com.newman.animals.ManageAnimals;
+import com.newman.animals.ManageAnimals_SinglePlayer;
 import com.newman.player.PlayerStats;
 import com.newman.saves.ManageSaves;
 
@@ -17,8 +17,8 @@ public class CommandListener {
     //Commands listed here:
 
     public static void getInput() {
-        Main.input = IBIO.input();
-        CommandListener.takeCommand(Main.input.toLowerCase());
+        MainSinglePlayer.input = IBIO.input();
+        CommandListener.takeCommand(MainSinglePlayer.input.toLowerCase());
     }
 
     public static String[][] command_list = new String[][]{
@@ -51,37 +51,37 @@ public class CommandListener {
                 IBIO.output("Reputation: " + PlayerStats.reputation);
                 break;
             case "add animal":
-                ManageAnimals.buyCommand();
+                ManageAnimals_SinglePlayer.buyCommand();
                 break;
             case "animals":
-                ManageAnimals.my_animals();
+                ManageAnimals_SinglePlayer.my_animals();
                 break;
             case "species":
-                ManageAnimals.species_list();
+                ManageAnimals_SinglePlayer.species_list();
                 break;
             case "next":
                 //Ends the current turn by ending the turn loop in the Main
                 //Only works for turn based version
-                if (!Main.inRealTime) {
-                    Main.turnInProcess = false;
+                if (!MainSinglePlayer.inRealTime) {
+                    MainSinglePlayer.turnInProcess = false;
                 } else IBIO.output("Must be in turn based mode for 'next' to work");
                 break;
             case "quit":
                 //This is for ending the game.
                 IBIO.output("Are you sure you would like to end the game?");
-                if (AskUser.yesOrNo()) {
+                if (AskUser_old.yesOrNo()) {
                     //yesOrNo() ask the user to respond 'yes' or 'no', and returns true for yes.
                     //So if true, runGame is set false, ending the game
-                    Main.turnInProcess = false;
-                    Main.runGame = false;
+                    MainSinglePlayer.turnInProcess = false;
+                    MainSinglePlayer.runGame = false;
 
-                    ManageSaves.writeSave(Main.save_path);
+                    ManageSaves.writeSave(MainSinglePlayer.save_path);
                 }
                 break;
             default:
                 String bestMatch = Autocorrect.findMatch(command, command_list);
                 IBIO.output("Did you mean " + bestMatch + "?");
-                if (AskUser.yesOrNo()) {
+                if (AskUser_old.yesOrNo()) {
                     takeCommand(bestMatch);
                 }
         }

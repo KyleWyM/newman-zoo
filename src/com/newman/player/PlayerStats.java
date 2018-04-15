@@ -9,5 +9,5 @@ public class PlayerStats {
     public static int reputation;
 
     public static int dayNum;
-    public static ArrayList<Animals> myAnimals = new ArrayList<>();;
+    public static ArrayList<Animals> myAnimals = new ArrayList<>();
 }

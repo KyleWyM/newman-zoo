@@ -1,9 +1,8 @@
 package com.newman.animals;
 
-import com.newman.player.Player;
-import com.newman.multiplayer.Client;
+import com.newman.player.PlayerStats;
 
-public class Species {
+public class Species_SinglePlayer {
     private static int flamingo_price = 10;
     private static int flamingo_maintenances = 5;
     private static int flamingo_reputation = 1;
@@ -16,22 +15,22 @@ public class Species {
             "flamingo", "zebra", "kangaroo"
     };
 
-    public static void addFlamingo(Client client, String name, int birthTime) {
+    public static void addFlamingo(String name, int birthTime) {
         Animals flamingo = new Animals("Flamingo", name, flamingo_price, flamingo_maintenances,
                 flamingo_reputation,10, birthTime, 0);
-        client.player.myAnimals.add(flamingo);
+        PlayerStats.myAnimals.add(flamingo);
     }
 
-    public static void addZebra(Client client, String name, int birthTime) {
+    public static void addZebra(String name, int birthTime) {
         Animals zebra = new Animals("Zebra", name,75,35,
                 4, 10, birthTime, 0);
-        client.player.myAnimals.add(zebra);
+        PlayerStats.myAnimals.add(zebra);
     }
 
-    public static void addKangaroo(Client client, String name, int birthTime) {
+    public static void addKangaroo(String name, int birthTime) {
         Animals kangaroo = new Animals("Kangaroo", name,100,35,
                 4, 10, birthTime, 0);
-        client.player.myAnimals.add(kangaroo);
+        PlayerStats.myAnimals.add(kangaroo);
     }
 
     //TODO: Add the rest of the animals using the methods above as a model

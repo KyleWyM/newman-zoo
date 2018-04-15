@@ -5,7 +5,7 @@ import java.io.*;
 import com.newman.animals.*;
 import com.newman.game.RealTime_GameLoop;
 import com.newman.player.PlayerStats;
-import com.newman.game.Main;
+import com.newman.game.MainSinglePlayer;
 
 import ibio.*;
 
@@ -81,12 +81,12 @@ public class Reader {
 
                     if (inRealTime) {
                         IBIO.output("Game mode: real time");
-                        Main.inRealTime = true;
+                        MainSinglePlayer.inRealTime = true;
                         RealTime_GameLoop.globalTime = getNumberFromLine(gameModeData[0][1]); //Sets the global time
                         PlayerStats.dayNum = (int) (RealTime_GameLoop.globalTime - RealTime_GameLoop.globalTime % 60) / 60;
                     } else {
                         IBIO.output("Game mode: turn based");
-                        Main.inRealTime = false;
+                        MainSinglePlayer.inRealTime = false;
                         PlayerStats.dayNum = getNumberFromLine(gameModeData[0][1]); //Sets the global time
                     }
             }
@@ -254,7 +254,7 @@ public class Reader {
         switch (species_name.toLowerCase()) {
             case "flamingo":
                 //myArrayList.get(myArrayList.size()-1)
-                Species.addFlamingo(name, birthTime);
+                Species_SinglePlayer.addFlamingo(name, birthTime);
                 IBIO.output("Flamingo " + name + " loaded.");
 
                 //Now, flamingo is the last one in. The following line of code
@@ -265,7 +265,7 @@ public class Reader {
                 PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).level = level;
                 break;
             case "kangaroo":
-                Species.addKangaroo(name, birthTime);
+                Species_SinglePlayer.addKangaroo(name, birthTime);
                 IBIO.output("Kangaroo " + name + " loaded.");
 
                 PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).maintenance = maintenance;
@@ -273,7 +273,7 @@ public class Reader {
                 PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).level = level;
                 break;
             case "zebra":
-                Species.addZebra(name, birthTime);
+                Species_SinglePlayer.addZebra(name, birthTime);
                 IBIO.output("Zebra " + name + " loaded.");
 
                 PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).maintenance = maintenance;
