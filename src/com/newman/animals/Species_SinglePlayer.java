@@ -10,9 +10,16 @@ public class Species_SinglePlayer {
     //TODO: convert prices, maintenances, and reputations in terms of some base numbers (i.e. for flamingo)
     //This way the prices are relative to some set price so we need to only change the price of one animal
     //to affect all other animals
-
-    public static String[] species_list = new String[] {
-            "flamingo", "zebra", "kangaroo"
+    static String name;
+    static int birthTime;
+    static Animals flamingo = new Animals("Flamingo", name, flamingo_price, flamingo_maintenances,
+            flamingo_reputation,10, birthTime, 0);
+    static Animals zebra = new Animals("Zebra", name,75,1,
+            4, 400, birthTime, 0);
+    static Animals kangaroo = new Animals("Kangaroo", name,100,35,
+            4, 10, birthTime, 0);
+    public static Animals[] species_list = new Animals[] {
+            flamingo, zebra, kangaroo,
     };
 
     public static void addFlamingo(String name, int birthTime) {
