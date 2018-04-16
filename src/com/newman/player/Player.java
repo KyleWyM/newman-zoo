@@ -13,6 +13,7 @@ public class Player {
     private int level;
 
     public ArrayList<Animals> myAnimals;
+    public ArrayList<Animals> combat_team;
     private boolean adminRights;
 
     public Player(String name, int money, int reputation, int level) {
@@ -21,13 +22,21 @@ public class Player {
         this.reputation = reputation;
         this.level = level;
         ArrayList<Animals> myAnimals = new ArrayList<>();
+        ArrayList<Animals> combat_team = new ArrayList<>();
         this.myAnimals = myAnimals;
         this.adminRights = false;
     }
 
     public void update(Client client) {
         for (int i = 0; i < myAnimals.size(); i++) {
-            myAnimals.get(i).update(client, GameLoop.globalTime);
+            int globalTime = GameLoop.globalTime;
+            myAnimals.get(i).update(client, globalTime);
+
+            if (globalTime % GameLoop.dayLength == 0) {
+                money -= myAnimals.get(i).maintenance;
+                money += (int) (Math.random() * myAnimals.get(i).reputation * 0.5);
+                myAnimals.get(i).health += (int) (Math.random() * myAnimals.get(i).reputation);
+            }
         }
     }
 

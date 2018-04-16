@@ -1,6 +1,10 @@
 package com.newman.animals;
 
+import com.newman.game.GameLoop;
 import com.newman.multiplayer.Client;
+
+import java.util.ArrayList;
+
 public class Animals {
     public String species;
     public String name;
@@ -10,6 +14,8 @@ public class Animals {
     public int growthTime;
     public int level;
     public int birthTime;
+    public int health;
+    public ArrayList<Attack> attacks;
 
     public Animals(String species, String name, int price, int maintenance, int reputation,
                    int growthTime, int birthTime, int level) {
@@ -21,15 +27,17 @@ public class Animals {
         this.birthTime = birthTime;
         this.level = level;
         this.growthTime = growthTime;
+        this.health = 100;
+        attacks = new ArrayList<>();
     }
 
     public void update(Client client, int globalTime) {
         //TODO
-        if (globalTime - birthTime < growthTime * (level+1)) { //TODO: come up with a better algorithm to decide growth
+        if (globalTime - birthTime > growthTime * (level+1)) { //TODO: come up with a better algorithm to decide growth
             level++;
             client.println("Your " + species + " " + name + " has grown to level " + level + ".");
+            reputation += 10;
+            maintenance--;
         }
     }
-
 }
-

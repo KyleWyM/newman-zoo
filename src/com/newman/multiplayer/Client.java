@@ -1,7 +1,10 @@
 package com.newman.multiplayer;
 
+import com.newman.animals.Species;
 import com.newman.game.Action_Listener;
+import com.newman.game.GameLoop;
 import com.newman.player.Player;
+import com.newman.animals.Animals;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,6 +16,7 @@ public class Client extends Thread {
     private int ID;
     public int client_index;
     public boolean isConnected;
+    public boolean normalPlayMode;
     private Socket conn;
 
     private PrintWriter out;
@@ -21,6 +25,9 @@ public class Client extends Thread {
     private String username;
 
     public Player player;
+
+    public boolean queuedForFight;
+    public boolean acceptFight;
 
     public Client(Socket conn, int client_index) {
         //Get new user ID and check to see if it already exists
@@ -54,7 +61,11 @@ public class Client extends Thread {
         this.isConnected = true;
         this.client_index = client_index;
         this.username = "User" + ID;
+        this.normalPlayMode = true;
         createNewPlayer();
+
+        this.queuedForFight = false;
+        this.acceptFight = false;
     }
 
     public void run() {
@@ -66,10 +77,18 @@ public class Client extends Thread {
             e.printStackTrace();
         }
 
+        //First animal
+        println("Give the name of your first animal: ");
+        String name = readLine();
+        Animals firstAnimal = Species.addFlamingo(this, name, GameLoop.globalTime);
+        player.myAnimals.add(firstAnimal);
+
         String input;
         try {
             while ((input = readLine()) != null) {
-                    Action_Listener.getInput(this, input);
+                Action_Listener.getInput(this, input);
+                while (!normalPlayMode) ; //The player's input is not received until listening is turned back on
+                //This is useful for fights
             }
         } catch (Exception e) {
             System.out.println("Connection interrupted with " + username);

@@ -4,6 +4,7 @@ package com.newman.game;
 import com.newman.multiplayer.Multiplayer_Manager;
 import com.newman.multiplayer.Client;
 import com.newman.animals.ManageAnimals;
+import com.newman.animals.Fight_Handler;
 
 public class Action_Listener {
 
@@ -31,12 +32,14 @@ public class Action_Listener {
 
     public static String[][] command_list = new String[][]{
             {"help", "lists possible commands."},
-            {"add animal", "buys an animal of a specific type."},
+            {"buy animal", "buys an animal of a specific type."},
             {"report", "displays daily report_command."},
             {"animals", "lists all owned animals."},
             {"species", "lists all species available."},
             {"next", "ends the turn."},
-            {"quit", "quits the game."}
+            {"attack", "attack another player"},
+            {"quit", "quits the game."},
+            {"accept", "accepts fight invitation"}
     };
 
     //When a user enters a string, user_interface checks for
@@ -67,7 +70,7 @@ public class Action_Listener {
                 msg = "Reputation: " + client.player.getReputation();
                 Multiplayer_Manager.println(client_index, msg);
                 break;
-            case "add animal":
+            case "buy animal":
                 ManageAnimals.buyCommand(client);
                 break;
             case "animals":
@@ -75,6 +78,14 @@ public class Action_Listener {
                 break;
             case "species":
                 ManageAnimals.species_list(client);
+                break;
+            case "attack":
+                Fight_Handler.startBattle(client_index);
+                break;
+            case "accept":
+                client.acceptFight = true;
+                client.normalPlayMode = false;
+                client.println("You have accepted the fight.");
                 break;
             case "next":
                 if (client.player.hasAdminRights()) {

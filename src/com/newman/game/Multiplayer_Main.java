@@ -9,6 +9,8 @@ public class Multiplayer_Main {
 
     public static void main(String[] args) throws IOException {
         Host.create_localServer();
+
+        //Instructions to get on the server
         String msg = "\nTo log onto server, type 'nc -v 127.0.0.1 [port num]' into " +
                 "\nterminal while the server is running.";
         System.out.println(msg);
@@ -16,7 +18,6 @@ public class Multiplayer_Main {
         System.out.println(msg);
 
         Host.wait_for_start();
-//        Multiplayer_Manager.load_save(); //TODO
         GameLoop.startTimeCycle();
     }
 }

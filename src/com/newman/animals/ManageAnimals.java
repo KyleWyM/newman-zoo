@@ -1,12 +1,11 @@
 package com.newman.animals;
 
-import com.newman.game.AskUser_old;
+import com.newman.game.AskUser;
 import com.newman.game.Autocorrect;
 import com.newman.game.GameLoop;
 import com.newman.multiplayer.Multiplayer_Manager;
 import com.newman.multiplayer.Client;
 import com.newman.player.Player;
-import ibio.IBIO;
 
 public class ManageAnimals {
     public static void buyCommand(Client client) {
@@ -18,25 +17,53 @@ public class ManageAnimals {
         msg = "** Choose a name for your animal\n ";
         client.println(msg);
         String chosen_name = client.readLine();
-
-        addSelectedAnimal(client, animal.toLowerCase(), chosen_name, GameLoop.globalTime);
+        try {
+            addSelectedAnimal(client, animal.toLowerCase(), chosen_name, GameLoop.globalTime);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void addSelectedAnimal(Client client, String animal_selected, String animal_name, int currentTime) {
         boolean searchForAnimal = true;
+        int money = client.player.getMoney();
 
         while (searchForAnimal) {
             switch (animal_selected) {
                 case "flamingo":
-                    Species.addFlamingo(client, animal_name, currentTime);
+                    Animals flamingo = Species.addFlamingo(client, animal_name, currentTime);
+                    if (money >= flamingo.price) {
+
+                        money -= flamingo.price;
+                        client.player.setMoney(money);
+
+                        client.println("Flamingo added.");
+                        client.player.myAnimals.add(flamingo);
+                    } else client.println("Not enough money.");
                     searchForAnimal = false;
                     break;
                 case "zebra":
-                    Species.addZebra(client, animal_name, currentTime);
+                    Animals zebra = Species.addZebra(client, animal_name, currentTime);
+                    if (money >= zebra.price) {
+
+                        money -= zebra.price;
+                        client.player.setMoney(money);
+
+                        client.println("Zebra added.");
+                        client.player.myAnimals.add(zebra);
+                    } else client.println("Not enough money.");
                     searchForAnimal = false;
                     break;
                 case "kangaroo":
-                    Species.addKangaroo(client, animal_name, currentTime);
+                    Animals kangaroo = Species.addKangaroo(client, animal_name, currentTime);
+                    if (money >= kangaroo.price) {
+
+                        money -= kangaroo.price;
+                        client.player.setMoney(money);
+
+                        client.println("Kangaroo added.");
+                        client.player.myAnimals.add(kangaroo);
+                    } else client.println("Not enough money.");
                     searchForAnimal = false;
                     break;
                 default:
@@ -47,11 +74,11 @@ public class ManageAnimals {
                     client.println("Animal choice not recognized.");
 
                     String bestMatch = Autocorrect.findMatch(animal_selected,
-                            Species_SinglePlayer.species_list);
+                            Species.species_list);
 
                     client.println("Did you mean " + bestMatch + "?");
 
-                    if (AskUser_old.yesOrNo()) {
+                    if (AskUser.yesOrNo(client)) {
                         animal_selected = bestMatch;
                     } else searchForAnimal = false;
             }
@@ -60,10 +87,13 @@ public class ManageAnimals {
 
     public static void my_animals(Client client) {
         client.println("Your animals: ");
-        for (int i = 0; i < client.player.myAnimals.size(); i = i + 1) {
+        for (int i = 0; i < client.player.myAnimals.size(); i++) {
+
+            String species_name = client.player.myAnimals.get(i).species;
+            String animal_name = client.player.myAnimals.get(i).name;
 
             String msg = String.format("%2d. %-20s %s",
-                    i + 1, client.player.myAnimals.get(i).species, client.player.myAnimals.get(i).name);
+                    i + 1, species_name, animal_name);
 
             client.println(msg);
         }

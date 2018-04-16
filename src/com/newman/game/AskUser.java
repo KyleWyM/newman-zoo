@@ -1,6 +1,7 @@
 package com.newman.game;
 
 import com.newman.multiplayer.Multiplayer_Manager;
+import com.newman.multiplayer.Client;
 
 import java.util.Scanner;
 
@@ -9,16 +10,16 @@ public class AskUser {
     //For example, a "yes or no" question.
     //This class is for convenient methods that allow the code to be neater and easier.
 
-    public static boolean yesOrNo(int client_index) {
+    public static boolean yesOrNo(Client client) {
         boolean ResponseIsYes = false;
         boolean userHasAnswered = false;
 
 
         String msg = "(y/n)";
-        Multiplayer_Manager.println(client_index, msg);
+        client.println(msg);
         String user_response;
         while(!userHasAnswered) {
-            user_response = Multiplayer_Manager.input(client_index);
+            user_response = client.readLine();
             System.out.println(user_response);
 
             switch (user_response.toLowerCase()) {
@@ -33,12 +34,16 @@ public class AskUser {
                     break;
                 default:
                     msg = "Response not recognized.";
-                    Multiplayer_Manager.println(client_index, msg);
+                    client.println(msg);
                     userHasAnswered = true;
             }
         }
 
         return ResponseIsYes;
+    }
+
+    public static boolean yesOrNo(int client_index) {
+        return yesOrNo(Multiplayer_Manager.clients.get(client_index));
     }
 
     public static boolean yesOrNo() {
