@@ -66,9 +66,14 @@ public class ManageAnimals_SinglePlayer {
     public static void my_animals() {
         IBIO.output("Your animals:");
         for (int i = 0; i < PlayerStats.myAnimals.size(); i = i + 1) {
+            Animals current_animal = PlayerStats.myAnimals.get(i);
+            String message = String.format("    %-20s %-20s %-20s %-20s %-20s", "Animal", "Name", "Price",
+                    "Maintenance", "Reputation");
+            IBIO.output(message);
+            message = String.format( "%2d. %-20s %-20s %-20d %-20d %-20d",
+                    i + 1, current_animal.species, current_animal.name, current_animal.price,
+                    current_animal.maintenance, current_animal.reputation);
 
-            String message = String.format( "%2d. %-20s %s",
-                    i + 1, PlayerStats.myAnimals.get(i).species, PlayerStats.myAnimals.get(i).name);
 
             IBIO.output(message);
         }
@@ -77,7 +82,7 @@ public class ManageAnimals_SinglePlayer {
     public static void species_list() {
         IBIO.output("Available animals:");
         String message;
-        message = String.format("   %-20s %-20s %-20s %-20s", "Animal", "Price", "Maintenance", "Reputation");
+        message = String.format("    %-20s %-20s %-20s %-20s", "Animal", "Price", "Maintenance", "Reputation");
         IBIO.output(message);
         for (int i = 0; i < Species_SinglePlayer.species_list.length; i = i + 1) {
             Animals current_animal = Species_SinglePlayer.species_list[i];
