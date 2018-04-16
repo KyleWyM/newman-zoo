@@ -84,7 +84,13 @@ public class Action_Listener {
                 break;
             case "accept":
                 client.acceptFight = true;
-                client.normalPlayMode = false;
+                while (client.acceptFight) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+                    }
+                }
+//                client.listeningOn = false;
                 client.println("You have accepted the fight.");
                 break;
             case "next":

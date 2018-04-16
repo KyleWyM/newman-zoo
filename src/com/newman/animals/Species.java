@@ -26,7 +26,7 @@ public class Species {
     }
 
     public static Animals addZebra(Client client, String name, int birthTime) {
-        Animals zebra = new Animals("Zebra", name,75,35,
+        Animals zebra = new Animals("Zebra", name,75,1,
                 4, 400, birthTime, 0);
 
         //Attacks:

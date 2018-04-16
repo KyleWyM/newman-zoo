@@ -16,7 +16,7 @@ public class Client extends Thread {
     private int ID;
     public int client_index;
     public boolean isConnected;
-    public boolean normalPlayMode;
+//  public boolean listeningOn;
     private Socket conn;
 
     private PrintWriter out;
@@ -61,7 +61,7 @@ public class Client extends Thread {
         this.isConnected = true;
         this.client_index = client_index;
         this.username = "User" + ID;
-        this.normalPlayMode = true;
+//        this.listeningOn = true;
         createNewPlayer();
 
         this.queuedForFight = false;
@@ -87,8 +87,8 @@ public class Client extends Thread {
         try {
             while ((input = readLine()) != null) {
                 Action_Listener.getInput(this, input);
-                while (!normalPlayMode) ; //The player's input is not received until listening is turned back on
-                //This is useful for fights
+//                while (!listeningOn) ; //The player's input is not received until listening is turned back on
+//                //This is useful for fights
             }
         } catch (Exception e) {
             System.out.println("Connection interrupted with " + username);
