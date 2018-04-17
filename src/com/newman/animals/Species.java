@@ -14,7 +14,7 @@ public class Species {
 
     public static Animals addFlamingo(Client client, String name, int birthTime) {
         Animals flamingo = new Animals("Flamingo", name, 10, 1,
-                5,300, birthTime, 0);
+                5,300, birthTime, 1, 0);
 
         //Attacks:
         Attack flap = new Attack("flap", 0.5, 20);
@@ -27,7 +27,7 @@ public class Species {
 
     public static Animals addZebra(Client client, String name, int birthTime) {
         Animals zebra = new Animals("Zebra", name,75,1,
-                4, 400, birthTime, 0);
+                4, 400, birthTime, 1, 0);
 
         //Attacks:
         Attack flail = new Attack("flail", 0.5, 30);
@@ -40,7 +40,7 @@ public class Species {
 
     public static Animals addKangaroo(Client client, String name, int birthTime) {
         Animals kangaroo = new Animals("Kangaroo", name,100,35,
-                4, 350, birthTime, 0);
+                4, 350, birthTime, 1, 0);
 
         //Attacks:
         Attack jab = new Attack("jab", 0.5, 30);

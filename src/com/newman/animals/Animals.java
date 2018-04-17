@@ -15,10 +15,11 @@ public class Animals {
     public int level;
     public int birthTime;
     public int health;
+    public int labor;
     public ArrayList<Attack> attacks;
 
     public Animals(String species, String name, int price, int maintenance, int reputation,
-                   int growthTime, int birthTime, int level) {
+                   int growthTime, int birthTime, int labor, int level) {
         this.species = species;
         this.price = price;
         this.maintenance = maintenance;
@@ -27,6 +28,7 @@ public class Animals {
         this.birthTime = birthTime;
         this.level = level;
         this.growthTime = growthTime;
+        this.labor = labor;
         this.health = 100;
         attacks = new ArrayList<>();
     }

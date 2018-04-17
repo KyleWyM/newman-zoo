@@ -13,30 +13,30 @@ public class Species_SinglePlayer {
     static String name;
     static int birthTime;
     static Animals flamingo = new Animals("Flamingo", name, flamingo_price, flamingo_maintenances,
-            flamingo_reputation,10, birthTime, 0);
+            flamingo_reputation,10, birthTime, 1, 0);
     static Animals zebra = new Animals("Zebra", name,75,1,
-            4, 400, birthTime, 0);
+            4, 400, birthTime, 1, 0);
     static Animals kangaroo = new Animals("Kangaroo", name,100,35,
-            4, 10, birthTime, 0);
+            4, 10, birthTime, 1, 0);
     public static Animals[] species_list = new Animals[] {
             flamingo, zebra, kangaroo,
     };
 
     public static void addFlamingo(String name, int birthTime) {
         Animals flamingo = new Animals("Flamingo", name, flamingo_price, flamingo_maintenances,
-                flamingo_reputation,10, birthTime, 0);
+                flamingo_reputation,10, birthTime, 1, 0);
         PlayerStats.myAnimals.add(flamingo);
     }
 
     public static void addZebra(String name, int birthTime) {
         Animals zebra = new Animals("Zebra", name,75,35,
-                4, 10, birthTime, 0);
+                4, 10, birthTime, 1, 0);
         PlayerStats.myAnimals.add(zebra);
     }
 
     public static void addKangaroo(String name, int birthTime) {
         Animals kangaroo = new Animals("Kangaroo", name,100,35,
-                4, 10, birthTime, 0);
+                4, 10, birthTime, 1, 0);
         PlayerStats.myAnimals.add(kangaroo);
     }
 
