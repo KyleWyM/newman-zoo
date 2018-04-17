@@ -4,6 +4,8 @@ import com.newman.player.PlayerStats;
 import ibio.*;
 import com.newman.game.*;
 
+import java.util.Arrays;
+
 public class ManageAnimals_SinglePlayer {
 
     public static boolean isInteger(String s) {
@@ -22,13 +24,21 @@ public class ManageAnimals_SinglePlayer {
         species_list();
         String message = "** Choose an animal you would like to purchase\n ";
         String chosen_animal = IBIO.input(message);
+        int chosen_animal_index = 0;
         if (isInteger(chosen_animal)) {
-            int chosen_animal_index = Integer.parseInt(chosen_animal);
-            chosen_animal = Species_SinglePlayer.species_list[chosen_animal_index-1].species;
+            chosen_animal_index = Integer.parseInt(chosen_animal);
         }
-        message = String.format("** What would you like to name your %s?\n ", chosen_animal.toLowerCase());
-        addSelectedAnimal(chosen_animal.toLowerCase(), IBIO.input(message), RealTime_GameLoop.globalTime);
-
+        if (1 <= chosen_animal_index && chosen_animal_index <= Species_SinglePlayer.species_list.length) {
+            chosen_animal = Species_SinglePlayer.species_list[chosen_animal_index-1].species;
+            message = String.format("** What would you like to name your %s?\n ", chosen_animal.toLowerCase());
+            addSelectedAnimal(chosen_animal.toLowerCase(), IBIO.input(message), RealTime_GameLoop.globalTime);
+        } else if (Arrays.asList(Species_SinglePlayer.species_list).contains(chosen_animal)) {
+            message = String.format("** What would you like to name your %s?\n ", chosen_animal.toLowerCase());
+            addSelectedAnimal(chosen_animal.toLowerCase(), IBIO.input(message), RealTime_GameLoop.globalTime);
+        } else {
+            IBIO.output("That doesn't seem like it's in the store, how about you try again!");
+            buyCommand();
+        }
     }
 
     public static void addSelectedAnimal(String animal_selected, String animal_name, int currentTime) {
@@ -49,6 +59,9 @@ public class ManageAnimals_SinglePlayer {
                 case "kangaroo":
                 case "3":
                     Species_SinglePlayer.addKangaroo(animal_name, currentTime);
+                    searchForAnimal = false;
+                    break;
+                case "4":
                     searchForAnimal = false;
                     break;
                 default:
