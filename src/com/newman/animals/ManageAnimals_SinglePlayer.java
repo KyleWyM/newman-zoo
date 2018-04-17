@@ -1,5 +1,6 @@
 package com.newman.animals;
 
+import com.newman.player.Player;
 import com.newman.player.PlayerStats;
 import ibio.*;
 import com.newman.game.*;
@@ -61,18 +62,21 @@ public class ManageAnimals_SinglePlayer {
                 case "1":
                     Species_SinglePlayer.addFlamingo(animal_name, currentTime);
                     IBIO.output(String.format("Congratulations! You have bought a new %s!", "flamingo"));
+                    PlayerStats.reputation = PlayerStats.reputation + Species_SinglePlayer.flamingo.reputation;
                     searchForAnimal = false;
                     break;
                 case "zebra":
                 case "2":
                     Species_SinglePlayer.addZebra(animal_name, currentTime);
                     IBIO.output(String.format("Congratulations! You have bought a new %s!", "zebra"));
+                    PlayerStats.reputation = PlayerStats.reputation + Species_SinglePlayer.zebra.reputation;
                     searchForAnimal = false;
                     break;
                 case "kangaroo":
                 case "3":
                     Species_SinglePlayer.addKangaroo(animal_name, currentTime);
                     IBIO.output(String.format("Congratulations! You have bought a new %s!", "kangaroo"));
+                    PlayerStats.reputation = PlayerStats.reputation + Species_SinglePlayer.kangaroo.reputation;
                     searchForAnimal = false;
                     break;
                 case "4":

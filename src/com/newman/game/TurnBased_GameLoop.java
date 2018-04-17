@@ -1,6 +1,8 @@
 package com.newman.game;
 
 import com.newman.animals.Animals;
+import com.newman.player.PlayerStats;
+
 
 class TurnBased extends Thread {
     public void run() {
@@ -10,6 +12,8 @@ class TurnBased extends Thread {
 }
 
 public class TurnBased_GameLoop {
+    int total_reputation = 10;
+
     public static void turnCycle() {
         while (MainSinglePlayer.runGame) {
             while (MainSinglePlayer.turnInProcess) {
