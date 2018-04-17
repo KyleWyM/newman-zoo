@@ -104,8 +104,6 @@ public class ManageAnimals_SinglePlayer {
             message = String.format( "%2d. %-20s %-20s %-20d %-20d %-20d",
                     i + 1, current_animal.species, current_animal.name, current_animal.price,
                     current_animal.maintenance, current_animal.reputation);
-
-
             IBIO.output(message);
         }
     }

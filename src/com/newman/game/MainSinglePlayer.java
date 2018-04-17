@@ -5,6 +5,10 @@ import com.newman.player.PlayerStats;
 
 import ibio.*;
 
+import static com.newman.player.PlayerStats.dayNum;
+import static com.newman.player.PlayerStats.money;
+import static com.newman.player.PlayerStats.myAnimals;
+
 public class MainSinglePlayer {
     public static boolean runGame = true;
     public static boolean turnInProcess = true;
@@ -31,9 +35,11 @@ public class MainSinglePlayer {
         //This runs at the end of the game
         //i.e. it sets things up and does things that are only executed once at the end
     }
-
+    static int total_maintenance = 0;
     public static void update() {
         IBIO.output("Turn ended");
+        int size;
+        size = myAnimals.size();
             /*
              * In here we include all things that should be updated daily
              * For example:
@@ -48,9 +54,15 @@ public class MainSinglePlayer {
 
         //e.g. import com.newman.random_events
         // Random_total.method();
-
-        PlayerStats.dayNum++;
+        dayNum++;
         PlayerStats.money += 5;
+        for (int i = 0; i < size; i++) {
+            total_maintenance = total_maintenance + myAnimals.get(i).maintenance;
+        }
+        money = money - total_maintenance;
+        if (total_maintenance != 0) {
+            IBIO.output(String.format("You have paid %d dollars to feed your animals", total_maintenance));
+        }
     }
 
     public static void main(String[] args) {
