@@ -1,5 +1,7 @@
 package com.newman.game;
 
+import com.newman.animals.Animals;
+
 class TurnBased extends Thread {
     public void run() {
         TurnBased_GameLoop.turnCycle(); //Runs the game loop cycle in this thread
@@ -14,7 +16,6 @@ public class TurnBased_GameLoop {
                 //During the process of a turn, this loops through and gathers user input.
                 CommandListener.getInput();
             }
-
             MainSinglePlayer.update(); //This calls updates the game after every turn with changes, such as adding to dayNum
             MainSinglePlayer.turnInProcess = true; //This allows for the next turn
         }

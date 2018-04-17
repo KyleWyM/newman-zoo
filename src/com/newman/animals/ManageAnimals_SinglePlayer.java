@@ -20,6 +20,17 @@ public class ManageAnimals_SinglePlayer {
         return true;
     }
 
+    public static boolean animalAvailable(String animal) {
+        boolean animalAvailable = false;
+        for (int i = 0; i < Species_SinglePlayer.species_list.length; i++) {
+            if (Species.species_list[i].equals(animal)) {
+                animalAvailable = true;
+                i = Species_SinglePlayer.species_list.length;
+            }
+        }
+        return animalAvailable;
+    }
+
     public static void buyCommand() {
         species_list();
         String message = "** Choose an animal you would like to purchase\n ";
@@ -32,7 +43,7 @@ public class ManageAnimals_SinglePlayer {
             chosen_animal = Species_SinglePlayer.species_list[chosen_animal_index-1].species;
             message = String.format("** What would you like to name your %s?\n ", chosen_animal.toLowerCase());
             addSelectedAnimal(chosen_animal.toLowerCase(), IBIO.input(message), RealTime_GameLoop.globalTime);
-        } else if (Arrays.asList(Species_SinglePlayer.species_list).contains(chosen_animal)) {
+        } else if (animalAvailable(chosen_animal.toLowerCase())) {
             message = String.format("** What would you like to name your %s?\n ", chosen_animal.toLowerCase());
             addSelectedAnimal(chosen_animal.toLowerCase(), IBIO.input(message), RealTime_GameLoop.globalTime);
         } else {
@@ -49,16 +60,19 @@ public class ManageAnimals_SinglePlayer {
                 case "flamingo":
                 case "1":
                     Species_SinglePlayer.addFlamingo(animal_name, currentTime);
+                    IBIO.output(String.format("Congratulations! You have bought a new %s!", "flamingo"));
                     searchForAnimal = false;
                     break;
                 case "zebra":
                 case "2":
                     Species_SinglePlayer.addZebra(animal_name, currentTime);
+                    IBIO.output(String.format("Congratulations! You have bought a new %s!", "zebra"));
                     searchForAnimal = false;
                     break;
                 case "kangaroo":
                 case "3":
                     Species_SinglePlayer.addKangaroo(animal_name, currentTime);
+                    IBIO.output(String.format("Congratulations! You have bought a new %s!", "kangaroo"));
                     searchForAnimal = false;
                     break;
                 case "4":
