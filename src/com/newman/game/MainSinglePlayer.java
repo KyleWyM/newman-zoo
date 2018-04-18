@@ -56,7 +56,9 @@ public class MainSinglePlayer {
         //e.g. import com.newman.random_events
         // Random_total.method();
         dayNum++;
-        PlayerStats.money += 5;
+        int rent = level*10;
+        money = money - rent;
+        IBIO.output(String.format("You have paid %d dollars in rent", rent));
         total_income = 0;
         total_maintenance = 0;
         int randomNum = ThreadLocalRandom.current().nextInt(reputation*4, (reputation*8)+1);
