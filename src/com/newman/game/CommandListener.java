@@ -24,12 +24,12 @@ public class CommandListener {
     public static String[][] command_list = new String[][]{
             {"help", "lists possible commands."},
             {"buy animal", "buys an animal of a specific type."},
-            {"owned animals", "lists all owned animals."},
+            {"owned animals", "lists all of your owned animals."},
             {"species", "lists all species available."},
             {"hire employee", "hires employee"},
             {"train employee", "trains employee"},
             {"list employees", "list all employees"},
-            {"report", "displays daily report_command."},
+            {"report", "shows your game statistics."},
             {"next", "ends the turn."},
             {"quit", "quits the game."}
     };
@@ -52,7 +52,7 @@ public class CommandListener {
             case "2":
                 ManageAnimals_SinglePlayer.buyCommand();
                 break;
-            case "animals":
+            case "owned animals":
             case "3":
                 ManageAnimals_SinglePlayer.my_animals();
                 break;

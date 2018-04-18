@@ -3,11 +3,11 @@ package com.newman.game;
 import com.newman.saves.ManageSaves;
 import com.newman.player.PlayerStats;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import ibio.*;
 
-import static com.newman.player.PlayerStats.dayNum;
-import static com.newman.player.PlayerStats.money;
-import static com.newman.player.PlayerStats.myAnimals;
+import static com.newman.player.PlayerStats.*;
 
 public class MainSinglePlayer {
     public static boolean runGame = true;
@@ -57,7 +57,16 @@ public class MainSinglePlayer {
         // Random_total.method();
         dayNum++;
         PlayerStats.money += 5;
+        total_income = 0;
         total_maintenance = 0;
+        int randomNum = ThreadLocalRandom.current().nextInt(reputation*4, (reputation*8)+1);
+        for (int i = 0; i < size; i++) {
+            total_income = total_income + randomNum;
+        }
+        money = money + total_income;
+        if (total_income != 0) {
+            IBIO.output(String.format("You have earned %d dollars in ticket sales!", total_income));
+        }
         for (int i = 0; i < size; i++) {
             total_maintenance = total_maintenance + myAnimals.get(i).maintenance;
         }
