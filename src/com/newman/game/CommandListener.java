@@ -24,7 +24,7 @@ public class CommandListener {
     public static String[][] command_list = new String[][]{
             {"help", "lists possible commands."},
             {"buy animal", "buys an animal of a specific type."},
-            {"animals", "lists all owned animals."},
+            {"owned animals", "lists all owned animals."},
             {"species", "lists all species available."},
             {"hire employee", "hires employee"},
             {"train employee", "trains employee"},

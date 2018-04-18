@@ -36,6 +36,7 @@ public class MainSinglePlayer {
         //i.e. it sets things up and does things that are only executed once at the end
     }
     static int total_maintenance = 0;
+    static int total_income = 0;
     public static void update() {
         IBIO.output("Turn ended");
         int size;
@@ -56,6 +57,7 @@ public class MainSinglePlayer {
         // Random_total.method();
         dayNum++;
         PlayerStats.money += 5;
+        total_maintenance = 0;
         for (int i = 0; i < size; i++) {
             total_maintenance = total_maintenance + myAnimals.get(i).maintenance;
         }
