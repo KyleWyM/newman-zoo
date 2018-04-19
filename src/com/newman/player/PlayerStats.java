@@ -10,4 +10,5 @@ public class PlayerStats {
     public static int level = 1;
     public static int dayNum;
     public static ArrayList<Animals> myAnimals = new ArrayList<>();
+    public static ArrayList<Employee> myAnimals = new ArrayList<>();
 }

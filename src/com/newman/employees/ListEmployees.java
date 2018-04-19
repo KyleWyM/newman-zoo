@@ -1,3 +1,5 @@
+package com.newman.employees;
+
 public class ListEmployees {
     public static void myList(){
         System.out.print("*list of employees*");
