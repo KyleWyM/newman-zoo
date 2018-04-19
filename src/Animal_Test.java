@@ -4,14 +4,14 @@
 public class Animal_Test {
     private int cost;
     private int maintenance;
-    private int popularity;
+    private int reputation;
     private String name;
     String species_name;
 
-    public Animal_Test(int cost, int maintenance, int popularity, String species_name, String name) {
+    public Animal_Test(int cost, int maintenance, int reputation, String species_name, String name) {
         this.cost = cost;
         this.maintenance = maintenance;
-        this.popularity = popularity;
+        this.reputation = reputation;
         this.name = name;
         this.species_name = species_name;
     }
@@ -32,12 +32,12 @@ public class Animal_Test {
         this.maintenance = maintenance;
     }
 
-    public int getPopularity() {
-        return popularity;
+    public int getReputation() {
+        return reputation;
     }
 
-    public void setPopularity(int popularity) {
-        this.popularity = popularity;
+    public void setReputation(int reputation) {
+        this.reputation = reputation;
     }
 
     public String getSpecies_name() {
