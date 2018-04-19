@@ -1,4 +1,4 @@
-package com.newman.game;
+package com.newman.multiplayer;
 
 import com.newman.multiplayer.Multiplayer_Manager;
 import com.newman.multiplayer.Client;

@@ -1,10 +1,8 @@
-package com.newman.game;
+package com.newman.multiplayer;
 
 
-import com.newman.multiplayer.Multiplayer_Manager;
-import com.newman.multiplayer.Client;
-import com.newman.animals.ManageAnimals;
-import com.newman.animals.Fight_Handler;
+import com.newman.game.Autocorrect;
+import com.newman.game.MainSinglePlayer;
 
 public class Action_Listener {
 

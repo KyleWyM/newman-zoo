@@ -1,6 +1,5 @@
 package com.newman.multiplayer;
 
-import com.newman.game.AskUser;
 import com.newman.player.Player;
 
 import java.util.ArrayList;

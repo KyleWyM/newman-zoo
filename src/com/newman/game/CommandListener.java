@@ -3,6 +3,7 @@ package com.newman.game;
 import com.newman.animals.ManageAnimals_SinglePlayer;
 import com.newman.player.PlayerStats;
 import com.newman.saves.ManageSaves;
+import com.newman.shop.GiftShop;
 
 import ibio.IBIO;
 
@@ -26,8 +27,8 @@ public class CommandListener {
             {"buy animal", "buys an animal of a specific type."},
             {"owned animals", "lists all of your owned animals."},
             {"species", "lists all species available."},
-            {"hire employee", "hires employee"},
-            {"train employee", "trains employee"},
+            {"about giftshop", "gives information about how to use the giftshop"},
+            {"upgrade shop", "allows you to upgrade your shop"},
             {"list employees", "list all employees"},
             {"report", "shows your game statistics."},
             {"next", "ends the turn."},
@@ -59,6 +60,13 @@ public class CommandListener {
             case "species":
             case "4":
                 ManageAnimals_SinglePlayer.species_list();
+                break;
+            case "giftshop help":
+            case "about giftshop":
+                GiftShop.intro();
+                break;
+            case "upgrade shop":
+                GiftShop.increaseLevel();
                 break;
             case "report":
             case "8":

@@ -1,6 +1,7 @@
-package com.newman.animals;
+package com.newman.multiplayer;
 
-import com.newman.player.Player;
+import com.newman.animals.Animals;
+import com.newman.multiplayer.Attack;
 import com.newman.multiplayer.Client;
 
 public class Species {

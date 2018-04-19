@@ -1,5 +1,6 @@
-package com.newman.animals;
+package com.newman.multiplayer;
 
+import com.newman.animals.Animals;
 import com.newman.multiplayer.Client;
 
 public class Attack {

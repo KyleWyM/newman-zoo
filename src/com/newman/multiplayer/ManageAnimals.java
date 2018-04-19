@@ -1,11 +1,11 @@
-package com.newman.animals;
+package com.newman.multiplayer;
 
-import com.newman.game.AskUser;
+import com.newman.animals.Animals;
+import com.newman.multiplayer.AskUser;
 import com.newman.game.Autocorrect;
-import com.newman.game.GameLoop;
-import com.newman.multiplayer.Multiplayer_Manager;
+import com.newman.multiplayer.GameLoop;
 import com.newman.multiplayer.Client;
-import com.newman.player.Player;
+import com.newman.multiplayer.Species;
 
 public class ManageAnimals {
     public static void buyCommand(Client client) {

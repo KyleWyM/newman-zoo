@@ -1,7 +1,5 @@
 package com.newman.multiplayer;
 
-import com.newman.game.Multiplayer_Main;
-
 import java.io.IOException;
 import java.net.Socket;
 

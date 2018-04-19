@@ -1,8 +1,5 @@
 package com.newman.multiplayer;
 
-import com.newman.animals.Species;
-import com.newman.game.Action_Listener;
-import com.newman.game.GameLoop;
 import com.newman.player.Player;
 import com.newman.animals.Animals;
 

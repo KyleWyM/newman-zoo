@@ -1,6 +1,6 @@
 package com.newman.animals;
 
-import com.newman.game.GameLoop;
+import com.newman.multiplayer.Attack;
 import com.newman.multiplayer.Client;
 
 import java.util.ArrayList;

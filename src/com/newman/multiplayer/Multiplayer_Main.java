@@ -1,6 +1,4 @@
-package com.newman.game;
-
-import com.newman.multiplayer.Host;
+package com.newman.multiplayer;
 
 import java.io.IOException;
 

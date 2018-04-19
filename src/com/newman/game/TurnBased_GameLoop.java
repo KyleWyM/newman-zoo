@@ -1,17 +1,5 @@
 package com.newman.game;
 
-import com.newman.animals.Animals;
-import com.newman.animals.Species;
-import com.newman.animals.Species_SinglePlayer;
-import com.newman.player.Player;
-import com.newman.player.PlayerStats;
-import ibio.IBIO;
-
-import java.util.ArrayList;
-
-import static com.newman.player.PlayerStats.money;
-import static com.newman.player.PlayerStats.myAnimals;
-
 class TurnBased extends Thread {
     public void run() {
         TurnBased_GameLoop.turnCycle(); //Runs the game loop cycle in this thread

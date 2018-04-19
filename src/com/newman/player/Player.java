@@ -1,7 +1,7 @@
 package com.newman.player;
 
 import com.newman.animals.Animals;
-import com.newman.game.GameLoop;
+import com.newman.multiplayer.GameLoop;
 import com.newman.multiplayer.Client;
 
 import java.util.ArrayList;

@@ -1,7 +1,4 @@
-package com.newman.animals;
-
-import com.newman.game.GameLoop;
-import com.newman.multiplayer.*;
+package com.newman.multiplayer;
 
 public class Fight_Handler {
     public static Client client1;

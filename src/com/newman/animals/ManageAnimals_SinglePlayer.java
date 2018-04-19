@@ -1,11 +1,9 @@
 package com.newman.animals;
 
-import com.newman.player.Player;
+import com.newman.multiplayer.Species;
 import com.newman.player.PlayerStats;
 import ibio.*;
 import com.newman.game.*;
-
-import java.util.Arrays;
 
 public class ManageAnimals_SinglePlayer {
 
