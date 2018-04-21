@@ -1,9 +1,9 @@
 import ibio.*;
 
 public class Zoovenir extends GiftShop {
-    public Zoovenir(int shopEmployee, int shopCustomers, boolean unlocked) {
+    public Zoovenir(int shopEmployee, int shopCustomers) {
         super(shopEmployee, shopCustomers, 1, 5700, 15700,
-                5, 15, 5,5, unlocked);
+                5, 15, 5,5);
         this.shopEmployee = totalEmployee * 10 / 100;
         this.shopCustomers = totalCustomers *70/100;
     }

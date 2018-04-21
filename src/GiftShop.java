@@ -22,12 +22,12 @@ public class GiftShop {
     int max;
     int unlockLevel;
     int reputation;
-    boolean unlocked;
+
 
 
     public GiftShop(int employee,int shopCustomers, int shopLevel, double upgrade1_2,
                     double upgrade2_3, int min, int max, int unlockLevel,
-                    int reputation, boolean unlocked) {
+                    int reputation) {
         this.shopEmployee = employee;
         this.shopCustomers = shopCustomers;
         this.shopLevel = shopLevel;
@@ -37,20 +37,40 @@ public class GiftShop {
         this.max = max;
         this.unlockLevel = unlockLevel;
         this.reputation = reputation;
-        this.unlocked = unlocked;
     }
+
     public static void Welcome() {
-        String message = "Hello " + username + " welcome to the Gift Shops Area!";
+        String message = "Hello " + username + "\n __       __ ________ __       ______   ______  __       __ ________        ________  ______         ________ __    __ ________       \n" +
+                "|  \\  _  |  |        |  \\     /      \\ /      \\|  \\     /  |        \\      |        \\/      \\       |        |  \\  |  |        \\      \n" +
+                "| $$ / \\ | $| $$$$$$$| $$    |  $$$$$$|  $$$$$$| $$\\   /  $| $$$$$$$$       \\$$$$$$$|  $$$$$$\\       \\$$$$$$$| $$  | $| $$$$$$$$      \n" +
+                "| $$/  $\\| $| $$__   | $$    | $$   \\$| $$  | $| $$$\\ /  $$| $$__             | $$  | $$  | $$         | $$  | $$__| $| $$__          \n" +
+                "| $$  $$$\\ $| $$  \\  | $$    | $$     | $$  | $| $$$$\\  $$$| $$  \\            | $$  | $$  | $$         | $$  | $$    $| $$  \\         \n" +
+                "| $$ $$\\$$\\$| $$$$$  | $$    | $$   __| $$  | $| $$\\$$ $$ $| $$$$$            | $$  | $$  | $$         | $$  | $$$$$$$| $$$$$         \n" +
+                "| $$$$  \\$$$| $$_____| $$____| $$__/  | $$__/ $| $$ \\$$$| $| $$_____          | $$  | $$__/ $$         | $$  | $$  | $| $$_____       \n" +
+                "| $$$    \\$$| $$     | $$     \\$$    $$\\$$    $| $$  \\$ | $| $$     \\         | $$   \\$$    $$         | $$  | $$  | $| $$     \\      \n" +
+                " \\$$      \\$$\\$$$$$$$$\\$$$$$$$$\\$$$$$$  \\$$$$$$ \\$$      \\$$\\$$$$$$$$          \\$$    \\$$$$$$           \\$$   \\$$   \\$$\\$$$$$$$$      \n" +
+                "                                                                                                                                      \n" +
+                "                                                                                                                                      \n" +
+                "                                                                                                                                      \n" +
+                "  ______  ______ ________ ________         ______  __    __  ______  _______   ______          ______  _______  ________  ______      \n" +
+                " /      \\|      |        |        \\       /      \\|  \\  |  \\/      \\|       \\ /      \\        /      \\|       \\|        \\/      \\     \n" +
+                "|  $$$$$$\\\\$$$$$| $$$$$$$$\\$$$$$$$$      |  $$$$$$| $$  | $|  $$$$$$| $$$$$$$|  $$$$$$\\      |  $$$$$$| $$$$$$$| $$$$$$$|  $$$$$$\\    \n" +
+                "| $$ __\\$$ | $$ | $$__      | $$         | $$___\\$| $$__| $| $$  | $| $$__/ $| $$___\\$$      | $$__| $| $$__| $| $$__   | $$__| $$    \n" +
+                "| $$|    \\ | $$ | $$  \\     | $$          \\$$    \\| $$    $| $$  | $| $$    $$\\$$    \\       | $$    $| $$    $| $$  \\  | $$    $$    \n" +
+                "| $$ \\$$$$ | $$ | $$$$$     | $$          _\\$$$$$$| $$$$$$$| $$  | $| $$$$$$$ _\\$$$$$$\\      | $$$$$$$| $$$$$$$| $$$$$  | $$$$$$$$    \n" +
+                "| $$__| $$_| $$_| $$        | $$         |  \\__| $| $$  | $| $$__/ $| $$     |  \\__| $$      | $$  | $| $$  | $| $$_____| $$  | $$    \n" +
+                " \\$$    $|   $$ | $$        | $$          \\$$    $| $$  | $$\\$$    $| $$      \\$$    $$      | $$  | $| $$  | $| $$     | $$  | $$    \n" +
+                "  \\$$$$$$ \\$$$$$$\\$$         \\$$           \\$$$$$$ \\$$   \\$$ \\$$$$$$ \\$$       \\$$$$$$        \\$$   \\$$\\$$   \\$$\\$$$$$$$$\\$$   \\$$";
         IBIO.output(message);
     }
 
     public static void main(String args[]) {
-        FoodAndBeverage myFood = new FoodAndBeverage(0,0,false);
-        CoffeeShop myCoffee = new CoffeeShop(0,0,false);
-        Zoovenir myZoovenir= new Zoovenir(0,0,false);
-        StuffedWithJoy myStuffed = new StuffedWithJoy(0,0,false);
-        CandiesShop myCandies = new CandiesShop(0,0,false);
-        Jewellery myJewels = new Jewellery(0,0,false);
+        FoodAndBeverage myFood = new FoodAndBeverage(0,0);
+        CoffeeShop myCoffee = new CoffeeShop(0,0);
+        Zoovenir myZoovenir= new Zoovenir(0,0);
+        StuffedWithJoy myStuffed = new StuffedWithJoy(0,0);
+        CandiesShop myCandies = new CandiesShop(0,0);
+        Jewellery myJewels = new Jewellery(0,0);
         Welcome();
         String message;
         String again = "Y";

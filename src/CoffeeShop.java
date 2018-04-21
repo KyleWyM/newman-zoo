@@ -1,9 +1,9 @@
 import ibio.*;
 
 public class CoffeeShop extends GiftShop {
-    public CoffeeShop(int shopEmployee, int shopCustomers, boolean unlocked) {
+    public CoffeeShop(int shopEmployee, int shopCustomers) {
         super(shopEmployee, shopCustomers, 1, 5700, 15700, 5,
-                15, 3,2, unlocked);
+                15, 3,2);
         this.shopEmployee = totalEmployee *15/100;
         this.shopCustomers = totalCustomers * 9 / 10;
     }
