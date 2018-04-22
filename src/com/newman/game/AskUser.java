@@ -2,7 +2,7 @@ package com.newman.game;
 
 import ibio.*;
 
-public class AskUser_old {
+public class AskUser {
     //Over and over in the code there was a need to ask the user similar questions
     //For example, a "yes or no" question.
     //This class is for convenient methods that allow the code to be neater and easier.

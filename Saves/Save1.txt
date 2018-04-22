@@ -1,6 +1,6 @@
 Name: [Brendan] &&&
-Turn Number: 4
-Money: 20
+Turn Number: 6
+Money: -150
 Reputation: 0
-GameMode: [0,4] &&&
-Animals: [Flamingo,jfjf,5,1,0,0] [Flamingo,ffhfh,5,1,0,0] &&&
+GameMode: [0,6] &&&
+Animals: [Giraffe,Flammy,25,10,0] [Flamingo,jammy,10,5,0] [Flamingo,jammy,10,5,0] &&&

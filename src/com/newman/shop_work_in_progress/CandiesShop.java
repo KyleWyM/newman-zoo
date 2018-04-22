@@ -1,22 +1,24 @@
+/*package com.newman.shop_new;
+
 import ibio.*;
 
-public class Jewellery extends GiftShop {
-    public Jewellery(int shopEmployee, int shopCustomers) {
-        super(shopEmployee, shopCustomers, 1, 10000, 50000,
-                100, 250, 13, 30);
-        this.shopEmployee = totalEmployee * 20 / 100;
-        this.shopCustomers = totalCustomers *5/100;
+public class CandiesShop extends GiftShop {
+    public CandiesShop(int shopEmployee, int shopCustomers) {
+        super(shopEmployee, shopCustomers, 1, 7000, 17000, 5, 10,
+                9,15);
+        this.shopEmployee = totalEmployee * 15 / 100;
+        this.shopCustomers = GiftShop.totalCustomers *75/100;
     }
 
     public void runShop() {
-        if (userLevel >= this.unlockLevel) {
+        if (GiftShop.userLevel >= this.unlockLevel) {
             // the amount of money that each customer will spend in this shop
             // corresponds to a random generated number
             // which goes from a minimum fixed number (in this case 1)
-            // plus the number of employees for the shop,
+            // plus the number of employyes for the shop,
             // to a maximum fixed number (in this case 20)
-            // plus the number of employees for the shop,
-            // in this way increasing the amount of employees in a shop
+            // plus the number of emplyees for the shop,
+            // in this way increasing the amount of emplyees in a shop
             // there will be an increase in profit,
             // the same thing is valid also for the other shops below
             this.min = (this.min + this.shopEmployee) * this.shopLevel;
@@ -25,23 +27,23 @@ public class Jewellery extends GiftShop {
             for (int i = 0; i < this.shopCustomers; i++) {
                 int random = this.min + (int) (Math.random() * ((this.max - this.min) + 1));
                 int money = random;
-                totalMoney = totalMoney + money;
+                GiftShop.totalMoney = GiftShop.totalMoney + money;
             }
         }
     }
 
     public void increaseLevel() {
         String message;
-        if (userLevel >= this.unlockLevel) {
-            message = String.format("The current level of Jewellery is %d", this.shopLevel);
+        if (GiftShop.userLevel >= this.unlockLevel) {
+            message = String.format("The current level of Candies Shop is %d", this.shopLevel);
             IBIO.output(message);
             if (this.shopLevel == 1) {
-                message = String.format("The price required to upgrade Jewellery " +
+                message = String.format("The price required to upgrade Food and beverage " +
                         "from level 1 to level 2 is %f", this.upgrade1_2);
                 IBIO.output(message);
-                message = String.format("At the moment tou have %f money", totalMoney);
+                message = String.format("At the moment tou have %f money", GiftShop.totalMoney);
                 IBIO.output(message);
-                if (totalMoney >= this.upgrade1_2) {
+                if (GiftShop.totalMoney >= this.upgrade1_2) {
                     message = "Do you want to proceed with this upgrade?";
                     IBIO.output(message);
                     String answerFandB = IBIO.input("\nAnswer (Y) if you do, answer with " +
@@ -60,12 +62,12 @@ public class Jewellery extends GiftShop {
                     IBIO.output(message);
                 }
             } else if (this.shopLevel == 2) {
-                message = String.format("The price required to upgrade Jewellery " +
+                message = String.format("The price required to upgrade Candies Shop " +
                         "from level 2 to level 3 this shop is %f", this.upgrade2_3);
                 IBIO.output(message);
-                message = String.format("At the moment tou have %f money", totalMoney);
+                message = String.format("At the moment tou have %f money", GiftShop.totalMoney);
                 IBIO.output(message);
-                if (totalMoney >= this.upgrade2_3) {
+                if (GiftShop.totalMoney >= this.upgrade2_3) {
                     message = "Do you want to proceed with this upgrade?";
                     IBIO.output(message);
                     String answerFandB = IBIO.input("\nAnswer (Y) if you do, answer with " +
@@ -88,10 +90,11 @@ public class Jewellery extends GiftShop {
                 IBIO.output(message);
             }
 
-        } else {
+        }else {
             IBIO.output(String.format("You can't upgrade this shop because it is locked," +
                     "\n Increase your level to unlock it"));
         }
     }
 
 }
+*/

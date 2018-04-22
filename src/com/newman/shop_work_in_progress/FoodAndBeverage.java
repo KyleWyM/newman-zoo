@@ -1,15 +1,17 @@
-import ibio.*;
+/*package com.newman.shop_work_in_progress;
 
-public class CandiesShop extends GiftShop {
-    public CandiesShop(int shopEmployee, int shopCustomers) {
-        super(shopEmployee, shopCustomers, 1, 7000, 17000, 5, 10,
-                9,15);
-        this.shopEmployee = totalEmployee * 15 / 100;
-        this.shopCustomers = totalCustomers *75/100;
+import ibio.IBIO;
+
+public class FoodAndBeverage extends GiftShop {
+    public FoodAndBeverage(int shopEmployee, int shopCustomers) {
+        super(shopEmployee, shopCustomers, 1, 5000, 15000,
+                1, 20, 1,1);
+        this.shopEmployee = totalEmployee * 30 / 100;
+        this.shopCustomers = totalCustomers / 2;
     }
 
     public void runShop() {
-        if (userLevel >= this.unlockLevel) {
+        if (userLevel>=this.unlockLevel) {
             // the amount of money that each customer will spend in this shop
             // corresponds to a random generated number
             // which goes from a minimum fixed number (in this case 1)
@@ -32,8 +34,8 @@ public class CandiesShop extends GiftShop {
 
     public void increaseLevel() {
         String message;
-        if (userLevel >= this.unlockLevel) {
-            message = String.format("The current level of Candies Shop is %d", this.shopLevel);
+        if (userLevel>=this.unlockLevel){
+            message = String.format("The current level of Food and beverage is %d",this.shopLevel);
             IBIO.output(message);
             if (this.shopLevel == 1) {
                 message = String.format("The price required to upgrade Food and beverage " +
@@ -60,7 +62,7 @@ public class CandiesShop extends GiftShop {
                     IBIO.output(message);
                 }
             } else if (this.shopLevel == 2) {
-                message = String.format("The price required to upgrade Candies Shop " +
+                message = String.format("The price required to upgrade Food and beverage " +
                         "from level 2 to level 3 this shop is %f", this.upgrade2_3);
                 IBIO.output(message);
                 message = String.format("At the moment tou have %f money", totalMoney);
@@ -88,10 +90,12 @@ public class CandiesShop extends GiftShop {
                 IBIO.output(message);
             }
 
-        }else {
+
+        } else {
             IBIO.output(String.format("You can't upgrade this shop because it is locked," +
                     "\n Increase your level to unlock it"));
         }
     }
 
 }
+*/

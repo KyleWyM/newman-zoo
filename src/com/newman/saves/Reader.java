@@ -2,10 +2,10 @@ package com.newman.saves;
 
 import java.io.*;
 
-import com.newman.animals.*;
+import com.newman.animals.species.*;
 import com.newman.game.RealTime_GameLoop;
 import com.newman.player.PlayerStats;
-import com.newman.game.MainSinglePlayer;
+import com.newman.game.Main;
 
 import ibio.*;
 
@@ -43,7 +43,7 @@ public class Reader {
                     break;
                 case "Animals:":
 //                    List<Animals> animals = new ArrayList<>();
-                    int numAnimalsVars = 6;
+                    int numAnimalsVars = 5;
                     String[][] animal_data = getStringLists(line, numAnimalsVars);
 
                     /* The following for loop goes through the list just recovered from the text
@@ -56,20 +56,26 @@ public class Reader {
                      * This is because the length of the list is much longer than it needs to be,
                      * so there are many empty slots.
                      */
-                    for (int i = 0; i < animal_data.length; i++) {
-                        if (animal_data[i][0] != null) {
 
-                            String species = animal_data[i][0];
-                            String animal_name = animal_data[i][1];
-                            int maintenance = getNumberFromLine(animal_data[i][2]);
-                            int animal_reputation = getNumberFromLine(animal_data[i][3]);
-                            int birthTime = getNumberFromLine(animal_data[i][4]);
-                            int level = getNumberFromLine(animal_data[i][5]);
+                    try {
+                        for (int i = 0; i < animal_data.length; i++) {
+                            if (animal_data[i][0] != null) {
+                                String species = animal_data[i][0];
+                                String animal_name = animal_data[i][1];
+                                int maintenance = getNumberFromLine(animal_data[i][2]);
+                                int animal_reputation = getNumberFromLine(animal_data[i][3]);
+//                           int birthTime = getNumberFromLine(animal_data[i][4]);
+                                int level = getNumberFromLine(animal_data[i][4]);
 
-                            addAnimal(species, animal_name, maintenance, animal_reputation,
-                                     birthTime, level);
-
-                        } else i = animal_data.length;
+                                //TODO: add animal to player animals
+                                addAnimal(species, animal_name, maintenance, animal_reputation, level);
+                            } else i = animal_data.length;
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("Failure to load animal save data. Please check to make sure the variables are correctly" +
+                                "\n specified in Reader.java.");
+                        System.exit(-1);
                     }
                     break;
                 case "GameMode:":
@@ -81,12 +87,12 @@ public class Reader {
 
                     if (inRealTime) {
                         IBIO.output("Game mode: real time");
-                        MainSinglePlayer.inRealTime = true;
+                        Main.inRealTime = true;
                         RealTime_GameLoop.globalTime = getNumberFromLine(gameModeData[0][1]); //Sets the global time
                         PlayerStats.dayNum = (int) (RealTime_GameLoop.globalTime - RealTime_GameLoop.globalTime % 60) / 60;
                     } else {
                         IBIO.output("Game mode: turn based");
-                        MainSinglePlayer.inRealTime = false;
+                        Main.inRealTime = false;
                         PlayerStats.dayNum = getNumberFromLine(gameModeData[0][1]); //Sets the global time
                     }
             }
@@ -224,7 +230,8 @@ public class Reader {
                 if (line.charAt(i) == '&') { //'&' indicates the end of a line. This will terminate the loop.
                     keepGoing = false;
                 } else if (i == line.length()) {
-                    keepGoing = false; //If '&' is not found, the loop will stop after 1000 characters searched
+                    keepGoing = false; //If '&' is not found, the loop will stop after it reaches the end of the line
+                    //Otherwise, the code was resulting in an 'out of range' error. Ignore the suggestion to alter the code.
                 }
 
                 if (itemList_index1 >= 999) {
@@ -250,39 +257,141 @@ public class Reader {
     }
 
     private static void addAnimal(String species_name, String name, int maintenance,
-                                  int reputation, int birthTime, int level) {
-        switch (species_name.toLowerCase()) {
-            case "flamingo":
-                //myArrayList.get(myArrayList.size()-1)
-                Species_SinglePlayer.addFlamingo(name, birthTime);
-                IBIO.output("Flamingo " + name + " loaded.");
+                                  int reputation, int level) {
+        switch (species_name) {
+            case "Flamingo":
+                Flamingo flamingo = new Flamingo(name);
+                flamingo.maintenance = maintenance;
+                flamingo.reputation = reputation;
+                flamingo.level = level;
 
-                //Now, flamingo is the last one in. The following line of code
-                //sets the variables of the last animal added to myAnimals:
-
-                PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).maintenance = maintenance;
-                PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).reputation = reputation;
-                PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).level = level;
+                PlayerStats.myAnimals.add(flamingo);
                 break;
-            case "kangaroo":
-                Species_SinglePlayer.addKangaroo(name, birthTime);
-                IBIO.output("Kangaroo " + name + " loaded.");
+            case "Kangaroo":
+                Kangaroo kangaroo = new Kangaroo(name);
+                kangaroo.maintenance = maintenance;
+                kangaroo.reputation = reputation;
+                kangaroo.level = level;
 
-                PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).maintenance = maintenance;
-                PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).reputation = reputation;
-                PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).level = level;
+                PlayerStats.myAnimals.add(kangaroo);
                 break;
-            case "zebra":
-                Species_SinglePlayer.addZebra(name, birthTime);
-                IBIO.output("Zebra " + name + " loaded.");
+            case "Zebra":
+                Zebra zebra = new Zebra(name);
+                zebra.maintenance = maintenance;
+                zebra.reputation = reputation;
+                zebra.level = level;
 
-                PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).maintenance = maintenance;
-                PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).reputation = reputation;
-                PlayerStats.myAnimals.get(PlayerStats.myAnimals.size() - 1).level = level;
+                PlayerStats.myAnimals.add(zebra);
+                break;
+            case "Armadillo":
+                Armadillo armadillo = new Armadillo(name);
+                armadillo.maintenance = maintenance;
+                armadillo.reputation = reputation;
+                armadillo.level = level;
+
+                PlayerStats.myAnimals.add(armadillo);
+                break;
+            case "Giraffe":
+                Giraffe giraffe = new Giraffe(name);
+                giraffe.maintenance = maintenance;
+                giraffe.reputation = reputation;
+                giraffe.level = level;
+
+                PlayerStats.myAnimals.add(giraffe);
+                break;
+            case "Camel":
+                Camel camel = new Camel(name);
+                camel.maintenance = maintenance;
+                camel.reputation = reputation;
+                camel.level = level;
+
+                PlayerStats.myAnimals.add(camel);
+                break;
+            case "Dragon":
+                Dragon dragon = new Dragon(name);
+                dragon.maintenance = maintenance;
+                dragon.reputation = reputation;
+                dragon.level = level;
+
+                PlayerStats.myAnimals.add(dragon);
+                break;
+            case "Elephant":
+                Elephant elephant = new Elephant(name);
+                elephant.maintenance = maintenance;
+                elephant.reputation = reputation;
+                elephant.level = level;
+
+                PlayerStats.myAnimals.add(elephant);
+                break;
+            case "Koala":
+                Koala koala = new Koala(name);
+                koala.maintenance = maintenance;
+                koala.reputation = reputation;
+                koala.level = level;
+
+                PlayerStats.myAnimals.add(koala);
+                break;
+            case "Lion":
+                Lion lion = new Lion(name);
+                lion.maintenance = maintenance;
+                lion.reputation = reputation;
+                lion.level = level;
+
+                PlayerStats.myAnimals.add(lion);
+                break;
+            case "Okapi":
+                Okapi okapi = new Okapi(name);
+                okapi.maintenance = maintenance;
+                okapi.reputation = reputation;
+                okapi.level = level;
+
+                PlayerStats.myAnimals.add(okapi);
+                break;
+            case "Orangutan":
+                Orangutan orangutan = new Orangutan(name);
+                orangutan.maintenance = maintenance;
+                orangutan.reputation = reputation;
+                orangutan.level = level;
+
+                PlayerStats.myAnimals.add(orangutan);
+                break;
+            case "Ostrich":
+                Ostrich ostrich = new Ostrich(name);
+                ostrich.maintenance = maintenance;
+                ostrich.reputation = reputation;
+                ostrich.level = level;
+
+                PlayerStats.myAnimals.add(ostrich);
+                break;
+            case "Penguin":
+                Penguin penguin = new Penguin(name);
+                penguin.maintenance = maintenance;
+                penguin.reputation = reputation;
+                penguin.level = level;
+
+                PlayerStats.myAnimals.add(penguin);
+                break;
+            case "Snake":
+                Snake snake = new Snake(name);
+                snake.maintenance = maintenance;
+                snake.reputation = reputation;
+                snake.level = level;
+
+                PlayerStats.myAnimals.add(snake);
+                break;
+            case "Tiger":
+                Tiger tiger = new Tiger(name);
+                tiger.maintenance = maintenance;
+                tiger.reputation = reputation;
+                tiger.level = level;
+
+                PlayerStats.myAnimals.add(tiger);
                 break;
             default:
                 IBIO.output("Error, animal in save file not found.");
-                IBIO.output("Apparent species name: " + species_name);
+                IBIO.output("Apparent species name: " + species_name + ".");
+                IBIO.output("If the animal name is not a mistake, check to see that" +
+                        "the animal is listed in the method addAnimal of the save Reader.java class.");
         }
     }
 }

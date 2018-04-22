@@ -1,11 +1,13 @@
-import ibio.*;
+/*package com.newman.shop_work_in_progress;
 
-public class StuffedWithJoy extends GiftShop {
-    public StuffedWithJoy(int shopEmployee, int shopCustomers) {
-        super(shopEmployee, shopCustomers, 1, 6000, 16000,
-                20, 50, 7,10);
+import ibio.IBIO;
+
+public class Zoovenir extends GiftShop {
+    public Zoovenir(int shopEmployee, int shopCustomers) {
+        super(shopEmployee, shopCustomers, 1, 5700, 15700,
+                5, 15, 5,5);
         this.shopEmployee = totalEmployee * 10 / 100;
-        this.shopCustomers = totalCustomers *30/100;
+        this.shopCustomers = totalCustomers *70/100;
     }
 
     public void runShop() {
@@ -33,10 +35,10 @@ public class StuffedWithJoy extends GiftShop {
     public void increaseLevel() {
         String message;
         if (userLevel >= this.unlockLevel) {
-            message = String.format("The current level of Stuffed With Joy is %d", this.shopLevel);
+            message = String.format("The current level of Zoovenir is %d", this.shopLevel);
             IBIO.output(message);
             if (this.shopLevel == 1) {
-                message = String.format("The price required to upgrade Stuffed With Joy " +
+                message = String.format("The price required to upgrade Zoovenir " +
                         "from level 1 to level 2 is %f", this.upgrade1_2);
                 IBIO.output(message);
                 message = String.format("At the moment tou have %f money", totalMoney);
@@ -60,7 +62,7 @@ public class StuffedWithJoy extends GiftShop {
                     IBIO.output(message);
                 }
             } else if (this.shopLevel == 2) {
-                message = String.format("The price required to upgrade Stuffed With Joy " +
+                message = String.format("The price required to upgrade Zoovenir " +
                         "from level 2 to level 3 this shop is %f", this.upgrade2_3);
                 IBIO.output(message);
                 message = String.format("At the moment tou have %f money", totalMoney);
@@ -95,3 +97,4 @@ public class StuffedWithJoy extends GiftShop {
     }
 
 }
+*/

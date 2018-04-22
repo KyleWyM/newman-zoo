@@ -9,7 +9,7 @@ import ibio.*;
 
 import static com.newman.player.PlayerStats.*;
 
-public class MainSinglePlayer {
+public class Main {
     public static boolean runGame = true;
     public static boolean turnInProcess = true;
     public static boolean newGame = false; //New game unless save is loaded
@@ -17,7 +17,7 @@ public class MainSinglePlayer {
     //It's not necessary to put the input string here,
     //but it's better not to redefine a variable every time the loop is run.
 
-    public static boolean inRealTime;
+    public static boolean inRealTime = false;
 
     static String save_path = "Saves/Save1.txt";
 
@@ -35,11 +35,12 @@ public class MainSinglePlayer {
         //This runs at the end of the game
         //i.e. it sets things up and does things that are only executed once at the end
     }
-    static int total_maintenance = 0;
-    static int total_income = 0;
+
     public static void update() {
+        dayNum++;
         IBIO.output("Turn ended");
-        int size;
+
+        int total_maintenance, total_income, size, rent;
         size = myAnimals.size();
             /*
              * In here we include all things that should be updated daily
@@ -55,24 +56,31 @@ public class MainSinglePlayer {
 
         //e.g. import com.newman.random_events
         // Random_total.method();
-        dayNum++;
-        int rent = level*10;
-        money = money - rent;
+
+        rent = level * 10;
+        money -= rent;
         IBIO.output(String.format("You have paid %d dollars in rent", rent));
+
         total_income = 0;
         total_maintenance = 0;
-        int randomNum = ThreadLocalRandom.current().nextInt(reputation*4, (reputation*8)+1);
+        reputation = 0;
+
+
+
         for (int i = 0; i < size; i++) {
-            total_income = total_income + randomNum;
+            int randomNum = ThreadLocalRandom.current().nextInt(reputation * 4, (reputation * 8) + 1);
+            total_income += randomNum;
+            reputation += myAnimals.get(i).reputation;
         }
-        money = money + total_income;
+
+        money += total_income;
         if (total_income != 0) {
             IBIO.output(String.format("You have earned %d dollars in ticket sales!", total_income));
         }
         for (int i = 0; i < size; i++) {
             total_maintenance = total_maintenance + myAnimals.get(i).maintenance;
         }
-        money = money - total_maintenance;
+        money -= total_maintenance;
         if (total_maintenance != 0) {
             IBIO.output(String.format("You have paid %d dollars to feed your animals", total_maintenance));
         }
@@ -82,23 +90,24 @@ public class MainSinglePlayer {
 
         ManageSaves.loadSave(save_path);
         if (newGame) {
-            IBIO.output("Would you like to run a real time game or a turn based game?\n" +
-                    "y = real time, n = turn based");
-            if (AskUser_old.yesOrNo()) {
-                RealTime_GameLoop.startTimeCycle();
-                inRealTime = true;
-            } else {
-                TurnBased_GameLoop.startTurnCycle();
-                inRealTime = false;
-            }
-
             //If loadSave() does not load a previous game, it will set newGame to true.
             intro();
-        } else {
-            if (inRealTime) {
-                RealTime_GameLoop.startTimeCycle();
-            } else TurnBased_GameLoop.startTurnCycle();
+
+            while (Main.runGame) {
+                while (Main.turnInProcess) {
+                    //During the process of a turn, this loops through and gathers user input.
+                    CommandListener.getInput();
+                }
+                Main.update(); //This calls updates the game after every turn with changes, such as adding to dayNum
+
+                Main.turnInProcess = true; //This allows for the next turn
+            }
         }
+// else {
+//            if (inRealTime) {
+//                RealTime_GameLoop.startTimeCycle();
+//            }
+//        }
 
         end();
     }

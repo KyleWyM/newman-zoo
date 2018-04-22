@@ -1,7 +1,7 @@
 package com.newman.saves;
 
-import com.newman.animals.Animals;
-import com.newman.game.MainSinglePlayer;
+import com.newman.animals.species.*;
+import com.newman.game.Main;
 import com.newman.game.RealTime_GameLoop;
 import com.newman.player.PlayerStats;
 
@@ -20,7 +20,7 @@ public class Writer {
     }
 
     public static void saveGame(String name, int turnNum, int money,
-                                int reputation, List<Animals> animals, String file_path) throws IOException {
+                                int reputation, List<Animal> animals, String file_path) throws IOException {
 
         FileWriter file_writer = new FileWriter(file_path,true);
         PrintWriter print_writer = new PrintWriter(file_writer);
@@ -30,7 +30,7 @@ public class Writer {
         print_writer.println("Reputation: " + reputation);
 
         int inRealTime = 0; //0 indicates false
-        if (MainSinglePlayer.inRealTime) {
+        if (Main.inRealTime) {
             inRealTime = 1;
             print_writer.println("GameMode: " + "[" + inRealTime
                     + "," + RealTime_GameLoop.globalTime + "] &&&");
@@ -41,9 +41,9 @@ public class Writer {
 
         print_writer.print("Animals: ");
         for (int i = 0; i < animals.size(); i++) {
-            print_writer.print("[" + animals.get(i).species + "," + animals.get(i).name
+            print_writer.print("[" + animals.get(i).getClass().getSimpleName() + "," + animals.get(i).name
                     + "," + animals.get(i).maintenance + "," + animals.get(i).reputation
-                    + "," + animals.get(i).birthTime + "," + animals.get(i).level + "] ");
+                     + "," + animals.get(i).level + "] ");
         }
 
         print_writer.print("&&&");

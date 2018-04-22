@@ -1,9 +1,9 @@
 package com.newman.game;
 
-import com.newman.animals.ManageAnimals_SinglePlayer;
+import com.newman.animals.ManageAnimals;
+import com.newman.giftshop.GiftShop;
 import com.newman.player.PlayerStats;
 import com.newman.saves.ManageSaves;
-import com.newman.shop.GiftShop;
 
 import ibio.IBIO;
 
@@ -18,8 +18,8 @@ public class CommandListener {
     //Commands listed here:
 
     public static void getInput() {
-        MainSinglePlayer.input = IBIO.input();
-        CommandListener.takeCommand(MainSinglePlayer.input.toLowerCase());
+        Main.input = IBIO.input();
+        CommandListener.takeCommand(Main.input.toLowerCase());
     }
 
     public static String[][] command_list = new String[][]{
@@ -27,8 +27,8 @@ public class CommandListener {
             {"buy animal", "buys an animal of a specific type."},
             {"owned animals", "lists all of your owned animals."},
             {"species", "lists all species available."},
-            {"about giftshop", "gives information about how to use the giftshop"},
-            {"upgrade shop", "allows you to upgrade your shop"},
+            {"about giftshop", "gives information about how the giftshop works"},
+            {"upgrade giftshop", "allows the user to enhance their giftshop"},
             {"list employees", "list all employees"},
             {"report", "shows your game statistics."},
             {"next", "ends the turn."},
@@ -51,21 +51,20 @@ public class CommandListener {
                 break;
             case "buy animal":
             case "2":
-                ManageAnimals_SinglePlayer.buyCommand();
+                ManageAnimals.buy_animal();
                 break;
             case "owned animals":
             case "3":
-                ManageAnimals_SinglePlayer.my_animals();
+                ManageAnimals.my_animals();
                 break;
             case "species":
             case "4":
-                ManageAnimals_SinglePlayer.species_list();
+                ManageAnimals.species_list();
                 break;
-            case "giftshop help":
             case "about giftshop":
                 GiftShop.intro();
                 break;
-            case "upgrade shop":
+            case "upgrade giftshop":
                 GiftShop.increaseLevel();
                 break;
             case "report":
@@ -77,27 +76,27 @@ public class CommandListener {
             case "9":
                 //Ends the current turn by ending the turn loop in the Main
                 //Only works for turn based version
-                if (!MainSinglePlayer.inRealTime) {
-                    MainSinglePlayer.turnInProcess = false;
+                if (!Main.inRealTime) {
+                    Main.turnInProcess = false;
                 } else IBIO.output("Must be in turn based mode for 'next' to work");
                 break;
             case "quit":
             case "10":
                 //This is for ending the game.
                 IBIO.output("Are you sure you would like to end the game?");
-                if (AskUser_old.yesOrNo()) {
+                if (AskUser.yesOrNo()) {
                     //yesOrNo() ask the user to respond 'yes' or 'no', and returns true for yes.
                     //So if true, runGame is set false, ending the game
-                    MainSinglePlayer.turnInProcess = false;
-                    MainSinglePlayer.runGame = false;
+                    Main.turnInProcess = false;
+                    Main.runGame = false;
 
-                    ManageSaves.writeSave(MainSinglePlayer.save_path);
+                    ManageSaves.writeSave(Main.save_path);
                 }
                 break;
             default:
                 String bestMatch = Autocorrect.findMatch(command, command_list);
                 IBIO.output("Did you mean " + bestMatch + "?");
-                if (AskUser_old.yesOrNo()) {
+                if (AskUser.yesOrNo()) {
                     takeCommand(bestMatch);
                 }
         }

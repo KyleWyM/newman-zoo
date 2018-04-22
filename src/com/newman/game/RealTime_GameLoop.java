@@ -13,7 +13,7 @@ class RealTime_timedCycle extends Thread {
 
 class RealTime_commandListener extends Thread {
     public void run() {
-        while (MainSinglePlayer.runGame) {
+        while (Main.runGame) {
             CommandListener.getInput();
         }
     }
@@ -33,7 +33,7 @@ public class RealTime_GameLoop {
 
     public static void timeCycle() {
 
-        while (MainSinglePlayer.runGame) {
+        while (Main.runGame) {
             currentTime = System.nanoTime() * 1e-9;
             changeInTime = currentTime - startTime;
 
