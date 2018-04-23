@@ -1,4 +1,4 @@
-package com.newman.giftshop;
+/*package com.newman.giftshop;
 
 import com.newman.game.AskUser;
 import ibio.*;
@@ -6,9 +6,9 @@ import com.newman.player.PlayerStats;
 
 public class GiftShop {
     //TODO: integrate employees with gift shop and make it so you can assign them roles
-    /*
+
      *
-     */
+
     private static int foodBeverage_employees = (int) (PlayerStats.employees * 0.50);
     int zoovenir_employees = (int) (PlayerStats.employees * 0.15);
     int stuffedWithJoy_employees = (int) (PlayerStats.employees * 0.15);
@@ -164,6 +164,6 @@ public class GiftShop {
         IBIO.output("Your shops have earned you $" + total_earnings + ".");
     }
 }
-
+*/
 
 

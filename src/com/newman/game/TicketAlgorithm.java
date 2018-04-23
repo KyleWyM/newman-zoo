@@ -20,9 +20,9 @@ public class TicketAlgorithm {
     }
 
     //update
-    public static void TicketUpdate(){
-        PlayerStats.money = PlayerStats.money + n1/PlayerStats.visitors;
-    }
+//    public static void TicketUpdate(){
+  //      PlayerStats.money = PlayerStats.money + n1/PlayerStats.visitors;
+    //}
     //PlayerStats.money += ;
     //PlayerStats.visitors
 }

@@ -1,6 +1,7 @@
 package com.newman.game;
 
 import com.newman.animals.ManageAnimals;
+import com.newman.employees.ManageEmployees_SinglePlayer;
 import com.newman.giftshop.GiftShop;
 import com.newman.player.PlayerStats;
 import com.newman.saves.ManageSaves;
@@ -27,6 +28,7 @@ public class CommandListener {
             {"buy animal", "buys an animal of a specific type."},
             {"owned animals", "lists all of your owned animals."},
             {"species", "lists all species available."},
+            {"manage employees", "examine and hire new employees"},
             {"about giftshop", "gives information about how the giftshop works"},
             {"upgrade giftshop", "allows the user to enhance their giftshop"},
             {"list employees", "list all employees"},
@@ -34,6 +36,14 @@ public class CommandListener {
             {"next", "ends the turn."},
             {"quit", "quits the game."}
     };
+    public static void help() {
+        for (int i = 0; i < command_list.length; i++) {
+            String message = String.format( "%2d. %-20s %s",
+                    i + 1, command_list[i][0], command_list[i][1]);
+            IBIO.output(message);
+        }
+    }
+
 
     //When a user enters a string, user_interface checks for
     //existing commands
@@ -42,12 +52,7 @@ public class CommandListener {
             case "help":
             case "h":
             case "1":
-                for (int i = 0; i < command_list.length; i++) {
-
-                    String message = String.format( "%2d. %-20s %s",
-                            i + 1, command_list[i][0], command_list[i][1]);
-                    IBIO.output(message);
-                }
+                help();
                 break;
             case "buy animal":
             case "2":
@@ -61,11 +66,15 @@ public class CommandListener {
             case "4":
                 ManageAnimals.species_list();
                 break;
+            case "manage employees":
+            case "5":
+                ManageEmployees_SinglePlayer.manage_employees();
+                break;
             case "about giftshop":
-                GiftShop.intro();
+                //GiftShop.intro();
                 break;
             case "upgrade giftshop":
-                GiftShop.increaseLevel();
+                //GiftShop.increaseLevel();
                 break;
             case "report":
             case "8":
