@@ -103,11 +103,6 @@ public class Main {
                 Main.turnInProcess = true; //This allows for the next turn
             }
         }
-// else {
-//            if (inRealTime) {
-//                RealTime_GameLoop.startTimeCycle();
-//            }
-//        }
 
         end();
     }
