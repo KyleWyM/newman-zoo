@@ -2,11 +2,14 @@ package com.newman.game;
 
 import com.newman.saves.ManageSaves;
 import com.newman.player.PlayerStats;
+import com.newman.game.TicketAlgorithm;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import ibio.*;
 
+import static com.newman.game.TicketAlgorithm.ticket_price;
 import static com.newman.player.PlayerStats.*;
 
 public class Main {
@@ -64,14 +67,15 @@ public class Main {
         total_income = 0;
         total_maintenance = 0;
         reputation = 0;
-
-
-
         for (int i = 0; i < size; i++) {
-            int randomNum = ThreadLocalRandom.current().nextInt(reputation * 4, (reputation * 8) + 1);
-            total_income += randomNum;
             reputation += myAnimals.get(i).reputation;
         }
+        int number = (int )(Math.random() * PlayerStats.reputation);
+        int visitors = (-(ticket_price)*(ticket_price)+number);
+        if (visitors < 0) {
+            visitors = 0;
+        }
+        total_income = visitors * ticket_price;
 
         money += total_income;
         if (total_income != 0) {

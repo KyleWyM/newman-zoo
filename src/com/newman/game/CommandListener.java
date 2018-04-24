@@ -8,6 +8,8 @@ import com.newman.saves.ManageSaves;
 
 import ibio.IBIO;
 
+import static com.newman.game.TicketAlgorithm.setTicket_price;
+
 public class CommandListener {
 
     //This is a list of all commands for use in the help command
@@ -29,7 +31,7 @@ public class CommandListener {
             {"manage employees", "examine and hire new employees"},
             {"about giftshop", "gives information about how the giftshop works"},
             {"upgrade giftshop", "allows the user to enhance their giftshop"},
-            {"list employees", "list all employees"},
+            {"set ticket price", "set ticket price to optimize your profits"},
             {"report", "shows your game statistics."},
             {"next", "ends the turn."},
             {"quit", "quits the game."}
@@ -66,13 +68,17 @@ public class CommandListener {
             case "upgrade giftshop":
                 //GiftShop.increaseLevel();
                 break;
-            case "report":
+            case "set ticket price":
             case "6":
+                setTicket_price();
+                break;
+            case "report":
+            case "7":
                 IBIO.output("Bank Account (Zooman Dollars): " + PlayerStats.money);
                 IBIO.output("Reputation: " + PlayerStats.reputation);
                 break;
             case "next":
-            case "7":
+            case "9":
                 //Ends the current turn by ending the turn loop in the Main
                 //Only works for turn based version
                 if (!Main.inRealTime) {
@@ -80,7 +86,7 @@ public class CommandListener {
                 } else IBIO.output("Must be in turn based mode for 'next' to work");
                 break;
             case "quit":
-            case "8":
+            case "10":
                 //This is for ending the game.
                 IBIO.output("Are you sure you would like to end the game?");
                 if (AskUser.yesOrNo()) {
