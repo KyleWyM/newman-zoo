@@ -64,23 +64,8 @@ public class Main {
         money -= rent;
         IBIO.output(String.format("You have paid %d dollars in rent", rent));
 
-        total_income = 0;
         total_maintenance = 0;
-        reputation = 0;
-        for (int i = 0; i < size; i++) {
-            reputation += myAnimals.get(i).reputation;
-        }
-        int number = (int )(Math.random() * PlayerStats.reputation);
-        int visitors = (-(ticket_price)*(ticket_price)+number);
-        if (visitors < 0) {
-            visitors = 0;
-        }
-        total_income = visitors * ticket_price;
 
-        money += total_income;
-        if (total_income != 0) {
-            IBIO.output(String.format("You have earned %d dollars in ticket sales!", total_income));
-        }
         for (int i = 0; i < size; i++) {
             total_maintenance = total_maintenance + myAnimals.get(i).maintenance;
         }
@@ -88,6 +73,23 @@ public class Main {
         if (total_maintenance != 0) {
             IBIO.output(String.format("You have paid %d dollars to feed your animals", total_maintenance));
         }
+        reputation = 0;
+        for (int i = 0; i < size; i++) {
+            reputation += myAnimals.get(i).reputation;
+        }
+        int number = (int )(Math.random() * PlayerStats.reputation);
+        int visitors = (-(ticket_price)*(ticket_price)+number); //upside-down parabola, determines how many visitors
+        // come in with random number based on reputation as y intercept
+        if (visitors < 0) {
+            visitors = 0;
+        }
+        total_income = visitors * ticket_price;
+        if (ticket_price == 0) {
+            IBIO.output("Your tickets are free, your not making any profits!");
+        } else {
+            IBIO.output(String.format("You have earned %d dollars in ticket sales!", total_income));
+        }
+        money += total_income;
     }
 
     public static void main(String[] args) {
