@@ -27,9 +27,11 @@ public class ManageEmployees_SinglePlayer {
         IBIO.output(message);
         for (int i = 0; i < employee_list.length; i++) {
             Employee current_employee = employee_list[i];
-            message = String.format("%2d. %-20s %-20d %-20d",
-                    i+1, current_employee.name, current_employee.salary, current_employee.experience);
-            IBIO.output(message);
+            if (current_employee.level <= PlayerStats.level) {
+                message = String.format("%2d. %-20s %-20d %-20d",
+                        i + 1, current_employee.name, current_employee.salary, current_employee.experience);
+                IBIO.output(message);
+            }
         }
     }
     public static void hire_employees() {
@@ -46,13 +48,17 @@ public class ManageEmployees_SinglePlayer {
         boolean successful_hire = false;
         int i = 0;
         while (i < employee_list.length && !successful_hire) {
-            if (employee_list[i].name.equals(chosen_employee)) {
+            if (employee_list[i].name.equals(chosen_employee) && employee_list[i].level <= PlayerStats.level) {
                 PlayerStats.myEmployees.add(employee_list[i]);
                 message = String.format("You have hired a new %s!", employee_list[i].name.toLowerCase());
                 IBIO.output(message);
                 successful_hire = true;
             }
             i = i + 1;
+        }
+        if (!successful_hire) {
+            IBIO.output("Hmm... that employee doesn't seem to be available, how about you try again!");
+            hire_employees();
         }
     }
     public static void list_owned_employees() {
