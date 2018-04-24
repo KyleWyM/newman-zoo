@@ -9,6 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import ibio.*;
 
+import static com.newman.game.DataCalculations.*;
 import static com.newman.game.TicketAlgorithm.ticket_price;
 import static com.newman.player.PlayerStats.*;
 
@@ -42,54 +43,9 @@ public class Main {
     public static void update() {
         dayNum++;
         IBIO.output("Turn ended");
-
-        int total_maintenance, total_income, size, rent;
-        size = myAnimals.size();
-            /*
-             * In here we include all things that should be updated daily
-             * For example:
-             *
-             * - Random events
-             * - Money, revenue, and expenses
-             * - Experience points
-             * - Reputation
-             *
-             * In addition, if we decide to make the game real time, we can include an actual game loop in this class.
-             */
-
-        //e.g. import com.newman.random_events
-        // Random_total.method();
-
-        rent = level * 10;
-        money -= rent;
-        IBIO.output(String.format("You have paid %d dollars in rent", rent));
-
-        total_maintenance = 0;
-
-        for (int i = 0; i < size; i++) {
-            total_maintenance = total_maintenance + myAnimals.get(i).maintenance;
-        }
-        money -= total_maintenance;
-        if (total_maintenance != 0) {
-            IBIO.output(String.format("You have paid %d dollars to feed your animals", total_maintenance));
-        }
-        reputation = 0;
-        for (int i = 0; i < size; i++) {
-            reputation += myAnimals.get(i).reputation;
-        }
-        int number = (int )(Math.random() * PlayerStats.reputation);
-        int visitors = (-(ticket_price)*(ticket_price)+number); //upside-down parabola, determines how many visitors
-        // come in with random number based on reputation as y intercept
-        if (visitors < 0) {
-            visitors = 0;
-        }
-        total_income = visitors * ticket_price;
-        if (ticket_price == 0) {
-            IBIO.output("Your tickets are free, your not making any profits!");
-        } else {
-            IBIO.output(String.format("You have earned %d dollars in ticket sales!", total_income));
-        }
-        money += total_income;
+        rent();
+        maintenance();
+        ticket_income();
     }
 
     public static void main(String[] args) {

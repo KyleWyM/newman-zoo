@@ -83,6 +83,8 @@ public class ManageAnimals {
                 animal.name = name;
                 IBIO.output(animal.getClass().getSimpleName() + " named " + name + " has been added.");
                 PlayerStats.myAnimals.add(animal);
+                PlayerStats.reputation += animal.reputation;
+                IBIO.output(PlayerStats.reputation);
             } else {
                 IBIO.output("You can't afford this animal.");
             }
