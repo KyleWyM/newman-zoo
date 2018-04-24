@@ -70,7 +70,7 @@ public class ManageEmployees_SinglePlayer {
     }
     public static void manage_employees() {
         String[] command_list = new String[] {
-                "hire employee", "my employees", "available employees", "leave animal management"
+                "hire employee", "my employees", "available employees", "leave employee management"
         };
         for (int i = 0; i < command_list.length; i++) {
             String message = String.format("%2d. %s", i+1, command_list[i]);

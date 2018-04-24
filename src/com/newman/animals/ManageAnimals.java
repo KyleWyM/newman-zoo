@@ -9,6 +9,8 @@ import com.newman.player.PlayerStats;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static com.newman.game.CommandListener.help;
+
 public class ManageAnimals {
     static String name = "Benjamin";
 
@@ -89,10 +91,40 @@ public class ManageAnimals {
             IBIO.output("That doesn't seem like it's in the store, how about you try again!");
             buy_animal();
         }
-
-
     }
-
+    public static void manage_animals() {
+        String[] command_list = new String[] {
+                "buy animal", "my animals", "available animals", "leave animal management"
+        };
+        for (int i = 0; i < command_list.length; i++) {
+            String message = String.format("%2d. %s", i+1, command_list[i]);
+            IBIO.output(message);
+        }
+        String command = IBIO.input("** ");
+        switch (command) {
+            case "1":
+            case "buy animal":
+            case "hire":
+                buy_animal();
+                break;
+            case "2":
+            case "my animals":
+                my_animals();
+                break;
+            case "3":
+            case "available animals":
+                species_list();
+                break;
+            case "4":
+            case "leave":
+            case "leave animal management":
+                help();
+                break;
+            default:
+                IBIO.output("Hmm that doesn't seem like a command, how about we try again!");
+                manage_animals();
+        }
+    }
     public static void main(String[] args) {
         species_list();
     }

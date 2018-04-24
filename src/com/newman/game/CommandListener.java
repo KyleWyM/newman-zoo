@@ -25,9 +25,7 @@ public class CommandListener {
 
     public static String[][] command_list = new String[][]{
             {"help", "lists possible commands."},
-            {"buy animal", "buys an animal of a specific type."},
-            {"owned animals", "lists all of your owned animals."},
-            {"species", "lists all species available."},
+            {"manage animals", "examine and buy new animals"},
             {"manage employees", "examine and hire new employees"},
             {"about giftshop", "gives information about how the giftshop works"},
             {"upgrade giftshop", "allows the user to enhance their giftshop"},
@@ -54,20 +52,12 @@ public class CommandListener {
             case "1":
                 help();
                 break;
-            case "buy animal":
+            case "manage animals":
             case "2":
-                ManageAnimals.buy_animal();
-                break;
-            case "owned animals":
-            case "3":
-                ManageAnimals.my_animals();
-                break;
-            case "species":
-            case "4":
-                ManageAnimals.species_list();
+                ManageAnimals.manage_animals();
                 break;
             case "manage employees":
-            case "5":
+            case "3":
                 ManageEmployees_SinglePlayer.manage_employees();
                 break;
             case "about giftshop":
@@ -77,12 +67,12 @@ public class CommandListener {
                 //GiftShop.increaseLevel();
                 break;
             case "report":
-            case "8":
+            case "6":
                 IBIO.output("Bank Account (Zooman Dollars): " + PlayerStats.money);
                 IBIO.output("Reputation: " + PlayerStats.reputation);
                 break;
             case "next":
-            case "9":
+            case "7":
                 //Ends the current turn by ending the turn loop in the Main
                 //Only works for turn based version
                 if (!Main.inRealTime) {
@@ -90,7 +80,7 @@ public class CommandListener {
                 } else IBIO.output("Must be in turn based mode for 'next' to work");
                 break;
             case "quit":
-            case "10":
+            case "8":
                 //This is for ending the game.
                 IBIO.output("Are you sure you would like to end the game?");
                 if (AskUser.yesOrNo()) {
