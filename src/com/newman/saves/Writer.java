@@ -42,7 +42,7 @@ public class Writer {
 
         System.out.println("Please choose the save path you want to " +
                 "write the new game in:");
-        System.out.println("\n\tCancel save \n\t1. Save1.ser\n\t2. Save2.ser\n\t3. Save3.ser");
+        System.out.println("\n\t0. Cancel \n\t1. Save 1\n\t2. Save 2\n\t3. Save 3");
         Scanner sc = new Scanner(System.in);
 
         String save_path;
