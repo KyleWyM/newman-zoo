@@ -51,6 +51,7 @@ public class Main {
         IBIO.output("Turn ended");
         rent();
         maintenance();
+        salaries();
         calculate_visitors();
         ticket_income();
         runShops();

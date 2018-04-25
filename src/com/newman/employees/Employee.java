@@ -9,7 +9,7 @@ public class Employee implements Serializable {
 
     public String name;
     int experience;
-    int salary; //weekly salary
+    public int salary; //weekly salary
     public int level;
 
     public Employee(String name, int experience, int salary, int level) {

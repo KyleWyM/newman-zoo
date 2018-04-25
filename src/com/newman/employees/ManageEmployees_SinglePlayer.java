@@ -4,6 +4,7 @@ import ibio.*;
 
 import static com.newman.employees.Employee.employee_list;
 import static com.newman.game.CommandListener.help;
+import static com.newman.game.DataCalculations.total_salaries;
 
 
 public class ManageEmployees_SinglePlayer {
@@ -50,6 +51,7 @@ public class ManageEmployees_SinglePlayer {
                 PlayerStats.myEmployees.add(employee_list[i]);
                 message = String.format("You have hired a new %s!", employee_list[i].name.toLowerCase());
                 IBIO.output(message);
+                total_salaries = total_salaries + employee_list[i].salary;
                 successful_hire = true;
             }
             i = i + 1;

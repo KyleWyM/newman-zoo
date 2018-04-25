@@ -8,12 +8,11 @@ import static com.newman.animals.ManageAnimals.available_animals;
 import static com.newman.employees.Employee.available_employees;
 import static com.newman.employees.Employee.employee_list;
 import static com.newman.game.TicketAlgorithm.ticket_price;
-import static com.newman.player.PlayerStats.level;
-import static com.newman.player.PlayerStats.myAnimals;
+import static com.newman.player.PlayerStats.*;
 
 public class DataCalculations {
     static int total_maintenance, total_income, rent;
-    public static int visitors;
+    public static int total_salaries, visitors;
     public static void calculate_visitors() {
         int number = (int )(Math.random() * (PlayerStats.reputation*5));
         visitors = (-(ticket_price)*(ticket_price)+number);
@@ -43,14 +42,17 @@ public class DataCalculations {
     }
 
     public static void maintenance() {
-        total_maintenance = 0;
-        for (int i = 0; i < myAnimals.size(); i++) {
-            total_maintenance = total_maintenance + myAnimals.get(i).maintenance;
-        }
         PlayerStats.money -= total_maintenance;
         if (total_maintenance != 0) {
             IBIO.output(String.format("You have paid %d dollars to feed your animals", total_maintenance));
         }
+    }
+    public static void salaries() {
+        if (total_salaries != 0)
+            if (dayNum % 7 == 0) {
+                PlayerStats.money -= total_salaries;
+                IBIO.output(String.format("You have paid %d dollars to your workers", total_maintenance));
+            }
     }
     static int[] level_thresholds = {0, 5, 10, 20, 50, 100, 200, 300, 500, 1000};
     public static void level_up(int reputation) {
