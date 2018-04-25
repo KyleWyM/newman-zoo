@@ -1,4 +1,4 @@
-import ibio.*;
+/*import ibio.*;
 public class Random_total {
     double Animal_number;
     double total_money;
@@ -96,3 +96,4 @@ public class Random_total {
         }
 
 }
+*/

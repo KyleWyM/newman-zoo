@@ -78,7 +78,7 @@ public class CommandListener {
                 IBIO.output("Reputation: " + PlayerStats.reputation);
                 break;
             case "next":
-            case "9":
+            case "8":
                 //Ends the current turn by ending the turn loop in the Main
                 //Only works for turn based version
                 if (!Main.inRealTime) {
@@ -86,7 +86,7 @@ public class CommandListener {
                 } else IBIO.output("Must be in turn based mode for 'next' to work");
                 break;
             case "quit":
-            case "10":
+            case "9":
                 //This is for ending the game.
                 IBIO.output("Are you sure you would like to end the game?");
                 if (AskUser.yesOrNo()) {

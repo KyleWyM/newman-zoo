@@ -10,6 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import ibio.*;
 
 import static com.newman.game.DataCalculations.*;
+import static com.newman.game.Random_Events.check_random_events;
 import static com.newman.game.TicketAlgorithm.ticket_price;
 import static com.newman.player.PlayerStats.*;
 
@@ -46,6 +47,7 @@ public class Main {
         rent();
         maintenance();
         ticket_income();
+        check_random_events();
     }
 
     public static void main(String[] args) {
