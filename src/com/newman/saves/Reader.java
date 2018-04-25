@@ -14,7 +14,7 @@ public class Reader {
         //Indicates whether a save or new game has been successfully selected and loaded
 
         System.out.println("\n\tWELCOME TO NEWMAN ZOO");
-        System.out.println("\n\t0. New Game\n\t1. Save 1\n\t2. Save 2\n\t3. Save 3");
+        System.out.println("\n\t1. New Game\n\t2. Save 1\n\t3. Save 2\n\t4. Save 3");
         System.out.println("\nPlease enter the number of the save you would like to load");
         String save_path;
         Scanner sc = new Scanner(System.in);
@@ -30,23 +30,23 @@ public class Reader {
             }
 
             switch (input) {
-                case 0:
+                case 1:
                     Main.save_path = "new game";
                     System.out.println("New game created.");
                     Main.newGame = true;
                     gameSelected = true;
                     break;
-                case 1:
+                case 2:
                     save_path = "Saves/Save1.ser";
                     game_data = read_file(save_path);
                     gameSelected = try_loading(game_data);
                     break;
-                case 2:
+                case 3:
                     save_path = "Saves/Save2.ser";
                     game_data = read_file(save_path);
                     gameSelected = try_loading(game_data);
                     break;
-                case 3:
+                case 4:
                     save_path = "Saves/Save3.ser";
                     game_data = read_file(save_path);
                     gameSelected = try_loading(game_data);
