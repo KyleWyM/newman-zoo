@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3687ae72-5f0a-4cd7-a38b-b17c9eebce0c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/employees/Employee.java" afterPath="$PROJECT_DIR$/src/com/newman/employees/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/employees/ManageEmployees_SinglePlayer.java" afterPath="$PROJECT_DIR$/src/com/newman/employees/ManageEmployees_SinglePlayer.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/game/Main.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java" afterPath="$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/game/DataCalculations.java" afterPath="$PROJECT_DIR$/src/com/newman/game/DataCalculations.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/game/Main.java" afterPath="$PROJECT_DIR$/src/com/newman/game/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" afterPath="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newman/game/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+            <state relative-caret-position="-38">
+              <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,24 +57,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManageAnimals.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java">
+      <file leaf-file-name="GiftShop.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="91" column="56" lean-forward="true" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
+            <state relative-caret-position="537">
+              <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
               <folding>
-                <element signature="e#1481#1489#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Animal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newman/animals/species/Animal.java">
+      <file leaf-file-name="ManageAnimals.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="238">
+              <caret line="90" column="64" lean-forward="false" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
+              <folding>
+                <element signature="e#1481#1489#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,8 +114,8 @@
       <file leaf-file-name="DataCalculations.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newman/game/DataCalculations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state relative-caret-position="554">
+              <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,7 +201,6 @@
         <option value="$PROJECT_DIR$/src/com/newman/saves/Writer.java" />
         <option value="$PROJECT_DIR$/src/com/newman/game/TicketAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/com/newman/saves/SaveObject.java" />
-        <option value="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" />
         <option value="$PROJECT_DIR$/src/com/newman/game/CommandListener.java" />
         <option value="$PROJECT_DIR$/src/com/newman/saves/Reader.java" />
         <option value="$PROJECT_DIR$/src/com/newman/employees/Employee.java" />
@@ -222,10 +223,11 @@
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Camel.java" />
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Armadillo.java" />
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Snake.java" />
-        <option value="$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java" />
         <option value="$PROJECT_DIR$/src/com/newman/employees/ManageEmployees_SinglePlayer.java" />
         <option value="$PROJECT_DIR$/src/com/newman/game/DataCalculations.java" />
+        <option value="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" />
         <option value="$PROJECT_DIR$/src/com/newman/game/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java" />
       </list>
     </option>
   </component>
@@ -291,14 +293,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="newman" type="462c0819:PsiDirectoryNode" />
               <item name="animals" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="newman-zoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="newman-zoo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="newman" type="462c0819:PsiDirectoryNode" />
-              <item name="animals" type="462c0819:PsiDirectoryNode" />
-              <item name="species" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="newman-zoo" type="b2602c69:ProjectViewProjectNode" />
@@ -589,7 +583,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116077000" />
+    <option name="totallyTimeSpent" value="116758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="23" width="1845" height="1057" extended-state="0" />
@@ -614,7 +608,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.23965141" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -843,42 +837,42 @@
         <state relative-caret-position="-7163">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1524694731000" expanded="true" signature="74658:74675" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="74658:74693" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="74658:74706" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="74658:74721" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="74756:76961" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="74769:76946" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="74823:75209" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="74842:75194" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="74957:75174" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="74997:75140" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75018:75118" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75259:75586" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75278:75571" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75373:75551" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75413:75517" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75434:75495" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75637:75902" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75656:75887" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75689:75867" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75729:75833" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75750:75811" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75945:76251" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="75964:76236" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76038:76216" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76078:76182" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76099:76160" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76302:76615" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76321:76600" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76402:76580" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76442:76546" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76463:76524" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76667:76932" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76686:76917" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76719:76897" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76759:76863" ph="..." />
-            <marker date="1524694731000" expanded="true" signature="76780:76841" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74546:74563" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74546:74581" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74546:74594" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74546:74609" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74644:76849" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74657:76834" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74711:75097" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74730:75082" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74845:75062" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74885:75028" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="74906:75006" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75147:75474" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75166:75459" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75261:75439" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75301:75405" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75322:75383" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75525:75790" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75544:75775" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75577:75755" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75617:75721" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75638:75699" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75833:76139" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75852:76124" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75926:76104" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75966:76070" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="75987:76048" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76190:76503" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76209:76488" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76290:76468" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76330:76434" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76351:76412" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76555:76820" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76574:76805" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76607:76785" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76647:76751" ph="..." />
+            <marker date="1524695367000" expanded="true" signature="76668:76729" ph="..." />
           </folding>
         </state>
       </provider>
@@ -895,16 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
           <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="192" column="0" lean-forward="true" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1107,26 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="91" column="56" lean-forward="true" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
-          <folding>
-            <element signature="e#1481#1489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/game/DataCalculations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/game/CommandListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1151,10 +1115,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="90" column="64" lean-forward="false" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
+          <folding>
+            <element signature="e#1481#1489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/game/DataCalculations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/game/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        <state relative-caret-position="-38">
+          <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

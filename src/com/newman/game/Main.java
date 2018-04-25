@@ -31,7 +31,6 @@ public class Main {
         available_animals.add(snake);
         available_animals.add(flamingo);
         available_animals.add(armadillo);
-        IBIO.output(String.valueOf(available_animals));
         //This runs at the start of the game
         //i.e. it sets things up and does things that are only executed once
         PlayerStats.name = IBIO.input("** Hello, what is your name?\n");
@@ -53,6 +52,7 @@ public class Main {
         maintenance();
         salaries();
         calculate_visitors();
+        IBIO.output(String.format("You had %d visitors today", visitors));
         ticket_income();
         runShops();
         level_up(reputation);

@@ -30,7 +30,7 @@ public class DataCalculations {
             IBIO.output("Hmm... you don't have any visitors! Either the " +
                     "ticket prices are too high or you should buy more animals!");
         } else {
-            IBIO.output(String.format("You have earned %d dollars in ticket sales!", total_income));
+            IBIO.output(String.format("You have earned $%d in ticket sales!", total_income));
         }
         PlayerStats.money += total_income;
     }
@@ -38,20 +38,20 @@ public class DataCalculations {
     public static void rent() {
         rent = level * 10;
         PlayerStats.money -= rent;
-        IBIO.output(String.format("You have paid %d dollars in rent", rent));
+        IBIO.output(String.format("You have paid $%d dollars in rent", rent));
     }
 
     public static void maintenance() {
         PlayerStats.money -= total_maintenance;
         if (total_maintenance != 0) {
-            IBIO.output(String.format("You have paid %d dollars to feed your animals", total_maintenance));
+            IBIO.output(String.format("You have paid $%d to feed your animals", total_maintenance));
         }
     }
     public static void salaries() {
         if (total_salaries != 0)
             if (dayNum % 7 == 0) {
                 PlayerStats.money -= total_salaries;
-                IBIO.output(String.format("You have paid %d dollars to your workers", total_maintenance));
+                IBIO.output(String.format("You have paid $%d to your workers", total_maintenance));
             }
     }
     static int[] level_thresholds = {0, 5, 10, 20, 50, 100, 200, 300, 500, 1000};
