@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3687ae72-5f0a-4cd7-a38b-b17c9eebce0c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/saves/ManageSaves.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/game/CommandListener.java" afterPath="$PROJECT_DIR$/src/com/newman/game/CommandListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/game/DataCalculations.java" afterPath="$PROJECT_DIR$/src/com/newman/game/DataCalculations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/game/Main.java" afterPath="$PROJECT_DIR$/src/com/newman/game/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" afterPath="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/saves/Reader.java" afterPath="$PROJECT_DIR$/src/com/newman/saves/Reader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java" afterPath="$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/newman/game/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="96">
               <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -49,10 +43,12 @@
       <file leaf-file-name="Reader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newman/saves/Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="15" column="80" lean-forward="false" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
+            <state relative-caret-position="225">
+              <caret line="15" column="56" lean-forward="false" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1524680907846" expanded="true" signature="2177:2548" ph="{...}" />
+                <marker date="1524680907846" expanded="true" signature="2610:2966" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -61,7 +57,7 @@
       <file leaf-file-name="GiftShop.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
+            <state relative-caret-position="2175">
               <caret line="150" column="9" lean-forward="false" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -73,8 +69,8 @@
       <file leaf-file-name="ManageAnimals.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="126" column="33" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="126" selection-end-column="33" />
+            <state relative-caret-position="486">
+              <caret line="128" column="5" lean-forward="false" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -93,7 +89,7 @@
       <file leaf-file-name="SaveObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newman/saves/SaveObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
+            <state relative-caret-position="930">
               <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -134,10 +130,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandListener.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CommandListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newman/game/CommandListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
+            <state relative-caret-position="1155">
               <caret line="86" column="19" lean-forward="false" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
               <folding />
             </state>
@@ -215,7 +211,6 @@
         <option value="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/GiftShop.java" />
         <option value="$PROJECT_DIR$/src/com/newman/player/PlayerStats.java" />
         <option value="$PROJECT_DIR$/src/com/newman/employees/ManageEmployees_SinglePlayer.java" />
-        <option value="$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java" />
         <option value="$PROJECT_DIR$/src/Random_total.java" />
         <option value="$PROJECT_DIR$/src/Random_Events.java" />
         <option value="$PROJECT_DIR$/src/com/newman/game/Random_Events.java" />
@@ -229,6 +224,7 @@
         <option value="$PROJECT_DIR$/src/com/newman/game/Main.java" />
         <option value="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" />
         <option value="$PROJECT_DIR$/src/com/newman/game/CommandListener.java" />
+        <option value="$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java" />
       </list>
     </option>
   </component>
@@ -242,7 +238,7 @@
     <option name="x" value="56" />
     <option name="y" value="23" />
     <option name="width" value="1606" />
-    <option name="height" value="1057" />
+    <option name="height" value="733" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -259,6 +255,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,9 +313,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -551,6 +547,7 @@
       <workItem from="1524675455206" duration="1331000" />
       <workItem from="1524676800373" duration="13000" />
       <workItem from="1524678013937" duration="986000" />
+      <workItem from="1524680887470" duration="87000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed buy animal index issue">
       <created>1524402790370</created>
@@ -563,10 +560,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110222000" />
+    <option name="totallyTimeSpent" value="110309000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="23" width="1606" height="1057" extended-state="0" />
+    <frame x="56" y="23" width="1606" height="733" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -576,7 +573,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14862682" sideWeight="0.40387723" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21413721" sideWeight="0.8743662" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44200626" sideWeight="0.8743662" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5961228" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -829,7 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="19" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,7 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,7 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="59" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="30" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,7 +951,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/saves/SaveObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
+        <state relative-caret-position="930">
           <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -986,35 +977,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/saves/Reader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="15" column="80" lean-forward="false" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
+        <state relative-caret-position="225">
+          <caret line="15" column="56" lean-forward="false" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="126" column="33" lean-forward="true" selection-start-line="97" selection-start-column="8" selection-end-line="126" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/game/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1524680907846" expanded="true" signature="2177:2548" ph="{...}" />
+            <marker date="1524680907846" expanded="true" signature="2610:2966" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
+        <state relative-caret-position="2175">
           <caret line="150" column="9" lean-forward="false" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1034,9 +1009,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/game/CommandListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
+        <state relative-caret-position="1155">
           <caret line="86" column="19" lean-forward="false" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="128" column="5" lean-forward="false" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/game/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

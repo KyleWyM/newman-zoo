@@ -95,11 +95,11 @@ public class ManageAnimals {
         }
     }
     public static void manage_animals() {
-        String[] command_list = new String[] {
+        String[] command_list = new String[]{
                 "buy animal", "my animals", "available animals", "leave animal management"
         };
         for (int i = 0; i < command_list.length; i++) {
-            String message = String.format("%2d. %s", i+1, command_list[i]);
+            String message = String.format("%2d. %s", i + 1, command_list[i]);
             IBIO.output(message);
         }
         String command = IBIO.input("** ");
@@ -126,8 +126,5 @@ public class ManageAnimals {
                 IBIO.output("Hmm that doesn't seem like a command, how about we try again!");
                 manage_animals();
         }
-    }
-    public static void main(String[] args) {
-        species_list();
     }
 }
