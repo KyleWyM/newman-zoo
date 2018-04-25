@@ -1,18 +1,19 @@
-/*package com.newman.giftshop;
+package com.newman.giftshop;
 
 import com.newman.game.AskUser;
 import ibio.*;
 import com.newman.player.PlayerStats;
 
+import static com.newman.game.CommandListener.help;
+import static com.newman.game.DataCalculations.visitors;
+
 public class GiftShop {
     //TODO: integrate employees with gift shop and make it so you can assign them roles
 
-     *
-
-    private static int foodBeverage_employees = (int) (PlayerStats.employees * 0.50);
-    int zoovenir_employees = (int) (PlayerStats.employees * 0.15);
-    int stuffedWithJoy_employees = (int) (PlayerStats.employees * 0.15);
-    int coffeeShop_employees = (int) (PlayerStats.employees * 0.20);
+    private static int foodBeverage_employees = (int) (PlayerStats.myEmployees.size() * 0.50);
+    static int zoovenir_employees = (int) (PlayerStats.myEmployees.size() * 0.15);
+    static int stuffedWithJoy_employees = (int) (PlayerStats.myEmployees.size() * 0.15);
+    static int coffeeShop_employees = (int) (PlayerStats.myEmployees.size() * 0.20);
 
     // the starting levels of the shops, the max is 3
     static private int FoodBeverageLevel = 1;
@@ -119,10 +120,40 @@ public class GiftShop {
             return shop_level;
         }
     }
+    public static void manage_shops() {
+        String[] command_list = new String[] {
+                "about giftshop", "upgrade giftshop", "leave shop management"
+        };
+        for (int i = 0; i < command_list.length; i++) {
+            String message = String.format("%2d. %s", i+1, command_list[i]);
+            IBIO.output(message);
+        }
+        String command = IBIO.input("** ");
+        switch (command) {
+            case "1":
+            case "about giftshop":
+            case "hire":
+                intro();
+                break;
+            case "2":
+            case "upgrade":
+            case "upgrade shops":
+                increaseLevel();
+                break;
+            case "3":
+            case "leave":
+            case "leave shop management":
+                help();
+                break;
+            default:
+                IBIO.output("Hmm that doesn't seem like a command, how about we try again!");
+                manage_shops();
+        }
+    }
 
-    public void runShops() {
+    public static void runShops() {
         int min, max, total_earnings = 0;
-        int shop_customers = (int) (0.5 * PlayerStats.visitors); //Half of visitors attend the shop
+        int shop_customers = (int) (0.5 * visitors); //Half of visitors attend the shop
 
         // The amount of money that each customer will spend in this shop
         // corresponds to a randomly generated number,
@@ -164,6 +195,6 @@ public class GiftShop {
         IBIO.output("Your shops have earned you $" + total_earnings + ".");
     }
 }
-*/
+
 
 
