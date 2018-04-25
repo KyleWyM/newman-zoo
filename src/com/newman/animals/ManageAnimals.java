@@ -37,10 +37,7 @@ public class ManageAnimals {
             armadillo, camel, dragon, elephant, flamingo, giraffe, hippo, kangaroo, koala, lion, okapi, orangutan,
             ostrich, penguin, snake, tiger, zebra
     };
-    public static ArrayList<Animal> available_animals = new ArrayList<Animal>()
-    {{add(armadillo); add(camel); add(dragon); add(elephant); add(flamingo); add(giraffe);
-        add(hippo); add(kangaroo); add(koala); add(lion); add(okapi); add(orangutan);
-        add(ostrich); add(penguin); add(snake); add(tiger); add(zebra);}};
+    public static ArrayList<Animal> available_animals = new ArrayList<Animal>();
 
     public static void my_animals() {
         IBIO.output("Your animals:");
