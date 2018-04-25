@@ -1,30 +1,26 @@
 package com.newman.game;
 
-import com.newman.saves.ManageSaves;
 import com.newman.player.PlayerStats;
-import com.newman.game.TicketAlgorithm;
 
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
-
+import com.newman.saves.Reader;
+import com.newman.saves.Writer;
 import ibio.*;
 
 import static com.newman.game.DataCalculations.*;
 import static com.newman.game.Random_Events.check_random_events;
-import static com.newman.game.TicketAlgorithm.ticket_price;
 import static com.newman.player.PlayerStats.*;
 
 public class Main {
     public static boolean runGame = true;
     public static boolean turnInProcess = true;
-    public static boolean newGame = false; //New game unless save is loaded
+    public static boolean newGame; //New game unless save is loaded
     public static String input;
     //It's not necessary to put the input string here,
     //but it's better not to redefine a variable every time the loop is run.
 
     public static boolean inRealTime = false;
 
-    static String save_path = "Saves/Save1.txt";
+    public static String save_path;
 
     public static void intro() {
         //This runs at the start of the game
@@ -52,22 +48,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ManageSaves.loadSave(save_path);
+        Reader.load_data();
+
         if (newGame) {
             //If loadSave() does not load a previous game, it will set newGame to true.
             intro();
-
-            while (Main.runGame) {
-                while (Main.turnInProcess) {
-                    //During the process of a turn, this loops through and gathers user input.
-                    CommandListener.getInput();
-                }
-                Main.update(); //This calls updates the game after every turn with changes, such as adding to dayNum
-
-                Main.turnInProcess = true; //This allows for the next turn
-            }
+            newGame = false;
         }
 
-        end();
+        while (Main.runGame) {
+            while (Main.turnInProcess) {
+                //During the process of a turn, this loops through and gathers user input.
+                CommandListener.getInput();
+            }
+            Main.update(); //This calls updates the game after every turn with changes, such as adding to dayNum
+
+            Main.turnInProcess = true; //This allows for the next turn
+        }
+
+        Writer.save_game();
     }
 }

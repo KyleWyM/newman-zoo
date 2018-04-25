@@ -1,6 +1,8 @@
 package com.newman.animals.species;
 
-public class Animal {
+import java.io.Serializable;
+
+public class Animal implements Serializable {
     public String name;
     public int price;
     public int maintenance; // per day; including food price as well

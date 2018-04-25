@@ -1,8 +1,6 @@
 package com.newman.employees;
-import com.newman.player.Player;
 import com.newman.player.PlayerStats;
 import ibio.*;
-import com.newman.employees.Employee;
 
 import static com.newman.employees.Employee.employee_list;
 import static com.newman.game.CommandListener.help;

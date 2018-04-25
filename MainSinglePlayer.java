@@ -2,8 +2,6 @@ package com.newman.game;
 
 import com.newman.animals.Animals;
 import com.newman.animals.Species_SinglePlayer;
-import com.newman.player.Player;
-import com.newman.saves.ManageSaves;
 import com.newman.player.PlayerStats;
 
 import java.util.concurrent.ThreadLocalRandom;

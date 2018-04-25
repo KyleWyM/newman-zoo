@@ -2,7 +2,6 @@ package com.newman.game;
 
 import com.newman.animals.ManageAnimals_SinglePlayer;
 import com.newman.player.PlayerStats;
-import com.newman.saves.ManageSaves;
 import com.newman.shop.GiftShop;
 
 import ibio.IBIO;

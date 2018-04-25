@@ -1,52 +1,81 @@
 package com.newman.saves;
 
-import com.newman.animals.species.*;
-import com.newman.game.Main;
-import com.newman.game.RealTime_GameLoop;
-import com.newman.player.PlayerStats;
-
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
+import java.io.ObjectOutputStream;
+import java.util.Scanner;
 
 public class Writer {
-
-    public static void eraseSave(String file_path) throws IOException {
-        FileWriter file_writer = new FileWriter(file_path,false);
-        PrintWriter print_writer = new PrintWriter(file_writer);
-        print_writer.print("");
-        print_writer.close();
+    public static void save_game() {
+        SaveObject game_data = new SaveObject();
+        if (game_data.getSave_path().equals("new game")) {
+            //If the game is new, then it does not have a save path assigned,
+            //so one must be selected and written on.
+            if (overwrite_save(game_data)) {
+                write_data(game_data);
+            } else {
+                System.out.println("Game not saved.");
+            }
+        } else {
+            write_data(game_data);
+        }
     }
 
-    public static void saveGame(String name, int turnNum, int money,
-                                int reputation, List<Animal> animals, String file_path) throws IOException {
-
-        FileWriter file_writer = new FileWriter(file_path,true);
-        PrintWriter print_writer = new PrintWriter(file_writer);
-        print_writer.println("Name: [" + name + "] &&&");
-        print_writer.println("Turn Number: " + turnNum);
-        print_writer.println("Money: " + money);
-        print_writer.println("Reputation: " + reputation);
-
-        int inRealTime = 0; //0 indicates false
-        if (Main.inRealTime) {
-            inRealTime = 1;
-            print_writer.println("GameMode: " + "[" + inRealTime
-                    + "," + RealTime_GameLoop.globalTime + "] &&&");
-        } else {
-            print_writer.println("GameMode: " + "[" + inRealTime
-                    + "," + PlayerStats.dayNum + "] &&&");
+    public static void write_data(SaveObject game_data) {
+        try {
+            String save_path = game_data.getSave_path();
+            FileOutputStream fs = new FileOutputStream(save_path);
+            ObjectOutputStream os = new ObjectOutputStream(fs);
+            os.writeObject(game_data);
+            os.close();
+            System.out.println("The game has been saved.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Unable to save game...");
         }
+    }
 
-        print_writer.print("Animals: ");
-        for (int i = 0; i < animals.size(); i++) {
-            print_writer.print("[" + animals.get(i).getClass().getSimpleName() + "," + animals.get(i).name
-                    + "," + animals.get(i).maintenance + "," + animals.get(i).reputation
-                     + "," + animals.get(i).level + "] ");
+    public static boolean overwrite_save(SaveObject game_data) {
+        boolean savepathSelected = false; //This signifies whether the user has cancelled or not
+        boolean userResponded = false;
+        //The game will keep prompting user for save path until one is correctly specified
+
+        System.out.println("Please choose the save path you want to " +
+                "write the new game in:");
+        System.out.println("\n\tCancel save \n\t1. Save1.ser\n\t2. Save2.ser\n\t3. Save3.ser");
+        Scanner sc = new Scanner(System.in);
+
+        String save_path;
+        while (!userResponded) {
+            int input = sc.nextInt();
+
+            switch (input) {
+                case 0:
+                    System.out.println("Action cancelled.");
+                    userResponded = true;
+                    break;
+                case 1:
+                    save_path = "Saves/Save1.ser";
+                    game_data.setSave_path(save_path);
+                    savepathSelected = true;
+                    userResponded = true;
+                    break;
+                case 2:
+                    save_path = "Saves/Save2.ser";
+                    game_data.setSave_path(save_path);
+                    savepathSelected = true;
+                    userResponded = true;
+                    break;
+                case 3:
+                    save_path = "Saves/Save3.ser";
+                    game_data.setSave_path(save_path);
+                    savepathSelected = true;
+                    userResponded = true;
+                    break;
+                default:
+                    System.out.println("Please enter a valid int.");
+            }
         }
-
-        print_writer.print("&&&");
-        print_writer.close();
+        return savepathSelected;
     }
 }

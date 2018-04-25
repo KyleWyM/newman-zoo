@@ -1,9 +1,7 @@
 package com.newman.game;
 
-import com.newman.player.Player;
 import com.newman.player.PlayerStats;
 import ibio.IBIO;
-import java.util.ArrayList;
 
 import static com.newman.game.TicketAlgorithm.ticket_price;
 import static com.newman.player.PlayerStats.level;

@@ -4,7 +4,6 @@ import com.newman.animals.ManageAnimals;
 import com.newman.employees.ManageEmployees_SinglePlayer;
 //import com.newman.giftshop.GiftShop;
 import com.newman.player.PlayerStats;
-import com.newman.saves.ManageSaves;
 
 import ibio.IBIO;
 
@@ -94,8 +93,6 @@ public class CommandListener {
                     //So if true, runGame is set false, ending the game
                     Main.turnInProcess = false;
                     Main.runGame = false;
-
-                    ManageSaves.writeSave(Main.save_path);
                 }
                 break;
             default:

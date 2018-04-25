@@ -2,7 +2,9 @@ package com.newman.employees;
 
 import ibio.*;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
 
     String name;
     int experience;
