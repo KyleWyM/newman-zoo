@@ -1,7 +1,6 @@
 package com.newman.game;
 
 import com.newman.player.PlayerStats;
-
 import com.newman.saves.Reader;
 import com.newman.saves.Writer;
 import ibio.*;
