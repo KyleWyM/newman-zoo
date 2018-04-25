@@ -12,7 +12,7 @@ import java.util.Arrays;
 import static com.newman.game.CommandListener.help;
 
 public class ManageAnimals {
-    static String name = "Benjamin";
+    static String name = "pippo";
 
     public static Armadillo armadillo = new Armadillo(name);
     static Camel camel = new Camel(name);
@@ -37,7 +37,10 @@ public class ManageAnimals {
             armadillo, camel, dragon, elephant, flamingo, giraffe, hippo, kangaroo, koala, lion, okapi, orangutan,
             ostrich, penguin, snake, tiger, zebra
     };
-    public static ArrayList<Animal> available_animals = new ArrayList<Animal>();
+    public static ArrayList<Animal> available_animals = new ArrayList<Animal>()
+    {{add(armadillo); add(camel); add(dragon); add(elephant); add(flamingo); add(giraffe);
+        add(hippo); add(kangaroo); add(koala); add(lion); add(okapi); add(orangutan);
+        add(ostrich); add(penguin); add(snake); add(tiger); add(zebra);}};
 
     public static void my_animals() {
         IBIO.output("Your animals:");
@@ -88,6 +91,7 @@ public class ManageAnimals {
                     animal.name = name;
                     IBIO.output(animal.getClass().getSimpleName() + " named " + name + " has been added.");
                     PlayerStats.myAnimals.add(animal);
+                    animal.PlaySound();
                     PlayerStats.reputation += animal.reputation;
                     IBIO.output(PlayerStats.reputation);
                 } else {
@@ -132,6 +136,13 @@ public class ManageAnimals {
             default:
                 IBIO.output("Hmm that doesn't seem like a command, how about we try again!");
                 manage_animals();
+        }
+    }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < available_animals.size(); i++) {
+            System.out.println(available_animals.get(i).getClass().getSimpleName() + " now making its sound.");
+            available_animals.get(i).PlaySound();
         }
     }
 }
