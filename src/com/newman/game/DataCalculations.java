@@ -3,6 +3,10 @@ package com.newman.game;
 import com.newman.player.PlayerStats;
 import ibio.IBIO;
 
+import static com.newman.animals.ManageAnimals.animal_list;
+import static com.newman.animals.ManageAnimals.available_animals;
+import static com.newman.employees.Employee.available_employees;
+import static com.newman.employees.Employee.employee_list;
 import static com.newman.game.TicketAlgorithm.ticket_price;
 import static com.newman.player.PlayerStats.level;
 import static com.newman.player.PlayerStats.myAnimals;
@@ -55,6 +59,18 @@ public class DataCalculations {
                 String message = String.format("Congrats! You have leveled up to level %d!", i+1);
                 IBIO.output(message);
                 PlayerStats.level = i+1;
+                for (int g = 0; g < employee_list.length; g++) {
+                    if (employee_list[g].level == PlayerStats.level) {
+                        available_employees.add(employee_list[g]);
+                        IBIO.output(String.format("You have unlocked the %s!", employee_list[g].name.toLowerCase()));
+                    }
+                }
+                for (int g = 0; g < animal_list.length; g++) {
+                    if (animal_list[g].level == PlayerStats.level) {
+                        available_animals.add(animal_list[g]);
+                        IBIO.output(String.format("You have unlocked the %s!", animal_list[g].name.toLowerCase()));
+                    }
+                }
             }
         }
     }

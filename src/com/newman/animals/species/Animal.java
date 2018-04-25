@@ -10,11 +10,11 @@ public class Animal implements Serializable {
     public int level; // 1-10;
     
 
-    public Animal(String name, int price, int maintenance, int reputation) {
+    public Animal(String name, int price, int maintenance, int reputation, int level) {
         this.name = name;
         this.price = price;
         this.maintenance = maintenance;
         this.reputation = reputation;
-        this.level = 0;
+        this.level = level;
     }
 }

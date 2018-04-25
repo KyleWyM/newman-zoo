@@ -14,11 +14,11 @@ import static com.newman.game.CommandListener.help;
 public class ManageAnimals {
     static String name = "Benjamin";
 
-    static Armadillo armadillo = new Armadillo(name);
+    public static Armadillo armadillo = new Armadillo(name);
     static Camel camel = new Camel(name);
     static Dragon dragon = new Dragon(name);
     static Elephant elephant = new Elephant(name);
-    static Flamingo flamingo = new Flamingo(name);
+    public static Flamingo flamingo = new Flamingo(name);
     static Giraffe giraffe = new Giraffe(name);
     static Hippo hippo = new Hippo(name);
     static Kangaroo kangaroo = new Kangaroo(name);
@@ -28,15 +28,16 @@ public class ManageAnimals {
     static Orangutan orangutan = new Orangutan(name);
     static Ostrich ostrich = new Ostrich(name);
     static Penguin penguin = new Penguin(name);
-    static Snake snake = new Snake(name);
+    public static Snake snake = new Snake(name);
     static Tiger tiger = new Tiger(name);
     static Zebra zebra = new Zebra(name);
 
 
-    public static ArrayList<Animal> species_list = new ArrayList<Animal>()
-    {{add(armadillo); add(camel); add(dragon); add(elephant); add(flamingo); add(giraffe);
-      add(hippo); add(kangaroo); add(koala); add(lion); add(okapi); add(orangutan);
-      add(ostrich); add(penguin); add(snake); add(tiger); add(zebra);}};
+    public static Animal[] animal_list = new Animal[] {
+            armadillo, camel, dragon, elephant, flamingo, giraffe, hippo, kangaroo, koala, lion, okapi, orangutan,
+            ostrich, penguin, snake, tiger, zebra
+    };
+    public static ArrayList<Animal> available_animals = new ArrayList<Animal>();
 
     public static void my_animals() {
         IBIO.output("Your animals:");
@@ -60,35 +61,41 @@ public class ManageAnimals {
         message = String.format("    %-20s %-20s %-20s %-20s", "Animal", "Price", "Maintenance", "Reputation");
         IBIO.output(message);
         int i;
-        for (i = 0; i < species_list.size(); i = i + 1) {
-            Animal current_animal = species_list.get(i);
+        for (i = 0; i < available_animals.size(); i = i + 1) {
+            Animal current_animal = available_animals.get(i);
             message = String.format("%2d. %-20s %-20d %-20d %-20d",
                     i + 1, current_animal.getClass().getSimpleName(), current_animal.price,
                     current_animal.maintenance, current_animal.reputation);
             IBIO.output(message);
         }
-        IBIO.output(i + 1 + ". Cancel");
+        IBIO.output(" "+ (i + 1) + ". Cancel");
     }
 
     public static void buy_animal() {
-        species_list(); String message = "** Choose the number of the animal you would like to purchase: ";
+        species_list();
+        String message = "** Choose the number of the animal you would like to purchase: ";
         int animal_index;
         String input = IBIO.input(message);
+        Animal animal;
         try {
             animal_index = Integer.parseInt(input) - 1; //Subtracting 1 so that 1 is index 0, 2 is 1, etc...
-            Animal animal = species_list.get(animal_index);
-            if (PlayerStats.money >= animal.price) {
-                String name = IBIO.input("Please, name your animal:");
-                PlayerStats.money -= animal.price;
-                animal.name = name;
-                IBIO.output(animal.getClass().getSimpleName() + " named " + name + " has been added.");
-                PlayerStats.myAnimals.add(animal);
-                PlayerStats.reputation += animal.reputation;
-                IBIO.output(PlayerStats.reputation);
-            } else {
-                IBIO.output("You can't afford this animal.");
+            if (0 <= animal_index && animal_index < available_animals.size()) {
+                animal = available_animals.get(animal_index);
+                if (PlayerStats.money >= animal.price) {
+                    String name = IBIO.input(String.format("Please, name your %s: ",
+                            animal.getClass().getSimpleName().toLowerCase()));
+                    PlayerStats.money -= animal.price;
+                    animal.name = name;
+                    IBIO.output(animal.getClass().getSimpleName() + " named " + name + " has been added.");
+                    PlayerStats.myAnimals.add(animal);
+                    PlayerStats.reputation += animal.reputation;
+                    IBIO.output(PlayerStats.reputation);
+                } else {
+                    IBIO.output("You can't afford this animal.");
+                }
+            } else if (animal_index == available_animals.size()){
+                manage_animals();
             }
-
         } catch (Exception e) {
             IBIO.output("That doesn't seem like it's in the store, how about you try again!");
             buy_animal();

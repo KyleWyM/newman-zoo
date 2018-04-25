@@ -6,6 +6,9 @@ import com.newman.saves.Reader;
 import com.newman.saves.Writer;
 import ibio.*;
 
+import static com.newman.animals.ManageAnimals.*;
+import static com.newman.employees.Employee.available_employees;
+import static com.newman.employees.Employee.reluctant_teenager;
 import static com.newman.game.DataCalculations.*;
 import static com.newman.game.Random_Events.check_random_events;
 import static com.newman.giftshop.GiftShop.runShops;
@@ -24,6 +27,11 @@ public class Main {
     public static String save_path;
 
     public static void intro() {
+        available_employees.add(reluctant_teenager);
+        available_animals.add(snake);
+        available_animals.add(flamingo);
+        available_animals.add(armadillo);
+        IBIO.output(String.valueOf(available_animals));
         //This runs at the start of the game
         //i.e. it sets things up and does things that are only executed once
         PlayerStats.name = IBIO.input("** Hello, what is your name?\n");
