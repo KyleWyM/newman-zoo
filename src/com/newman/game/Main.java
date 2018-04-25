@@ -8,6 +8,7 @@ import ibio.*;
 
 import static com.newman.game.DataCalculations.*;
 import static com.newman.game.Random_Events.check_random_events;
+import static com.newman.giftshop.GiftShop.runShops;
 import static com.newman.player.PlayerStats.*;
 
 public class Main {
@@ -42,7 +43,9 @@ public class Main {
         IBIO.output("Turn ended");
         rent();
         maintenance();
+        calculate_visitors();
         ticket_income();
+        runShops();
         check_random_events();
     }
 

@@ -9,9 +9,13 @@ import static com.newman.player.PlayerStats.myAnimals;
 
 public class DataCalculations {
     static int total_maintenance, total_income, rent;
-    public static void ticket_income() {
+    public static int visitors;
+    public static void calculate_visitors() {
         int number = (int )(Math.random() * (PlayerStats.reputation*5));
-        int visitors = (-(ticket_price)*(ticket_price)+number); //upside-down parabola, determines how many visitors
+        visitors = (-(ticket_price)*(ticket_price)+number);
+    }
+    public static void ticket_income() {
+         //upside-down parabola, determines how many visitors
         // come in with random number based on reputation as y intercept
         if (visitors < 0) {
             visitors = 0;
