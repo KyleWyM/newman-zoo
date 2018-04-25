@@ -48,4 +48,14 @@ public class DataCalculations {
             IBIO.output(String.format("You have paid %d dollars to feed your animals", total_maintenance));
         }
     }
+    static int[] level_thresholds = {0, 5, 10, 20, 50, 100, 200, 300, 500, 1000};
+    public static void level_up(int reputation) {
+        for (int i = 0; i < level_thresholds.length; i++) {
+            if (reputation >= level_thresholds[i] && PlayerStats.level < i+1) {
+                String message = String.format("Congrats! You have leveled up to level %d!", i+1);
+                IBIO.output(message);
+                PlayerStats.level = i+1;
+            }
+        }
+    }
 }

@@ -46,6 +46,7 @@ public class Main {
         calculate_visitors();
         ticket_income();
         runShops();
+        level_up(reputation);
         check_random_events();
     }
 
