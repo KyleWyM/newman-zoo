@@ -135,12 +135,14 @@ public class Booleans {
             }
         }
 
-        double species_abundance_ratio = (double) max_num_species / (double) PlayerStats.myAnimals.size();
-        if (PlayerStats.myAnimals.size() > 5 && species_abundance_ratio > 0.5) {
-            mySpeciesName = ManageAnimals.available_animals.get(max_species_index).getClass().getName();
-            IBIO.output("More than half your animals are " + mySpeciesName + "s!" +
-                    "\nCheck your report to see the consequences!");
-            too_many_of_one_animal = true;
+        if (PlayerStats.myAnimals.size() != 0) {
+            double species_abundance_ratio = (double) max_num_species / (double) PlayerStats.myAnimals.size();
+            if (PlayerStats.myAnimals.size() > 5 && species_abundance_ratio > 0.5) {
+                mySpeciesName = ManageAnimals.available_animals.get(max_species_index).getClass().getName();
+                IBIO.output("More than half your animals are " + mySpeciesName + "s!" +
+                        "\nCheck your report to see the consequences!");
+                too_many_of_one_animal = true;
+            }
         }
     }
 
@@ -168,33 +170,35 @@ public class Booleans {
         double numAnimals = (double) PlayerStats.myAnimals.size();
 
         boolean sufficient_animals = PlayerStats.myAnimals.size() >= 4;
-        //Special bonuses that come from different percentages of animals
-        double percentage_reptiles = ((double) num_reptiles / numAnimals);
-        double percentage_mammals = ((double) num_mammals / numAnimals);
-        double percentage_birds = ((double) num_birds / numAnimals);
-        double percentage_carnivores = ((double) num_carnivores / numAnimals);
+        if (numAnimals != 0) {
+            //Special bonuses that come from different percentages of animals
+            double percentage_reptiles = ((double) num_reptiles / numAnimals);
+            double percentage_mammals = ((double) num_mammals / numAnimals);
+            double percentage_birds = ((double) num_birds / numAnimals);
+            double percentage_carnivores = ((double) num_carnivores / numAnimals);
 
-        if (sufficient_animals) {
-            if (percentage_reptiles > 0.10) {
-                //If more than 10% of a players animals are reptiles, they get the reptile bonus
-                reptile_bonus = true;
-            } else if (percentage_reptiles < 0.05) {
-                too_few_reptiles = true;
-            }
-            if (percentage_mammals > 0.80) {
-                //If more than 80% of a players animals are reptiles, they get the reptile bonus
-                mammal_bonus = true;
-            } else if (percentage_mammals > 0.90) {
-                too_many_mammals = true;
-            }
-            if (percentage_birds > 0.10) {
-                //If more than 10% of a players animals are birds, they get the avian bonus
-                avian_bonus = true;
-            } else if (percentage_birds < 0.05) {
-                too_few_birds = true;
-            }
-            if (percentage_carnivores > 0.50) {
-                too_many_carnivores = true;
+            if (sufficient_animals) {
+                if (percentage_reptiles > 0.10) {
+                    //If more than 10% of a players animals are reptiles, they get the reptile bonus
+                    reptile_bonus = true;
+                } else if (percentage_reptiles < 0.05) {
+                    too_few_reptiles = true;
+                }
+                if (percentage_mammals > 0.80) {
+                    //If more than 80% of a players animals are reptiles, they get the reptile bonus
+                    mammal_bonus = true;
+                } else if (percentage_mammals > 0.90) {
+                    too_many_mammals = true;
+                }
+                if (percentage_birds > 0.10) {
+                    //If more than 10% of a players animals are birds, they get the avian bonus
+                    avian_bonus = true;
+                } else if (percentage_birds < 0.05) {
+                    too_few_birds = true;
+                }
+                if (percentage_carnivores > 0.50) {
+                    too_many_carnivores = true;
+                }
             }
         }
 
@@ -211,14 +215,18 @@ public class Booleans {
         } else if ((double) DataCalculations.visitors < numAnimals) {
             too_sparse = true;
         }
-        if ((double) change_in_ticket_prices / (double) initial_ticket_prices > 1.00) {
-            ticket_prices_fluctuating = true;
+        if (initial_ticket_prices != 0) {
+            if ((double) change_in_ticket_prices / (double) initial_ticket_prices > 1.00) {
+                ticket_prices_fluctuating = true;
+            }
         }
         if ((double) change_in_reputation < 0) {
             reputation_dropping = true;
         }
-        if ((double) change_in_visitors / (double) initial_visitors > 0.20) {
-            increasing_popularity = true;
+        if (initial_visitors != 0) {
+            if ((double) change_in_visitors / (double) initial_visitors > 0.20) {
+                increasing_popularity = true;
+            }
         }
     }
 }
