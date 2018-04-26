@@ -12,7 +12,7 @@ import static com.newman.player.PlayerStats.*;
 
 public class DataCalculations {
     static int total_income, rent;
-    public static int total_salaries, visitors, total_maintenance, work_force, total_labor;
+    public static int total_salaries, visitors, total_maintenance, work_force, total_labor, lose_counter;
 
     public static void calculate_visitors() {
         int number = (int) (Math.random() * (PlayerStats.reputation * 5));
@@ -126,6 +126,16 @@ public class DataCalculations {
                     }
                 }
             }
+        }
+    }
+    public static void lose() {
+        if (money <= 0) {
+            lose_counter += 1;
+        } else {
+            lose_counter = 0;
+        }
+        if (lose_counter == 3) {
+            IBIO.output("Your zoo has gone bankrupt! You had to close down. Sorry! You lost!");
         }
     }
 }

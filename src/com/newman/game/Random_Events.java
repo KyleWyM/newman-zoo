@@ -3,6 +3,8 @@ package com.newman.game;
 import com.newman.player.PlayerStats;
 import ibio.*;
 
+import java.util.Random;
+
 public class Random_Events {
     int reputation_change;
     int money_change;
@@ -25,15 +27,17 @@ public class Random_Events {
             "and decided to make a donation! Your zoo has been granted $1000!", -1, 20,
             0, 1000, null);
     static Random_Events chimp = new Random_Events("A rich chimpanzee loves your zoo " +
-            "and decided to make a donation! Your zoo has been granted $1000!", -1, 20,
+            "and decided to make a donation! Your zoo has been granted $1000!", 50, 70,
             0, 1000, null);
     static Random_Events earthquake = new Random_Events("Oh no! There was an earthquake at your zoo! " +
             "You had to pay $500 to fix the damages!", 20, 30, 0,
             -500, null);
     static Random_Events pass_go = new Random_Events("You passed go! Collect 200$!", 30, 50,
             0, 200, null);
+    static Random_Events news_report = new Random_Events("A news station has done a piece on your zoo! Your" +
+            "reputation has gone up 50!", 70, 90, 50, 0, null);
     static Random_Events[] random_events_list = new Random_Events[] {
-            donation, earthquake, pass_go
+            donation, earthquake, pass_go, chimp, news_report
     };
 
     public static void check_random_events() {

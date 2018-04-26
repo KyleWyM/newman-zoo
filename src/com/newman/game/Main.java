@@ -53,6 +53,7 @@ public class Main {
         level_up(reputation);
         check_random_events();
         ComplaintChecker.update();
+        lose();
     }
 
     public static void main(String[] args) {
