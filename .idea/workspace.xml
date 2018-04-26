@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89dd0f32-3683-4cc0-982e-c7fcba048825" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/animals/species/Flamingo.java" afterPath="$PROJECT_DIR$/src/com/newman/animals/species/Flamingo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/animals/species/Snake.java" afterPath="$PROJECT_DIR$/src/com/newman/animals/species/Snake.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" afterPath="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GiftShop.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GiftShop.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="86" lean-forward="false" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+            <state relative-caret-position="961">
+              <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kangaroo.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Kangaroo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newman/animals/species/Kangaroo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -173,7 +172,6 @@
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Penguin.java" />
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Tiger.java" />
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Zebra.java" />
-        <option value="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" />
         <option value="$PROJECT_DIR$/src/com/newman/employees/Employee.java" />
         <option value="$PROJECT_DIR$/src/com/newman/game/DataCalculations.java" />
         <option value="$PROJECT_DIR$/src/com/newman/animals/ManageAnimals.java" />
@@ -193,6 +191,7 @@
         <option value="$PROJECT_DIR$/src/old_classes/Gift Shop final update/GiftShop.java" />
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Snake.java" />
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Flamingo.java" />
+        <option value="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" />
       </list>
     </option>
   </component>
@@ -545,7 +544,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19155000" />
+    <option name="totallyTimeSpent" value="19492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="23" width="1144" height="709" extended-state="0" />
@@ -559,7 +558,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14862682" sideWeight="0.40387723" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45928338" sideWeight="0.8743662" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45928338" sideWeight="0.8743662" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.5961228" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -976,14 +975,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="86" lean-forward="false" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
-          <folding />
+          <folding>
+            <element signature="e#0#3355#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -991,6 +985,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,6 +1030,14 @@
             <element signature="e#110#111#0" expanded="true" />
             <element signature="e#177#178#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="961">
+          <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

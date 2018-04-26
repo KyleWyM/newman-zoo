@@ -6,14 +6,15 @@ import com.newman.player.PlayerStats;
 
 import static com.newman.game.CommandListener.help;
 import static com.newman.game.DataCalculations.visitors;
+import static com.newman.game.DataCalculations.work_force;
 
 public class GiftShop {
     //TODO: integrate employees with gift shop and make it so you can assign them roles
 
-    private static int foodBeverage_employees = (int) (PlayerStats.myEmployees.size() * 0.05);
-    static int zoovenir_employees = (int) (PlayerStats.myEmployees.size() * 0.04);
-    static int stuffedWithJoy_employees = (int) (PlayerStats.myEmployees.size() * 0.02);
-    static int coffeeShop_employees = (int) (PlayerStats.myEmployees.size() * 0.04);
+    private static int foodBeverage_employees = (int) (work_force * 0.1);
+    static int zoovenir_employees = (int) (work_force * 0.08);
+    static int stuffedWithJoy_employees = (int) (work_force * 0.04);
+    static int coffeeShop_employees = (int) (work_force * 0.04);
 
     // the starting levels of the shops, the max is 3
     static private int FoodBeverageLevel = 1;
