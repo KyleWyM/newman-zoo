@@ -4,6 +4,7 @@ import com.newman.animals.species.Animal;
 import com.newman.animals.species.*;
 import ibio.*;
 import com.newman.player.PlayerStats;
+import static com.newman.game.DataCalculations.total_maintenance;
 
 import java.util.ArrayList;
 
@@ -51,6 +52,7 @@ public class ManageAnimals {
                     current_animal.maintenance, current_animal.reputation);
             IBIO.output(message);
         }
+        manage_animals();
     }
 
     public static void species_list() {
@@ -74,7 +76,7 @@ public class ManageAnimals {
         Animal animal;
 
         species_list(); //Outputs a list of animals so that the user can see their choices
-        IBIO.output(available_animals.size() + 1 + ". Cancel");
+        IBIO.output(" " + (available_animals.size() + 1)+ ". Cancel");
         //The above output method adds a cancel option at the end of the list of species
         //It will always be one more than the number of available species so that it comes right after in the list
 
@@ -103,8 +105,10 @@ public class ManageAnimals {
                     //Animal is added and it plays its sound
                     PlayerStats.myAnimals.add(animal);
                     animal.PlaySound();
+                    manage_animals();
                 } else {
-                    IBIO.output("You can't afford this animal.");
+                    IBIO.output("You can't afford that animal.");
+                    manage_animals();
                 }
             } else if (animal_index == available_animals.size()) {
                 manage_animals();
@@ -114,9 +118,29 @@ public class ManageAnimals {
             buy_animal();
         }
     }
+    public static void sell_animal() {
+        my_animals();
+        IBIO.output(String.format("%2d. keep your animals", PlayerStats.myAnimals.size()+1));
+        String message = "Which animal would you like to sell? (You receive half of the cost of the animal)\n** ";
+        int chosen_animal_index = IBIO.inputInt(message);
+        if (0 < chosen_animal_index && chosen_animal_index <= PlayerStats.myAnimals.size()) {
+            total_maintenance = total_maintenance - PlayerStats.myAnimals.get(chosen_animal_index-1).maintenance;
+            IBIO.output(String.format("You have sold your %s for $%d!",
+                    PlayerStats.myAnimals.get(chosen_animal_index-1).name,
+                    PlayerStats.myAnimals.get(chosen_animal_index-1).price/2));
+            PlayerStats.money += PlayerStats.myAnimals.get(chosen_animal_index-1).price/2;
+            PlayerStats.myAnimals.remove(PlayerStats.myAnimals.get(chosen_animal_index-1));
+            manage_animals();
+        } else if (chosen_animal_index == PlayerStats.myAnimals.size()+1) {
+            manage_animals();
+        } else {
+            IBIO.output("Hmm... that doesn't seem like one of your animals, try again!");
+            sell_animal();
+        }
+    }
     public static void manage_animals() {
         String[] command_list = new String[]{
-                "buy animal", "my animals", "available animals", "leave animal management"
+                "buy animal", "sell animal", "my animals", "available animals", "leave animal management"
         };
         for (int i = 0; i < command_list.length; i++) {
             String message = String.format("%2d. %s", i + 1, command_list[i]);
@@ -126,18 +150,23 @@ public class ManageAnimals {
         switch (command) {
             case "1":
             case "buy animal":
-            case "hire":
+            case "buy":
                 buy_animal();
                 break;
             case "2":
+            case "sell":
+            case "sell animal":
+                sell_animal();
+                break;
+            case "3":
             case "my animals":
                 my_animals();
                 break;
-            case "3":
+            case "4":
             case "available animals":
                 species_list();
                 break;
-            case "4":
+            case "5":
             case "leave":
             case "leave animal management":
                 help();
@@ -145,6 +174,7 @@ public class ManageAnimals {
             default:
                 IBIO.output("Hmm that doesn't seem like a command, how about we try again!");
                 manage_animals();
+                break;
         }
     }
 

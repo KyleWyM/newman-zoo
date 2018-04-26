@@ -29,10 +29,12 @@ public class Employee implements Serializable {
     static Employee martin = new Employee("Martin Lentz", 0, 1, 6, true);
     static Employee steve_irwin = new Employee("Steve Irwin", 100, 1000, 10, true);
     static Employee father_luca = new Employee("Father Luca", 10000, 1000000000, 11, true);
+
     public static Employee[] employee_list = new Employee[] {
       reluctant_teenager, average_teenager, nerdy_teenager, undergrad_student, biology_major, zoologist, martin,
             steve_irwin, father_luca
     };
+
     public static ArrayList<Employee> available_employees = new ArrayList<Employee>();
 }
 

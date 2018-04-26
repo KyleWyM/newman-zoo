@@ -11,8 +11,8 @@ import static com.newman.game.TicketAlgorithm.ticket_price;
 import static com.newman.player.PlayerStats.*;
 
 public class DataCalculations {
-    static int total_maintenance, total_income, rent;
-    public static int total_salaries, visitors;
+    static int total_income, rent;
+    public static int total_salaries, visitors, total_maintenance;
     public static void calculate_visitors() {
         int number = (int )(Math.random() * (PlayerStats.reputation*5));
         visitors = (-(ticket_price)*(ticket_price)+number);
