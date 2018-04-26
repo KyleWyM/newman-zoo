@@ -30,18 +30,13 @@ public class Main {
         available_animals.add(snake);
         available_animals.add(flamingo);
         available_animals.add(armadillo);
+
         //This runs at the start of the game
         //i.e. it sets things up and does things that are only executed once
         PlayerStats.name = IBIO.input("** Hello, what is your name?\n");
         String message = "** Welcome to the zoo " + PlayerStats.name +
                 ". You are now its owner...\nType 'help' for a list of commands.";
         IBIO.output(message);
-    }
-
-
-    public static void end() {
-        //This runs at the end of the game
-        //i.e. it sets things up and does things that are only executed once at the end
     }
 
     public static void update() {
@@ -51,7 +46,6 @@ public class Main {
         maintenance();
         salaries();
         calculate_visitors();
-        IBIO.output(String.format("You had %d visitors today", visitors));
         ticket_income();
         runShops();
         level_up(reputation);

@@ -20,12 +20,9 @@ public class Random_Events {
         this.special_event = special_event;
     }
 
-    public boolean eventOccurs(int chance) {
-        return (this.min < chance && chance <= this.max);
-    }
 
     static Random_Events donation = new Random_Events("A rich animal enthusiast loves your zoo " +
-            "and decided to make a donation! Your zoo has been granted $1000!", -1, 20,
+            "and decided to make a donation! Your zoo has been granted 1000$!", -1, 20,
             0, 1000, null);
     static Random_Events earthquake = new Random_Events("Oh no! There was an earthquake at your zoo! " +
             "You had to pay 500$ to fix the damages!", 20, 30, 0,
@@ -39,7 +36,7 @@ public class Random_Events {
     public static void check_random_events() {
         int number = (int )(Math.random() * 1000);
         for (int i = 0; i < random_events_list.length; i++) {
-            if (random_events_list[i].min < number && number <= random_events_list[i].max) {
+                if (random_events_list[i].min < number && number <= random_events_list[i].max) {
                 IBIO.output(random_events_list[i].description);
                 PlayerStats.money += random_events_list[i].money_change;
                 PlayerStats.reputation += random_events_list[i].reputation_change;

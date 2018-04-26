@@ -1,5 +1,6 @@
 package com.newman.saves;
 
+import com.newman.animals.ManageAnimals;
 import com.newman.animals.species.Animal;
 import com.newman.employees.Employee;
 import com.newman.game.Main;
@@ -9,22 +10,27 @@ import com.newman.player.PlayerStats;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class SaveObject implements Serializable {
+class SaveObject implements Serializable {
+
+
+    private static final long serialVersionUID = -668677731915942571L;
+
     //Game Data
     private String save_path;
-    public boolean newGame;
-    public int dayNum;
+    private boolean newGame;
+    private int dayNum;
 
     //Player Data
-    public String name;
-    public int money;
-    public int reputation;
-    public int level;
-    public ArrayList<Animal> myAnimals = new ArrayList<>();
-    public ArrayList<Employee> myEmployees = new ArrayList<>();
-    public int ticket_price;
+    private String name;
+    private int money;
+    private int reputation;
+    private int level;
+    private ArrayList<Animal> myAnimals = new ArrayList<>();
+    private ArrayList<Employee> myEmployees = new ArrayList<>();
+    private int ticket_price;
+    private ArrayList<Animal> available_animals = new ArrayList<>();
 
-    public SaveObject() {
+    SaveObject() {
         //Game Data
         this.dayNum = PlayerStats.dayNum;
         this.save_path = Main.save_path;
@@ -40,9 +46,10 @@ public class SaveObject implements Serializable {
 
         //Other
         this.ticket_price = TicketAlgorithm.ticket_price;
+        this.available_animals = ManageAnimals.available_animals;
     }
 
-    public void loadDataToGame() {
+    void loadDataToGame() {
         //Game Data
         PlayerStats.dayNum = this.dayNum;
         Main.save_path = this.save_path;
@@ -58,13 +65,14 @@ public class SaveObject implements Serializable {
 
         //Other
         TicketAlgorithm.ticket_price = this.ticket_price;
+        ManageAnimals.available_animals = this.available_animals;
     }
 
-    public String getSave_path() {
+    String getSave_path() {
         return save_path;
     }
 
-    public void setSave_path(String save_path) {
+    void setSave_path(String save_path) {
         this.save_path = save_path;
     }
 }

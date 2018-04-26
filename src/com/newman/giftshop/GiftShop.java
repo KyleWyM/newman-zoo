@@ -192,9 +192,7 @@ public class GiftShop {
         }
 
         PlayerStats.money += total_earnings;
-        if (total_earnings != 0) {
-            IBIO.output("Your shops have earned you $" + total_earnings);
-        }
+        IBIO.output("Your shops have earned you $" + total_earnings + ".");
     }
 }
 
