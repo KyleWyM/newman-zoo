@@ -13,9 +13,10 @@ import static com.newman.player.PlayerStats.*;
 public class DataCalculations {
     static int total_income, rent;
     public static int total_salaries, visitors, total_maintenance, work_force, total_labor;
+
     public static void calculate_visitors() {
-        int number = (int )(Math.random() * (PlayerStats.reputation*5));
-        visitors = (-(ticket_price)*(ticket_price)+number);
+        int number = (int) (Math.random() * (PlayerStats.reputation * 5));
+        visitors = (-(ticket_price) * (ticket_price) + number);
         if (visitors < 0) {
             visitors = 0;
         }
@@ -26,14 +27,15 @@ public class DataCalculations {
             IBIO.output(String.format("You had %d visitors today!", visitors));
         }
     }
+
     public static void ticket_income() {
-         //upside-down parabola, determines how many visitors
+        //upside-down parabola, determines how many visitors
         // come in with random number based on reputation as y intercept
 
         total_income = visitors * ticket_price;
         if (ticket_price == 0) {
             IBIO.output("Your tickets are free, your not making any profits!");
-        }  else {
+        } else {
             IBIO.output(String.format("You have earned %d dollars in ticket sales!", total_income));
         }
         PlayerStats.money += total_income;
@@ -51,6 +53,7 @@ public class DataCalculations {
             IBIO.output(String.format("You have paid %d dollars to feed your animals", total_maintenance));
         }
     }
+
     public static void salaries() {
         if (total_salaries != 0)
             if (dayNum % 7 == 0) {
@@ -58,6 +61,7 @@ public class DataCalculations {
                 IBIO.output(String.format("You have paid %d dollars to your workers", total_maintenance));
             }
     }
+
     public static void inspection() {
         int difference = work_force - total_labor;
         if (difference > 100) {
@@ -100,13 +104,15 @@ public class DataCalculations {
             PlayerStats.myAnimals.remove(PlayerStats.myAnimals.get(0));
         }
     }
+
     static int[] level_thresholds = {0, 50, 100, 200, 300, 500, 1000, 2000, 3000, 5000, 10000};
+
     public static void level_up(int reputation) {
         for (int i = 0; i < level_thresholds.length; i++) {
-            if (reputation >= level_thresholds[i] && PlayerStats.level < i+1) {
-                String message = String.format("Congrats! You have leveled up to level %d!", i+1);
+            if (reputation >= level_thresholds[i] && PlayerStats.level < i + 1) {
+                String message = String.format("Congrats! You have leveled up to level %d!", i + 1);
                 IBIO.output(message);
-                PlayerStats.level = i+1;
+                PlayerStats.level = i + 1;
                 for (int g = 0; g < employee_list.length; g++) {
                     if (employee_list[g].level == PlayerStats.level) {
                         available_employees.add(employee_list[g]);

@@ -43,15 +43,15 @@ public class ManageAnimals {
     public static void my_animals() {
         IBIO.output("Your animals:");
 
-        String message = String.format("    %-20s %-20s %-20s %-20s %-20s", "Animal", "Name", "Price",
+        String message = String.format("    %-20s %-20s %-20s %-20s %-20s %-20s", "Animal", "Name", "Price", "Labor",
                 "Maintenance", "Reputation");
         IBIO.output(message);
 
         for (int i = 0; i < PlayerStats.myAnimals.size(); i = i + 1) {
             Animal current_animal = PlayerStats.myAnimals.get(i);
-            message = String.format("%2d. %-20s %-20s %-20d %-20d %-20d",
+            message = String.format("%2d. %-20s %-20s %-20d %-20d %-20d %-20d",
                     i + 1, current_animal.getClass().getSimpleName(), current_animal.name, current_animal.price,
-                    current_animal.maintenance, current_animal.reputation);
+                    current_animal.maintenance, current_animal.reputation, current_animal.labor);
             IBIO.output(message);
         }
     }
@@ -60,14 +60,14 @@ public class ManageAnimals {
         //This is a list that tells the user what animals they have unlocked and are able to buy
         IBIO.output("Available animals:");
         String message;
-        message = String.format("\t%-20s %-20s %-20s %-20s", "Animal", "Price", "Maintenance", "Reputation");
+        message = String.format("\t%-20s %-20s %-20s %-20s %-20s", "Animal", "Price", "Maintenance", "Reputation", "Labor");
         IBIO.output(message);
 
         for (int i = 0; i < available_animals.size(); i = i + 1) {
             Animal current_animal = available_animals.get(i);
-            message = String.format("%2d. %-20s %-20d %-20d %-20d",
+            message = String.format("%2d. %-20s %-20d %-20d %-20d %-20d",
                     i + 1, current_animal.getClass().getSimpleName(), current_animal.price,
-                    current_animal.maintenance, current_animal.reputation);
+                    current_animal.maintenance, current_animal.reputation, current_animal.labor);
             IBIO.output(message);
         }
     }
