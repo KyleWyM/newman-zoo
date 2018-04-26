@@ -1,5 +1,6 @@
 package com.newman.game;
 
+import com.newman.complaints.ComplaintChecker;
 import com.newman.player.PlayerStats;
 import com.newman.saves.Reader;
 import com.newman.saves.Writer;
@@ -51,6 +52,7 @@ public class Main {
         inspection();
         level_up(reputation);
         check_random_events();
+        ComplaintChecker.update();
     }
 
     public static void main(String[] args) {

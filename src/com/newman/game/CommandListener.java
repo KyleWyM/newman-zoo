@@ -1,6 +1,7 @@
 package com.newman.game;
 
 import com.newman.animals.ManageAnimals;
+import com.newman.complaints.ComplaintChecker;
 import com.newman.employees.ManageEmployees_SinglePlayer;
 //import com.newman.giftshop.GiftShop;
 import com.newman.giftshop.GiftShop;
@@ -73,6 +74,7 @@ public class CommandListener {
             case "6":
                 IBIO.output("Bank Account: $" + PlayerStats.money);
                 IBIO.output("Reputation: " + PlayerStats.reputation);
+                ComplaintChecker.listComplaints();
                 break;
             case "next":
             case "7":

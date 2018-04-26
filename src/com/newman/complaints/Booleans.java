@@ -10,10 +10,8 @@ import ibio.IBIO;
 import java.util.ArrayList;
 
 public class Booleans {
-    //TODO: save innitial variables and complaints_initialized
-    //TODO: add a complaints list in report
 
-    private static boolean complaints_initialized = false;
+    public static boolean complaints_initialized = false;
 
     //Animal related booleans
     static boolean too_many_mammals;
@@ -34,20 +32,20 @@ public class Booleans {
     static boolean too_sparse;
     static boolean increasing_popularity;
 
-    private static int initial_money;
+    public static int initial_money;
     private static int change_in_money;
 
-    private static int initial_reputation;
+    public static int initial_reputation;
     private static int change_in_reputation;
 
-    private static int initial_ticket_prices;
+    public static int initial_ticket_prices;
     private static int change_in_ticket_prices;
 
-    private static int initial_visitors;
+    public static int initial_visitors;
     private static int change_in_visitors;
 
     //Animal data
-    private static int initial_num_animals;
+    public static int initial_num_animals;
     private static int change_in_num_animals;
 
     static int num_reptiles;

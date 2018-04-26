@@ -2,6 +2,7 @@ package com.newman.saves;
 
 import com.newman.animals.ManageAnimals;
 import com.newman.animals.species.Animal;
+import com.newman.complaints.Booleans;
 import com.newman.employees.Employee;
 import com.newman.game.Main;
 import com.newman.game.TicketAlgorithm;
@@ -27,8 +28,18 @@ class SaveObject implements Serializable {
     private int level;
     private ArrayList<Animal> myAnimals = new ArrayList<>();
     private ArrayList<Employee> myEmployees = new ArrayList<>();
+
+    //Other
     private int ticket_price;
     private ArrayList<Animal> available_animals = new ArrayList<>();
+
+    //Complaint data
+    private boolean complaints_initialized;
+    private int initial_money;
+    private int initial_ticket_prices;
+    private int initial_reputation;
+    private int initial_num_animals;
+    private int initial_visitors;
 
     SaveObject() {
         //Game Data
@@ -47,6 +58,14 @@ class SaveObject implements Serializable {
         //Other
         this.ticket_price = TicketAlgorithm.ticket_price;
         this.available_animals = ManageAnimals.available_animals;
+
+        //Complaint data
+        this.complaints_initialized = Booleans.complaints_initialized;
+        this.initial_money = Booleans.initial_money;
+        this.initial_ticket_prices = Booleans.initial_ticket_prices;
+        this.initial_reputation = Booleans.initial_reputation;
+        this.initial_num_animals = Booleans.initial_num_animals;
+        this.initial_visitors = Booleans.initial_visitors;
     }
 
     void loadDataToGame() {
@@ -66,6 +85,14 @@ class SaveObject implements Serializable {
         //Other
         TicketAlgorithm.ticket_price = this.ticket_price;
         ManageAnimals.available_animals = this.available_animals;
+
+        //Complaint data
+        Booleans.complaints_initialized = this.complaints_initialized;
+        Booleans.initial_money = this.initial_money ;
+        Booleans.initial_ticket_prices = this.initial_ticket_prices;
+        Booleans.initial_reputation = this.initial_reputation;
+        Booleans.initial_num_animals = this.initial_num_animals;
+        Booleans.initial_visitors = this.initial_visitors;
     }
 
     String getSave_path() {
