@@ -71,7 +71,7 @@ public class CommandListener {
                 break;
             case "report":
             case "6":
-                IBIO.output("Bank Account (Zooman Dollars): " + PlayerStats.money);
+                IBIO.output("Bank Account: $" + PlayerStats.money);
                 IBIO.output("Reputation: " + PlayerStats.reputation);
                 break;
             case "next":

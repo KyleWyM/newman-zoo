@@ -4,6 +4,7 @@ import ibio.*;
 
 import static com.newman.employees.Employee.available_employees;
 import static com.newman.employees.Employee.employee_list;
+import static com.newman.employees.Employee.father_luca;
 import static com.newman.game.CommandListener.help;
 import static com.newman.game.DataCalculations.total_salaries;
 
@@ -85,8 +86,23 @@ public class ManageEmployees_SinglePlayer {
         String message = "Which employee would you like to fire?\n** ";
         int chosen_employee_index = IBIO.inputInt(message);
         if (0 < chosen_employee_index && chosen_employee_index <= PlayerStats.myEmployees.size()) {
-            PlayerStats.myEmployees.remove(PlayerStats.myEmployees.get(chosen_employee_index-1));
-            total_salaries -= PlayerStats.myEmployees.get(chosen_employee_index-1).salary;
+            if (available_employees.get(chosen_employee_index-1).equals(father_luca)) {
+                message = "You can't fire Father Luca";
+                IBIO.output(message);
+                fire_employees();
+            } else if (available_employees.get(chosen_employee_index-1).proper_name) {
+                message = String.format("You have fired %s!", available_employees.get(chosen_employee_index-1).name);
+                IBIO.output(message);
+                total_salaries -= PlayerStats.myEmployees.get(chosen_employee_index - 1).salary;
+                PlayerStats.myEmployees.remove(PlayerStats.myEmployees.get(chosen_employee_index-1));
+                manage_employees();
+            } else {
+                message = String.format("You have hired a new %s!", available_employees.get(chosen_employee_index-1).name.toLowerCase());
+                IBIO.output(message);
+                total_salaries -= PlayerStats.myEmployees.get(chosen_employee_index - 1).salary;
+                PlayerStats.myEmployees.remove(PlayerStats.myEmployees.get(chosen_employee_index-1));
+                manage_employees();
+            }
         } else if (chosen_employee_index == PlayerStats.myEmployees.size()+1) {
             manage_employees();
         } else {
