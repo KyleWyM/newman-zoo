@@ -70,7 +70,8 @@ public class DataCalculations {
                 for (int g = 0; g < animal_list.length; g++) {
                     if (animal_list[g].level == PlayerStats.level) {
                         available_animals.add(animal_list[g]);
-                        IBIO.output(String.format("You have unlocked the %s!", animal_list[g].name.toLowerCase()));
+                        IBIO.output(String.format("You have unlocked the %s!",
+                                animal_list[g].getClass().getSimpleName().toLowerCase()));
                     }
                 }
             }

@@ -2,6 +2,7 @@ package com.newman.employees;
 import com.newman.player.PlayerStats;
 import ibio.*;
 
+import static com.newman.employees.Employee.available_employees;
 import static com.newman.employees.Employee.employee_list;
 import static com.newman.game.CommandListener.help;
 import static com.newman.game.DataCalculations.total_salaries;
@@ -24,15 +25,13 @@ public class ManageEmployees_SinglePlayer {
         String message;
         message = String.format("    %-20s %-20s %-20s", "Employee", "Salary", "Experience");
         IBIO.output(message);
-        for (int i = 0; i < employee_list.length; i++) {
-            Employee current_employee = employee_list[i];
-            if (current_employee.level <= PlayerStats.level) {
-                message = String.format("%2d. %-20s %-20d %-20d",
-                        i + 1, current_employee.name, current_employee.salary, current_employee.experience);
-                IBIO.output(message);
+        for (int i = 0; i < available_employees.size(); i++) {
+            Employee current_employee = available_employees.get(i);
+            message = String.format("%2d. %-20s %-20d %-20d", i + 1,
+                    current_employee.name, current_employee.salary, current_employee.experience);
+            IBIO.output(message);
             }
         }
-    }
     public static void hire_employees() {
         list_employees();
         String message = "Choose an employee \n** ";
@@ -53,6 +52,7 @@ public class ManageEmployees_SinglePlayer {
                 IBIO.output(message);
                 total_salaries = total_salaries + employee_list[i].salary;
                 successful_hire = true;
+                manage_employees();
             }
             i = i + 1;
         }
@@ -72,7 +72,7 @@ public class ManageEmployees_SinglePlayer {
                     i+1, current_employee.name, current_employee.salary, current_employee.experience);
             IBIO.output(message);
         }
-
+        manage_employees();
     }
     public static void manage_employees() {
         String[] command_list = new String[] {
@@ -104,6 +104,7 @@ public class ManageEmployees_SinglePlayer {
             default:
                 IBIO.output("Hmm that doesn't seem like a command, how about we try again!");
                 manage_employees();
+                break;
         }
     }
 }
