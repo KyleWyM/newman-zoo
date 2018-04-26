@@ -91,12 +91,12 @@ public class DataCalculations {
         } else if (difference > -50) {
             IBIO.output("Your workers could not take care of enough of your animals, one of your animals has died");
             reputation -= 50;
-            IBIO.output(String.format("%s has died", PlayerStats.myAnimals.get(0).name);
+            IBIO.output(String.format("%s has died", PlayerStats.myAnimals.get(0).name));
             PlayerStats.myAnimals.remove(PlayerStats.myAnimals.get(0));
         } else {
             IBIO.output("Your workers are so behind, your zoo is gaining a terrible reputation and your animals are dying");
             reputation -= 100;
-            IBIO.output(String.format("%s has died", PlayerStats.myAnimals.get(0).name);
+            IBIO.output(String.format("%s has died", PlayerStats.myAnimals.get(0).name));
             PlayerStats.myAnimals.remove(PlayerStats.myAnimals.get(0));
         }
     }
