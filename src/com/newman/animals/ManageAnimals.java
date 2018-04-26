@@ -54,7 +54,6 @@ public class ManageAnimals {
                     current_animal.maintenance, current_animal.reputation);
             IBIO.output(message);
         }
-        manage_animals();
     }
 
     public static void species_list() {

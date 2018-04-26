@@ -10,10 +10,10 @@ import static com.newman.game.DataCalculations.visitors;
 public class GiftShop {
     //TODO: integrate employees with gift shop and make it so you can assign them roles
 
-    private static int foodBeverage_employees = (int) (PlayerStats.myEmployees.size() * 0.50);
-    static int zoovenir_employees = (int) (PlayerStats.myEmployees.size() * 0.15);
-    static int stuffedWithJoy_employees = (int) (PlayerStats.myEmployees.size() * 0.15);
-    static int coffeeShop_employees = (int) (PlayerStats.myEmployees.size() * 0.20);
+    private static int foodBeverage_employees = (int) (PlayerStats.myEmployees.size() * 0.05);
+    static int zoovenir_employees = (int) (PlayerStats.myEmployees.size() * 0.04);
+    static int stuffedWithJoy_employees = (int) (PlayerStats.myEmployees.size() * 0.02);
+    static int coffeeShop_employees = (int) (PlayerStats.myEmployees.size() * 0.04);
 
     // the starting levels of the shops, the max is 3
     static private int FoodBeverageLevel = 1;
@@ -163,31 +163,31 @@ public class GiftShop {
         // will increase profit.
 
         //Zoovenir
-        min = (int) (((1 + zoovenir_employees)*(0.5* visitors))) * ZoovenirLevel;
-        max = (int) (((4 + zoovenir_employees)*(0.5* visitors)) * ZoovenirLevel);
+        min = (int) ((zoovenir_employees*(0.5* visitors))) * ZoovenirLevel;
+        max = (int) ((zoovenir_employees*(0.5* visitors)) * ZoovenirLevel);
 
             total_earnings += min + (int) (Math.random() * ((max - min) + 1));
 
         //Food and Beverage
-        min = (int) (((2 + foodBeverage_employees)*(0.5* visitors)) * FoodBeverageLevel);
-        max = (int) (((3 + foodBeverage_employees)*(0.5* visitors)) * FoodBeverageLevel);
+        min = (int) ((foodBeverage_employees*(0.5* visitors)) * FoodBeverageLevel);
+        max = (int) ((foodBeverage_employees*(0.5* visitors)) * FoodBeverageLevel);
 
             total_earnings += min + (int) (Math.random() * ((max - min) + 1));
 
 
         //Stuffed with Joy
-        min = (int) (((4 + stuffedWithJoy_employees)*(0.2* visitors))) * StuffedWithJoyLevel;
-        max = (int) (((6 + stuffedWithJoy_employees)*(0.2* visitors))) * StuffedWithJoyLevel;
+        min = (int) ((stuffedWithJoy_employees*(0.2* visitors))) * StuffedWithJoyLevel;
+        max = (int) ((stuffedWithJoy_employees*(0.2* visitors))) * StuffedWithJoyLevel;
 
         total_earnings += min + (int) (Math.random() * ((max - min) + 1));
 
         //Coffee Shop
-        min = (int) (((0 + coffeeShop_employees)*(0.5* visitors))) * CoffeeShopLevel;
-        max = (int) (((5 + coffeeShop_employees)*(0.5* visitors))) * CoffeeShopLevel;
+        min = (int) ((coffeeShop_employees)*(0.5* visitors)) * CoffeeShopLevel;
+        max = (int) ((coffeeShop_employees)*(0.5* visitors)) * CoffeeShopLevel;
 
         total_earnings += min + (int) (Math.random() * ((max - min) + 1));
 
-        PlayerStats.money += total_earnings/50;
+        PlayerStats.money += total_earnings/150;
         IBIO.output("Your shops have earned you $" + total_earnings + ".");
     }
 }

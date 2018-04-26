@@ -40,7 +40,7 @@ public class DataCalculations {
     }
 
     public static void rent() {
-        rent = level * 10;
+        rent = level * 100;
         PlayerStats.money -= rent;
         IBIO.output(String.format("You have paid %d dollars in rent", rent));
     }
@@ -91,13 +91,16 @@ public class DataCalculations {
         } else if (difference > -50) {
             IBIO.output("Your workers could not take care of enough of your animals, one of your animals has died");
             reputation -= 50;
+            IBIO.output(String.format("%s has died", PlayerStats.myAnimals.get(0).name);
+            PlayerStats.myAnimals.remove(PlayerStats.myAnimals.get(0));
         } else {
             IBIO.output("Your workers are so behind, your zoo is gaining a terrible reputation and your animals are dying");
             reputation -= 100;
-
+            IBIO.output(String.format("%s has died", PlayerStats.myAnimals.get(0).name);
+            PlayerStats.myAnimals.remove(PlayerStats.myAnimals.get(0));
         }
     }
-    static int[] level_thresholds = {0, 20, 50, 100, 500, 1000, 2000, 3000, 5000, 10000};
+    static int[] level_thresholds = {0, 50, 100, 200, 300, 500, 1000, 2000, 3000, 5000, 10000};
     public static void level_up(int reputation) {
         for (int i = 0; i < level_thresholds.length; i++) {
             if (reputation >= level_thresholds[i] && PlayerStats.level < i+1) {

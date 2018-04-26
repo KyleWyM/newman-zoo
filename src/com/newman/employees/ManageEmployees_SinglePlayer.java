@@ -81,7 +81,6 @@ public class ManageEmployees_SinglePlayer {
                     i+1, current_employee.name, current_employee.salary, current_employee.experience);
             IBIO.output(message);
         }
-        manage_employees();
     }
     public static void fire_employees() {
         list_owned_employees();
