@@ -11,7 +11,7 @@ public class Employee implements Serializable {
     int experience;
     public int salary; //weekly salary
     public int level;
-    boolean proper_name;
+    public boolean proper_name;
 
     public Employee(String name, int experience, int salary, int level, boolean proper_name) {
         this.name = name;

@@ -2,6 +2,7 @@ package com.newman.employees;
 import com.newman.player.PlayerStats;
 import ibio.*;
 
+import static com.newman.employees.Employee.available_employees;
 import static com.newman.employees.Employee.employee_list;
 import static com.newman.game.CommandListener.help;
 import static com.newman.game.DataCalculations.total_salaries;
@@ -24,8 +25,8 @@ public class ManageEmployees_SinglePlayer {
         String message;
         message = String.format("    %-20s %-20s %-20s", "Employee", "Salary", "Experience");
         IBIO.output(message);
-        for (int i = 0; i < employee_list.length; i++) {
-            Employee current_employee = employee_list[i];
+        for (int i = 0; i < available_employees.size(); i++) {
+            Employee current_employee = available_employees.get(i);
             if (current_employee.level <= PlayerStats.level) {
                 message = String.format("%2d. %-20s %-20d %-20d",
                         i + 1, current_employee.name, current_employee.salary, current_employee.experience);
@@ -40,22 +41,22 @@ public class ManageEmployees_SinglePlayer {
         int chosen_employee_index;
         if (isInteger(chosen_employee)) {
             chosen_employee_index = Integer.parseInt(chosen_employee);
-            if (0 < chosen_employee_index && chosen_employee_index <= employee_list.length) {
-                chosen_employee = employee_list[chosen_employee_index-1].name;
+            if (0 < chosen_employee_index && chosen_employee_index <= available_employees.size()) {
+                chosen_employee = available_employees.get(chosen_employee_index-1).name;
             }
         }
         boolean successful_hire = false;
         int i = 0;
-        while (i < employee_list.length && !successful_hire) {
-            if (employee_list[i].name.equals(chosen_employee) && employee_list[i].level <= PlayerStats.level) {
-                PlayerStats.myEmployees.add(employee_list[i]);
-                if (employee_list[i].proper_name) {
-                    message = String.format("You have hired %s!", employee_list[i].name);
+        while (i < available_employees.size() && !successful_hire) {
+            if (available_employees.get(i).name.equals(chosen_employee) && available_employees.get(i).level <= PlayerStats.level) {
+                PlayerStats.myEmployees.add(available_employees.get(i));
+                if (available_employees.get(i).proper_name) {
+                    message = String.format("You have hired %s!", available_employees.get(i).name);
                 } else {
-                    message = String.format("You have hired a new %s!", employee_list[i].name.toLowerCase());
+                    message = String.format("You have hired a new %s!", available_employees.get(i).name.toLowerCase());
                 }
                 IBIO.output(message);
-                total_salaries = total_salaries + employee_list[i].salary;
+                total_salaries = total_salaries + available_employees.get(i).salary;
                 successful_hire = true;
             }
             i = i + 1;
@@ -78,9 +79,24 @@ public class ManageEmployees_SinglePlayer {
         }
 
     }
+    public static void fire_employees() {
+        list_owned_employees();
+        IBIO.output(String.format("%2d. let them keep their jobs", PlayerStats.myEmployees.size()+1));
+        String message = "Which employee would you like to fire?\n** ";
+        int chosen_employee_index = IBIO.inputInt(message);
+        if (0 < chosen_employee_index && chosen_employee_index <= PlayerStats.myEmployees.size()) {
+            PlayerStats.myEmployees.remove(PlayerStats.myEmployees.get(chosen_employee_index-1));
+            total_salaries -= PlayerStats.myEmployees.get(chosen_employee_index-1).salary;
+        } else if (chosen_employee_index == PlayerStats.myEmployees.size()+1) {
+            manage_employees();
+        } else {
+            IBIO.output("Hmm... that doesn't seem like one of your employees, try again!");
+            fire_employees();
+        }
+    }
     public static void manage_employees() {
         String[] command_list = new String[] {
-                "hire employee", "my employees", "available employees", "leave employee management"
+                "hire employee", "fire employee", "my employees", "available employees", "leave employee management"
         };
         for (int i = 0; i < command_list.length; i++) {
             String message = String.format("%2d. %s", i+1, command_list[i]);
@@ -94,14 +110,18 @@ public class ManageEmployees_SinglePlayer {
                 hire_employees();
                 break;
             case "2":
+            case "fire":
+            case "fire employee":
+                fire_employees();
+            case "3":
             case "my employees":
                 list_owned_employees();
                 break;
-            case "3":
+            case "4":
             case "available employees":
                 list_employees();
                 break;
-            case "4":
+            case "5":
             case "leave":
                 help();
                 break;

@@ -44,7 +44,6 @@ public class CommandListener {
         }
     }
 
-
     //When a user enters a string, user_interface checks for
     //existing commands
     public static void takeCommand(String command) {
