@@ -74,6 +74,8 @@ public class CommandListener {
             case "6":
                 IBIO.output("Bank Account: $" + PlayerStats.money);
                 IBIO.output("Reputation: " + PlayerStats.reputation);
+                IBIO.output("Workforce: " + DataCalculations.work_force);
+                IBIO.output("Total needed animal labor: " + DataCalculations.total_labor);
                 ComplaintChecker.listComplaints();
                 break;
             case "next":
