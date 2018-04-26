@@ -2,13 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89dd0f32-3683-4cc0-982e-c7fcba048825" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/complaints/Booleans.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/complaints/ComplaintChecker.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/newman/game/RealTime_GameLoop.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/CandiesShop.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/CoffeeShop.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/FoodAndBeverage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/GiftShop.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/Jewellery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/StuffedWithJoy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/Zoovenir.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Complaints.java" afterPath="$PROJECT_DIR$/src/old_classes/Complaints.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/EventsMain.java" afterPath="$PROJECT_DIR$/src/old_classes/EventsMain.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Random2.java" afterPath="$PROJECT_DIR$/src/old_classes/Random2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Random_total.java" afterPath="$PROJECT_DIR$/src/old_classes/Random_total.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Values.java" afterPath="$PROJECT_DIR$/src/old_classes/Values.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/CandiesShop.java" afterPath="$PROJECT_DIR$/src/old_classes/CandiesShop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/CoffeeShop.java" afterPath="$PROJECT_DIR$/src/old_classes/CoffeeShop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/FoodAndBeverage.java" afterPath="$PROJECT_DIR$/src/old_classes/FoodAndBeverage.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/GiftShop.java" afterPath="$PROJECT_DIR$/src/old_classes/GiftShop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/Jewellery.java" afterPath="$PROJECT_DIR$/src/old_classes/Jewellery.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/StuffedWithJoy.java" afterPath="$PROJECT_DIR$/src/old_classes/StuffedWithJoy.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/newman/shop_work_in_progress/Zoovenir.java" afterPath="$PROJECT_DIR$/src/old_classes/Zoovenir.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/newman_zoo_jar/newman-zoo.jar" afterPath="$PROJECT_DIR$/out/artifacts/newman_zoo_jar/newman-zoo.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/animals/ManageAnimals.class" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/animals/ManageAnimals.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/employees/Employee.class" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/employees/Employee.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/game/CommandListener.class" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/game/CommandListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/game/DataCalculations.class" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/game/DataCalculations.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/game/Main.class" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/game/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/game/Random_Events.class" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/game/Random_Events.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/giftshop/GiftShop.class" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/giftshop/GiftShop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/saves/SaveObject.class" afterPath="$PROJECT_DIR$/out/production/newman-zoo/com/newman/saves/SaveObject.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Saves/Save1.ser" afterPath="$PROJECT_DIR$/Saves/Save1.ser" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Saves/Save2.ser" afterPath="$PROJECT_DIR$/Saves/Save2.ser" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Saves/Save3.ser" afterPath="$PROJECT_DIR$/Saves/Save3.ser" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/complaints/Booleans.java" afterPath="$PROJECT_DIR$/src/com/newman/complaints/Booleans.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/game/CommandListener.java" afterPath="$PROJECT_DIR$/src/com/newman/game/CommandListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/game/Main.java" afterPath="$PROJECT_DIR$/src/com/newman/game/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/saves/SaveObject.java" afterPath="$PROJECT_DIR$/src/com/newman/saves/SaveObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/complaints/ComplaintChecker.java" afterPath="$PROJECT_DIR$/src/com/newman/complaints/ComplaintChecker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/game/Random_Events.java" afterPath="$PROJECT_DIR$/src/com/newman/game/Random_Events.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newman/game/TicketAlgorithm.java" afterPath="$PROJECT_DIR$/src/com/newman/game/TicketAlgorithm.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,117 +52,7 @@
     <favorites_list name="newman-zoo" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newman/game/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rules" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rules">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newman/game/CommandListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="76" column="50" lean-forward="true" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newman/saves/Reader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Booleans.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newman/complaints/Booleans.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComplaintChecker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newman/complaints/ComplaintChecker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaveObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newman/saves/SaveObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-              <folding>
-                <element signature="e#3213#3214#0" expanded="true" />
-                <element signature="e#3245#3246#0" expanded="true" />
-                <element signature="e#3288#3289#0" expanded="true" />
-                <element signature="e#3330#3331#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Save1.ser" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Saves/Save1.ser">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Save2.ser" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Saves/Save2.ser">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Save3.ser" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Saves/Save3.ser">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -164,7 +84,6 @@
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Snake.java" />
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Tiger.java" />
         <option value="$PROJECT_DIR$/src/com/newman/animals/species/Zebra.java" />
-        <option value="$PROJECT_DIR$/src/com/newman/game/Random_Events.java" />
         <option value="$PROJECT_DIR$/src/com/newman/employees/ManageEmployees_SinglePlayer.java" />
         <option value="$PROJECT_DIR$/src/com/newman/giftshop/GiftShop.java" />
         <option value="$PROJECT_DIR$/src/com/newman/employees/Employee.java" />
@@ -173,11 +92,15 @@
         <option value="$PROJECT_DIR$/rules" />
         <option value="$PROJECT_DIR$/src/com/newman/game/Main.java" />
         <option value="$PROJECT_DIR$/src/com/newman/game/CommandListener.java" />
-        <option value="$PROJECT_DIR$/src/com/newman/complaints/Booleans.java" />
         <option value="$PROJECT_DIR$/src/com/newman/saves/SaveObject.java" />
         <option value="$PROJECT_DIR$/Saves/Save1.ser" />
         <option value="$PROJECT_DIR$/Saves/Save2.ser" />
         <option value="$PROJECT_DIR$/Saves/Save3.ser" />
+        <option value="$PROJECT_DIR$/src/com/newman/complaints/Booleans.java" />
+        <option value="$PROJECT_DIR$/src/com/newman/game/Random_Events.java" />
+        <option value="$PROJECT_DIR$/src/com/newman/complaints/ComplaintChecker.java" />
+        <option value="$PROJECT_DIR$/src/com/newman/game/TicketAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/old_classes/Values.java" />
       </list>
     </option>
   </component>
@@ -188,7 +111,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="39" />
+    <option name="x" value="192" />
     <option name="y" value="23" />
     <option name="width" value="1144" />
     <option name="height" value="709" />
@@ -208,9 +131,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,12 +144,13 @@
             <path>
               <item name="newman-zoo" type="b2602c69:ProjectViewProjectNode" />
               <item name="newman-zoo" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="newman-zoo" type="b2602c69:ProjectViewProjectNode" />
               <item name="newman-zoo" type="462c0819:PsiDirectoryNode" />
-              <item name="Saves" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="newman" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -240,11 +164,12 @@
     <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/old_classes" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/com/newman" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -411,41 +336,42 @@
       <workItem from="1524702754151" duration="277000" />
       <workItem from="1524719881315" duration="56000" />
       <workItem from="1524719989225" duration="416000" />
+      <workItem from="1524720435285" duration="1164000" />
+      <workItem from="1524721608765" duration="405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14179000" />
+    <option name="totallyTimeSpent" value="15748000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="39" y="23" width="1144" height="709" extended-state="0" />
-    <editor active="true" />
+    <frame x="192" y="23" width="1144" height="709" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32328483" sideWeight="0.47267607" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14862682" sideWeight="0.40387723" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44200626" sideWeight="0.8743662" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.026058631" sideWeight="0.5961228" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57491857" sideWeight="0.5961228" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.118892506" sideWeight="0.8743662" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21415608" sideWeight="0.76034856" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21415608" sideWeight="0.76034856" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24954627" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.23965141" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.054640718" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32328483" sideWeight="0.47267607" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7887324" sideWeight="0.49353796" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -492,117 +418,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/animals/species/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/Values.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventsMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Complaints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/newman-zoo/com/newman/giftshop/GiftShop.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12105">
-          <caret line="807" column="28" lean-forward="false" selection-start-line="807" selection-start-column="28" selection-end-line="807" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/game/TicketAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/shop_work_in_progress/CandiesShop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/animals/species/Animal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/animals/species/Armadillo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="54" lean-forward="false" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/animals/species/Camel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="51" lean-forward="false" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/animals/species/Dragon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -677,16 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/game/Random_Events.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -729,10 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="54" lean-forward="false" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
-          <folding>
-            <element signature="e#102#103#0" expanded="true" />
-            <element signature="e#165#166#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,9 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
           <caret line="82" column="9" lean-forward="false" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,8 +614,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/game/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+        <state relative-caret-position="810">
+          <caret line="54" column="34" lean-forward="false" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -826,8 +624,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/game/CommandListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="76" column="50" lean-forward="true" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
+        <state relative-caret-position="990">
+          <caret line="76" column="50" lean-forward="false" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -840,33 +638,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/complaints/ComplaintChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newman/complaints/Booleans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newman/saves/SaveObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding>
-            <element signature="e#3213#3214#0" expanded="true" />
-            <element signature="e#3245#3246#0" expanded="true" />
-            <element signature="e#3288#3289#0" expanded="true" />
-            <element signature="e#3330#3331#0" expanded="true" />
+            <element signature="e#3213#3214#0" expanded="false" />
+            <element signature="e#3245#3246#0" expanded="false" />
+            <element signature="e#3288#3289#0" expanded="false" />
+            <element signature="e#3330#3331#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -875,6 +655,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommandListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainSinglePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/game/Random_Events.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="26" column="70" lean-forward="false" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/complaints/ComplaintChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="53" column="62" lean-forward="false" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/complaints/Booleans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3015">
+          <caret line="208" column="69" lean-forward="false" selection-start-line="208" selection-start-column="69" selection-end-line="208" selection-end-column="69" />
           <folding />
         </state>
       </provider>
@@ -888,6 +712,120 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Saves/Save3.ser">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newman/game/TicketAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/CandiesShop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/CoffeeShop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/Jewellery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/Zoovenir.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/EventsMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/Values.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/Random_total.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/Random2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/Complaints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/StuffedWithJoy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/GiftShop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_classes/FoodAndBeverage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TicketAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

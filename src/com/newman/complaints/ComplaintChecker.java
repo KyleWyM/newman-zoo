@@ -52,14 +52,14 @@ public class ComplaintChecker {
         }
         if (Booleans.reptile_bonus) {
             complaint = "You have the reptile bonus because of your reptile collection! " +
-                    "\nGet a bonus of money equal to 5 for every reptile you have!";
-            PlayerStats.money += Booleans.num_reptiles * 5;
+                    "\nGet a bonus of money equal to 15 for every reptile you have!";
+            PlayerStats.money += Booleans.num_reptiles * 15;
             complaints.add(complaint);
         }
         if (Booleans.mammal_bonus) {
-            complaint = "You have the avian bonus because of your reptile collection! " +
-                    "\nGet a bonus of money equal to 5 per turn!";
-            PlayerStats.money += 5;
+            complaint = "You have the mammalian bonus because of your mammal collection! " +
+                    "\nGet a bonus of money equal to 100 per turn!";
+            PlayerStats.money += 25;
             complaints.add(complaint);
         }
         if (Booleans.too_many_of_one_animal) {
@@ -71,18 +71,15 @@ public class ComplaintChecker {
             complaints.add(complaint);
         }
         if (Booleans.too_many_carnivores) {
-            complaint = "You have too many carnivores! They are rampaging the zoo, leaving the bodies of" +
-                    "\nvisitors strewn all about. It's carnage. The chances of survival are remote." +
-                    "\nYou must pay $3 in reparations. Also, you have bad Yelp reviews now, so " +
-                    "\nyou will lose 1 reputation per turn.";
+            complaint = "You have too many carnivores. It's too much. Pay 3 bucks.";
             PlayerStats.money -= 3;
             PlayerStats.reputation--;
             complaints.add(complaint);
         }
         if (Booleans.owner_is_rich) {
             int bonus = (int) ((double) PlayerStats.money * 0.9);
-            complaint = "You are rolling in cash! Get a bonus of " + bonus + " this turn! But you will lose reputation.";
-            PlayerStats.money += bonus;
+            complaint = "You are rolling in cash! Get a bonus of " + Math.max(bonus, 100) + " this turn! But you will lose reputation.";
+            PlayerStats.money += Math.max(bonus, 100);
             PlayerStats.reputation -= 9;
             complaints.add(complaint);
         }
@@ -98,10 +95,10 @@ public class ComplaintChecker {
             complaints.add(complaint);
         }
         if (Booleans.too_crowded) {
-            complaint = "Your zoo is two crowded. One guy even fell in the " + PlayerStats.myAnimals.get(0) + " " +
+            complaint = "Your zoo is two crowded. One guy even fell in the " + PlayerStats.myAnimals.get(0).getClass().getSimpleName() + " " +
                     "\nexhibit. Lose $5 and 1 reputation until your zoo is no longer crowded.";
             PlayerStats.reputation--;
-            PlayerStats.money -= 5;
+            PlayerStats.money -= 15;
             complaints.add(complaint);
         }
         if (Booleans.too_sparse) {
@@ -109,8 +106,8 @@ public class ComplaintChecker {
             complaints.add(complaint);
         }
         if (Booleans.increasing_popularity) {
-            complaint = "Your growing in popularity! Get 15 reputation and $30!";
-            PlayerStats.money += 30;
+            complaint = "Your growing in popularity! Get 15 reputation and $100!";
+            PlayerStats.money += 100;
             PlayerStats.reputation += 15;
             complaints.add(complaint);
         }

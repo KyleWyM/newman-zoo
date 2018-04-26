@@ -201,10 +201,10 @@ public class Booleans {
         }
 
         //Other booleans:
-        if ((double) change_in_money > 0.15 * (double) PlayerStats.money) {
+        if (((double) change_in_money > 0.15 * (double) PlayerStats.money) && change_in_money > 0) {
             owner_is_rich = true;
         }
-        if ((double) DataCalculations.visitors > numAnimals * 10) {
+        if ((double) DataCalculations.visitors > numAnimals * 50) {
             too_crowded = true;
         } else if ((double) DataCalculations.visitors < numAnimals) {
             too_sparse = true;

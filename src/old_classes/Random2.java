@@ -1,3 +1,5 @@
+package old_classes;
+
 import java.util.Random;
 
 public class Random2 {
