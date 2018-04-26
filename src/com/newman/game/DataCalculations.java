@@ -136,6 +136,7 @@ public class DataCalculations {
         }
         if (lose_counter == 3) {
             IBIO.output("Your zoo has gone bankrupt! You had to close down. Sorry! You lost!");
+            Main.runGame = false;
         }
     }
 }
