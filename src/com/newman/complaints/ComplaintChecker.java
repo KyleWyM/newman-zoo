@@ -15,10 +15,10 @@ public class ComplaintChecker {
                     i + 1, complaints.get(i));
             IBIO.output(message + "\n");
         }
-        complaints = new ArrayList<>();
     }
 
     public static void update() {
+        complaints = new ArrayList<>();
         Booleans.update_variables();
 
         String complaint;
@@ -77,9 +77,9 @@ public class ComplaintChecker {
             complaints.add(complaint);
         }
         if (Booleans.owner_is_rich) {
-            int bonus = (int) ((double) PlayerStats.money * 0.9);
+            int bonus = (int) ((double) PlayerStats.money * 0.1);
             complaint = "You are rolling in cash! Get a bonus of " + Math.max(bonus, 100) + " this turn! But you will lose reputation.";
-            PlayerStats.money += Math.max(bonus, 100);
+            PlayerStats.money += Math.min(bonus, 100);
             PlayerStats.reputation -= 9;
             complaints.add(complaint);
         }

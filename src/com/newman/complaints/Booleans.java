@@ -60,8 +60,11 @@ public class Booleans {
 
     static void update_variables() {
         resetBooleans();
-        if (!complaints_initialized)
+        if (!complaints_initialized) {
             initialize_variables();
+            complaints_initialized = true;
+        }
+
 
         calculate_changes();
         analyze_arrays();
@@ -84,7 +87,6 @@ public class Booleans {
             change_in_reputation = PlayerStats.reputation - initial_reputation;
             change_in_num_animals = PlayerStats.myAnimals.size() - initial_num_animals;
             change_in_visitors = DataCalculations.visitors - initial_visitors;
-
             initialize_variables();
         }
     }
