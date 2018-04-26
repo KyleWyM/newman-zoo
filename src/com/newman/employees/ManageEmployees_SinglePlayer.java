@@ -48,7 +48,11 @@ public class ManageEmployees_SinglePlayer {
         while (i < employee_list.length && !successful_hire) {
             if (employee_list[i].name.equals(chosen_employee) && employee_list[i].level <= PlayerStats.level) {
                 PlayerStats.myEmployees.add(employee_list[i]);
-                message = String.format("You have hired a new %s!", employee_list[i].name.toLowerCase());
+                if (employee_list[i].proper_name) {
+                    message = String.format("You have hired %s!", employee_list[i].name);
+                } else {
+                    message = String.format("You have hired a new %s!", employee_list[i].name.toLowerCase());
+                }
                 IBIO.output(message);
                 total_salaries = total_salaries + employee_list[i].salary;
                 successful_hire = true;
