@@ -39,15 +39,19 @@ public class ManageEmployees_SinglePlayer {
     public static void hire_employees() {
         list_employees();
         String message = "Choose an employee \n** ";
+        IBIO.output(String.format("%2d. Cancel", available_employees.size()+1));
         String chosen_employee = IBIO.input(message);
         int chosen_employee_index;
+        boolean successful_hire = false;
         if (isInteger(chosen_employee)) {
             chosen_employee_index = Integer.parseInt(chosen_employee);
             if (0 < chosen_employee_index && chosen_employee_index <= available_employees.size()) {
                 chosen_employee = available_employees.get(chosen_employee_index-1).name;
+            } else if (chosen_employee_index == available_employees.size()+1) {
+                manage_employees();
+                successful_hire = true;
             }
         }
-        boolean successful_hire = false;
         int i = 0;
         while (i < available_employees.size() && !successful_hire) {
             if (available_employees.get(i).name.equals(chosen_employee)) {
