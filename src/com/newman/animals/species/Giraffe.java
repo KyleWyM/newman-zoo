@@ -2,7 +2,7 @@ package com.newman.animals.species;
 
 public class Giraffe extends Animal {
     public Giraffe(String name) {
-        super (name, 300, 25, 10, 2, "res/Giraffe.aiff");
+        super (name, 300, 25, 10, 2, "res/Giraffe.aiff", 10);
 
     }
 }

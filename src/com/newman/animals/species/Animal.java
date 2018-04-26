@@ -11,18 +11,20 @@ public class Animal implements Serializable {
     public int maintenance; // per day; including food price as well
     public int reputation; //scale of 1-10; aka attention given
     public int level; // 1-10;
+    public int labor;
     private String file_path;
     
 
 //    "res/Armadillo.aiff"
 
-    public Animal(String name, int price, int maintenance, int reputation, int level, String file_path) {
+    public Animal(String name, int price, int maintenance, int reputation, int level, String file_path, int labor) {
         this.name = name;
         this.price = price;
         this.maintenance = maintenance;
         this.reputation = reputation;
         this.level = level;
         this.file_path = file_path;
+        this.labor = labor;
     }
 
     public void PlaySound() {

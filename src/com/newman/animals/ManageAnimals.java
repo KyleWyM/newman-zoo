@@ -4,6 +4,8 @@ import com.newman.animals.species.Animal;
 import com.newman.animals.species.*;
 import ibio.*;
 import com.newman.player.PlayerStats;
+
+import static com.newman.game.DataCalculations.total_labor;
 import static com.newman.game.DataCalculations.total_maintenance;
 
 import java.util.ArrayList;
@@ -100,6 +102,7 @@ public class ManageAnimals {
 
                     //Updating player stats
                     PlayerStats.reputation += animal.reputation;
+                    total_labor += animal.labor;
                     PlayerStats.money -= animal.price;
 
                     //Animal is added and it plays its sound
@@ -125,6 +128,7 @@ public class ManageAnimals {
         int chosen_animal_index = IBIO.inputInt(message);
         if (0 < chosen_animal_index && chosen_animal_index <= PlayerStats.myAnimals.size()) {
             total_maintenance = total_maintenance - PlayerStats.myAnimals.get(chosen_animal_index-1).maintenance;
+            total_labor = total_labor - PlayerStats.myAnimals.get(chosen_animal_index-1).labor;
             IBIO.output(String.format("You have sold your %s for $%d!",
                     PlayerStats.myAnimals.get(chosen_animal_index-1).name,
                     PlayerStats.myAnimals.get(chosen_animal_index-1).price/2));

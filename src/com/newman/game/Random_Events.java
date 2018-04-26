@@ -22,10 +22,10 @@ public class Random_Events {
 
 
     static Random_Events donation = new Random_Events("A rich animal enthusiast loves your zoo " +
-            "and decided to make a donation! Your zoo has been granted 1000$!", -1, 20,
+            "and decided to make a donation! Your zoo has been granted $1000!", -1, 20,
             0, 1000, null);
     static Random_Events earthquake = new Random_Events("Oh no! There was an earthquake at your zoo! " +
-            "You had to pay 500$ to fix the damages!", 20, 30, 0,
+            "You had to pay $500 to fix the damages!", 20, 30, 0,
             -500, null);
     static Random_Events pass_go = new Random_Events("You passed go! Collect 200$!", 30, 50,
             0, 200, null);

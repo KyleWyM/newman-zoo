@@ -7,6 +7,7 @@ import static com.newman.employees.Employee.employee_list;
 import static com.newman.employees.Employee.father_luca;
 import static com.newman.game.CommandListener.help;
 import static com.newman.game.DataCalculations.total_salaries;
+import static com.newman.game.DataCalculations.work_force;
 
 
 public class ManageEmployees_SinglePlayer {
@@ -49,7 +50,7 @@ public class ManageEmployees_SinglePlayer {
         boolean successful_hire = false;
         int i = 0;
         while (i < available_employees.size() && !successful_hire) {
-            if (available_employees.get(i).name.equals(chosen_employee) && available_employees.get(i).level <= PlayerStats.level) {
+            if (available_employees.get(i).name.equals(chosen_employee)) {
                 PlayerStats.myEmployees.add(available_employees.get(i));
                 if (available_employees.get(i).proper_name) {
                     message = String.format("You have hired %s!", available_employees.get(i).name);
@@ -58,7 +59,9 @@ public class ManageEmployees_SinglePlayer {
                 }
                 IBIO.output(message);
                 total_salaries = total_salaries + available_employees.get(i).salary;
+                work_force = work_force + available_employees.get(i).experience;
                 successful_hire = true;
+                manage_employees();
             }
             i = i + 1;
         }
@@ -78,7 +81,7 @@ public class ManageEmployees_SinglePlayer {
                     i+1, current_employee.name, current_employee.salary, current_employee.experience);
             IBIO.output(message);
         }
-
+        manage_employees();
     }
     public static void fire_employees() {
         list_owned_employees();
@@ -93,12 +96,14 @@ public class ManageEmployees_SinglePlayer {
             } else if (available_employees.get(chosen_employee_index-1).proper_name) {
                 message = String.format("You have fired %s!", available_employees.get(chosen_employee_index-1).name);
                 IBIO.output(message);
+                work_force = work_force - available_employees.get(chosen_employee_index - 1).experience;
                 total_salaries -= PlayerStats.myEmployees.get(chosen_employee_index - 1).salary;
                 PlayerStats.myEmployees.remove(PlayerStats.myEmployees.get(chosen_employee_index-1));
                 manage_employees();
             } else {
-                message = String.format("You have hired a new %s!", available_employees.get(chosen_employee_index-1).name.toLowerCase());
+                message = String.format("You have fired a %s!", available_employees.get(chosen_employee_index-1).name.toLowerCase());
                 IBIO.output(message);
+                work_force = work_force - available_employees.get(chosen_employee_index - 1).experience;
                 total_salaries -= PlayerStats.myEmployees.get(chosen_employee_index - 1).salary;
                 PlayerStats.myEmployees.remove(PlayerStats.myEmployees.get(chosen_employee_index-1));
                 manage_employees();

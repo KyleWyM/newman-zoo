@@ -153,7 +153,6 @@ public class GiftShop {
 
     public static void runShops() {
         int min, max, total_earnings = 0;
-        int shop_customers = (int) (0.5 * visitors); //Half of visitors attend the shop
 
         // The amount of money that each customer will spend in this shop
         // corresponds to a randomly generated number,
@@ -164,34 +163,31 @@ public class GiftShop {
         // will increase profit.
 
         //Zoovenir
-        min = (5 + zoovenir_employees) * ZoovenirLevel;
-        max = (15 + zoovenir_employees) * ZoovenirLevel;
-        for (int i = 0; i < shop_customers; i++) {
+        min = (int) (((1 + zoovenir_employees)*(0.5* visitors))) * ZoovenirLevel;
+        max = (int) (((4 + zoovenir_employees)*(0.5* visitors)) * ZoovenirLevel);
+
             total_earnings += min + (int) (Math.random() * ((max - min) + 1));
-        }
 
         //Food and Beverage
-        min = (1 + foodBeverage_employees) * FoodBeverageLevel;
-        max = (20 + foodBeverage_employees) * FoodBeverageLevel;
-        for (int i = 0; i < shop_customers; i++) {
+        min = (int) (((2 + foodBeverage_employees)*(0.5* visitors)) * FoodBeverageLevel);
+        max = (int) (((3 + foodBeverage_employees)*(0.5* visitors)) * FoodBeverageLevel);
+
             total_earnings += min + (int) (Math.random() * ((max - min) + 1));
-        }
+
 
         //Stuffed with Joy
-        min = (20 + stuffedWithJoy_employees) * StuffedWithJoyLevel;
-        max = (50 + stuffedWithJoy_employees) * StuffedWithJoyLevel;
-        for (int i = 0; i < shop_customers; i++) {
-            total_earnings += min + (int) (Math.random() * ((max - min) + 1));
-        }
+        min = (int) (((4 + stuffedWithJoy_employees)*(0.2* visitors))) * StuffedWithJoyLevel;
+        max = (int) (((6 + stuffedWithJoy_employees)*(0.2* visitors))) * StuffedWithJoyLevel;
+
+        total_earnings += min + (int) (Math.random() * ((max - min) + 1));
 
         //Coffee Shop
-        min = (5 + coffeeShop_employees) * CoffeeShopLevel;
-        max = (15 + coffeeShop_employees) * CoffeeShopLevel;
-        for (int i = 0; i < shop_customers; i++) {
-            total_earnings += min + (int) (Math.random() * ((max - min) + 1));
-        }
+        min = (int) (((0 + coffeeShop_employees)*(0.5* visitors))) * CoffeeShopLevel;
+        max = (int) (((5 + coffeeShop_employees)*(0.5* visitors))) * CoffeeShopLevel;
 
-        PlayerStats.money += total_earnings;
+        total_earnings += min + (int) (Math.random() * ((max - min) + 1));
+
+        PlayerStats.money += total_earnings/50;
         IBIO.output("Your shops have earned you $" + total_earnings + ".");
     }
 }
